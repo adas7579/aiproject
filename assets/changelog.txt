@@ -1,0 +1,5 @@
+Bugs Solved:
+favourite location
+multi word file search
+Added:
+Browsing favourite websites
