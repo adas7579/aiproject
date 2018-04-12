@@ -198,7 +198,7 @@ public class Windows {
 
     public String search(String fn) {
         //C:\Users\aNaWorLd\AppData\Roaming\Microsoft\Windows\Recent
-        //C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+       
         fname = fn;
         pth = "";
         // direc("C:\\Users\\" + System.getProperty("user.name") + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent");
