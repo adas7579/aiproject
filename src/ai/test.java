@@ -19,7 +19,9 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.json.simple.JSONObject;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Desktop;
 /**
  *
  * @author VISION
@@ -43,6 +45,9 @@ public class test extends javax.swing.JFrame {
     int hov;
     Sync syn;
     public test(String uid, ArrayList con, String email,Sync syn,int hv) {
+            task();
+            
+            
         this.uid = uid;
         w.email = email;
         hov=hv;
@@ -116,6 +121,7 @@ public class test extends javax.swing.JFrame {
 // Maps the tab key to the commit action, which finishes the autocomplete
 // when given a suggestion
         response.getActionMap().put(COMMIT_ACTION, autoComplete.new CommitAction());
+    
     }
 
     /**
@@ -139,6 +145,7 @@ public class test extends javax.swing.JFrame {
         setTitle("InArCo");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
@@ -223,7 +230,96 @@ public class test extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ MenuItem lis;
+private void task()
+{
+if (!SystemTray.isSupported()) {
+            System.out.println("SystemTray is not supported");
+            return;
+        }
+        final PopupMenu popup = new PopupMenu();
+        java.awt.Image image = Toolkit.getDefaultToolkit().getImage("assets/sys.png");
+        final TrayIcon trayIcon =  new TrayIcon(image);
+        final SystemTray tray = SystemTray.getSystemTray();
+       
+        // Create a pop-up menu components
+        MenuItem wel = new MenuItem("Welcome");
+//        CheckboxMenuItem cb1 = new CheckboxMenuItem("Set auto size");
+//        CheckboxMenuItem cb2 = new CheckboxMenuItem("Set tooltip");
+  
+       lis = new MenuItem("Listen");
+//        MenuItem errorItem = new MenuItem("Error");
+//        MenuItem warningItem = new MenuItem("Warning");
+        MenuItem mute = new MenuItem("Clear");
 
+        MenuItem log = new MenuItem("Logout");
+        MenuItem exit = new MenuItem("Exit");
+       
+        //Add components to pop-up menu
+        popup.add(wel);
+      popup.addSeparator();
+      popup.add(lis);
+        popup.add(mute);
+        popup.addSeparator();
+      
+        popup.add(log);
+//        displayMenu.add(errorItem);
+//        displayMenu.add(warningItem);
+//        displayMenu.add(infoItem);
+//        displayMenu.add(noneItem);
+        popup.add(exit);       
+        trayIcon.setPopupMenu(popup);
+        
+           wel.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+         try {
+                JSONObject qw = jj.getUser(detail.get("email").toString());
+                welcome w = new welcome(qw,syn);
+                w.pass = pass;
+               
+                
+                w.setVisible(true);
+                setVisible(false);
+            } catch (Exception ex) {
+                Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    });
+           
+       lis.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+          close();
+        }
+    });
+            
+             mute.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+          response.setText("");
+        }
+    });
+        
+        
+         log.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+          logout();
+        }
+    });
+        
+        exit.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+            exit();
+        }
+    });
+        try {
+            tray.add(trayIcon);
+        } catch (AWTException e) {
+            System.out.println("TrayIcon could not be added.");
+        }        
+        
+        
+        
+        
+}
     private void responseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_responseMouseClicked
         lb.setIcon(null);
         label.setIcon(new ImageIcon("assets/mute.png"));
@@ -264,7 +360,9 @@ public class test extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void b1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b1MouseClicked
-        anime();        // TODO add your handling code here:
+        anime();      
+
+// TODO add your handling code here:
 //ms=null;
     }//GEN-LAST:event_b1MouseClicked
 
@@ -402,11 +500,13 @@ public class test extends javax.swing.JFrame {
                 ob = null;
             }
             this.setBounds(this.getX(), this.getY(), 20, this.getHeight());
+             lis.setEnabled(false);
         } else {
             wp = 0;
             this.setBounds(this.getX(), this.getY(), wt, this.getHeight());
             b1.setText(">");
             this.setLocation(x - this.getWidth(), this.getY());
+               lis.setEnabled(true);
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -526,76 +626,11 @@ public class test extends javax.swing.JFrame {
         } else if (output.equalsIgnoreCase("logout")) {
 
 //               
-            String s = "";
-            try {
-                Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
-
-                InputStream in = child.getInputStream();
-
-                int c;
-                while ((c = in.read()) != -1) {
-                    //System.out.print((char) c);
-                    s = s + (char) c;
-                }
-
-                s = s.substring(4);
-                s = s.trim();
-
-                in.close();
-
-            } catch (Exception ex) {
-            }
-
-            try {
-
-                JSONObject tt = jj.Logout(uid, s);
-                // JOptionPane.showMessageDialog(null, ""+tt);
-                if (tt.containsValue("Successfully Logged Out")) {
-                    remem r = new remem();
-                    r.clear();
-                    System.exit(0);
-                }
-            } catch (Exception ex) {
-                Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
-            }
+ logout();
 
         } else if (output.equalsIgnoreCase("exit")) {
 
-            this.opt.setText("Good day!");
-            try {
-                ms.sp = this.opt.getText();
-                ms.run();
-            } catch (Exception e) {
-                System.out.println("TTS is Diasabled!");
-            }
-            try {
-                Thread.sleep(1000);
-            } catch (Exception ex) {
-            }
-            String s = "";
-            try {
-                Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
-                InputStream in = child.getInputStream();
-                int c;
-                while ((c = in.read()) != -1) {
-                    s = s + (char) c;
-                }
-                s = s.substring(4);
-                s = s.trim();
-                in.close();
-            } catch (Exception ex) {
-            }
-            try {
-
-                JSONObject tt = jj.Logout(uid, s);
-                // JOptionPane.showMessageDialog(null, ""+tt);
-                if (tt.containsValue("Successfully Logged Out")) {
-
-                    System.exit(0);
-                }
-            } catch (Exception ex) {
-                Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
-            }
+          exit();
         }
 
    
@@ -642,7 +677,78 @@ public class test extends javax.swing.JFrame {
         }
        
     }
+private void exit()
+{
+  this.opt.setText("Good day!");
+            try {
+                ms.sp = this.opt.getText();
+                ms.run();
+            } catch (Exception e) {
+                System.out.println("TTS is Diasabled!");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (Exception ex) {
+            }
+            String s = "";
+            try {
+                Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
+                InputStream in = child.getInputStream();
+                int c;
+                while ((c = in.read()) != -1) {
+                    s = s + (char) c;
+                }
+                s = s.substring(4);
+                s = s.trim();
+                in.close();
+            } catch (Exception ex) {
+            }
+            try {
 
+                JSONObject tt = jj.Logout(uid, s);
+                // JOptionPane.showMessageDialog(null, ""+tt);
+               
+                    System.exit(0);
+                
+            } catch (Exception ex) {
+                Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
+private void logout()
+{
+           String s = "";
+            try {
+                Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
+
+                InputStream in = child.getInputStream();
+
+                int c;
+                while ((c = in.read()) != -1) {
+                    //System.out.print((char) c);
+                    s = s + (char) c;
+                }
+
+                s = s.substring(4);
+                s = s.trim();
+
+                in.close();
+
+            } catch (Exception ex) {
+            }
+
+            try {
+
+                JSONObject tt = jj.Logout(uid, s);
+                // JOptionPane.showMessageDialog(null, ""+tt);
+                if (tt.containsValue("Successfully Logged Out")) {
+                    remem r = new remem();
+                    r.clear();
+                    System.exit(0);
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
     public void sorry(String a) {
 
             //        this.opt.setText("Sorry! I Didn't Understand.");
@@ -662,7 +768,7 @@ public class test extends javax.swing.JFrame {
 //        this.opt.setText("Need assistance?");
 //        this.response.setText("");
         try {
-        JSONObject tt=jj.aiResponse(a);
+        JSONObject tt=jj.aiResponse("desktop:"+a);
         Aires ai=new Aires(tt);
         ai.setVisible(true);
         } catch (Exception ex) {

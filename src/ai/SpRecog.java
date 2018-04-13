@@ -11,11 +11,10 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 import application.*;
-import java.sql.ResultSet;
 import java.time.Instant;
+import org.json.simple.JSONObject;
 
 public class SpRecog implements GSpeechResponseListener {
 
@@ -110,6 +109,7 @@ public class SpRecog implements GSpeechResponseListener {
                     pp.list.add(vf);
                     System.out.print(pp.list);
                 }
+              
 
                 op = "";
                 op += this.old_text;
@@ -256,7 +256,7 @@ public class SpRecog implements GSpeechResponseListener {
                             System.out.println("TTS is Diasabled!");
                         }
                     } else {
-                        sorry();
+                        sorry(output);
                     }
                 }
             }
@@ -275,23 +275,15 @@ public class SpRecog implements GSpeechResponseListener {
         njf.opt.setText("Need assistance?");
         njf.response.setText("");
     }
-
-    public void sorry() {
-        njf.opt.setText("Sorry! I Didn't Understand.");
-        try {
-            ms.sp = njf.opt.getText();
-            ms.run();
-        } catch (Exception e) {
-            System.out.println("TTS is Diasabled!");
+    Aires ai;
+    public void sorry(String a) {
+      try {
+        JSONObject tt=jj.aiResponse(a);
+        ai=new Aires(tt);
+        ai.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(SpRecog.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        njf.opt.setText("Need assistance?");
-        njf.response.setText("");
-
     }
 
     @Override

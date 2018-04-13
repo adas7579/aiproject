@@ -9,12 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import org.json.simple.JSONObject;
 
-public class Windows {
+public class Windows{
 
     String exe[];
     

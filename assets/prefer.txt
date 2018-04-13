@@ -5,6 +5,9 @@
 -
 A.M
 AVG
+Asphalt
+DSC
+DU c
 P.M
 PC
 aakhya
@@ -12,6 +15,7 @@ about
 acess
 admission
 ae
+ahsbdiah
 alarm
 alarms
 anadi
@@ -23,16 +27,21 @@ anna
 app
 apps
 arijit
+asefedf
+asphalt
 audio
 baaghi
 banking
 bca
 blogger
 browse
+bubububg
 calculate
 calculator
 castle
 charraiya
+chutia
+chutiya
 control
 crm
 cva
@@ -40,6 +49,8 @@ dil
 discards
 discord
 document
+duc
+duo
 eCRM
 easy GS
 ecrm
@@ -52,8 +63,10 @@ exit
 facebook
 falguni
 file
+find Satvik
 firewall
 for
+gallery
 games
 gmail
 google
@@ -66,11 +79,14 @@ hi
 ho
 images
 in
+instagram
 internet
 irctc
 iron
+is
 java
 kits
+know IP
 link
 man
 maula
@@ -89,9 +105,12 @@ numb
 online
 open
 panel
+pirates
 play
 play Numb
+plus
 powerless
+qurbani
 raha
 scarlet
 selena
@@ -99,11 +118,13 @@ server
 set
 sex
 show
+show songs
 software
 son
 song
 songs
 songs
+spotify
 sql
 studio
 sunn
@@ -111,14 +132,18 @@ technology
 teri
 the
 this PC
+time
+torch
 tum
 twitter
 video
 vlc
 wafa
+what
 whatsapp
 windows
+wordnet
 world
 youtube
-find Satvik
-show songs
+list
+lisp
