@@ -742,7 +742,7 @@ private void logout()
                 // JOptionPane.showMessageDialog(null, ""+tt);
                 if (tt.containsValue("Successfully Logged Out")) {
                     remem r = new remem();
-                    r.clear();
+                    r.clear(uid);
                     System.exit(0);
                 }
             } catch (Exception ex) {
@@ -768,7 +768,7 @@ private void logout()
 //        this.opt.setText("Need assistance?");
 //        this.response.setText("");
         try {
-        JSONObject tt=jj.aiResponse("desktop:"+a);
+        JSONObject tt=jj.aiResponse("android:"+a);
         Aires ai=new Aires(tt);
         ai.setVisible(true);
         } catch (Exception ex) {

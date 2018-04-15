@@ -16,11 +16,12 @@ public class Sync extends Thread {
 
     JMake jj = new JMake();
 
-    String ud = "";
+    String ud = "",email="";
     ArrayList ar = new ArrayList();
 
-    public Sync(String ud) {
+    public Sync(String ud,String email) {
         this.ud = ud;
+        this.email=email;
         DB bb = new DB(ud);
 
         //  -----------  ALARM   ----------
@@ -93,6 +94,14 @@ public class Sync extends Thread {
 
         try {
             while (true) {
+                
+                
+                 JSONObject us = jj.getUser(email);
+                if(us.get("sync").toString().equals("1")){
+                
+                
+                
+                
                 DB bb = new DB(ud);
                 
                 // ----- ALARM --------
@@ -114,6 +123,26 @@ public class Sync extends Thread {
                 }
                 bb.close();
 //                
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 Thread.sleep(15000);
             }
         } catch (Exception ex) {

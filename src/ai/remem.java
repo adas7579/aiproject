@@ -53,14 +53,14 @@ public class remem {
         return null;
     }
 
-    public void clear() {
+    public void clear(String db) {
         try {
-            DB bb = new DB("1");
+            DB bb = new DB(db);
             bb.open();
             bb.insertData("drop table if exists login");
             bb.insertData("create table login (id string, pwd string,did string)");
             bb.close();
-                    
+            
         } catch (Exception ex) {
         }
     }

@@ -1,5 +1,6 @@
-Bugs Solved:
-favourite location
-multi word file search
+Improvement:
+UI Disco
+System optimisation
 Added:
-Browsing favourite websites
+AI Implementation
+task tray icon

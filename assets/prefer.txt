@@ -8,6 +8,7 @@ AVG
 Asphalt
 DSC
 DU c
+MTDC
 P.M
 PC
 aakhya
@@ -34,6 +35,7 @@ baaghi
 banking
 bca
 blogger
+born
 browse
 bubububg
 calculate
@@ -63,11 +65,13 @@ exit
 facebook
 falguni
 file
+final
 find Satvik
 firewall
 for
 gallery
 games
+gandhi
 gmail
 google
 googleel
@@ -88,6 +92,9 @@ java
 kits
 know IP
 link
+lisp
+list
+mahatma
 man
 maula
 maulaa
@@ -108,6 +115,7 @@ panel
 pirates
 play
 play Numb
+play in the end
 plus
 powerless
 qurbani
@@ -119,6 +127,7 @@ set
 sex
 show
 show songs
+sjdbfhdbf
 software
 son
 song
@@ -137,13 +146,21 @@ torch
 tum
 twitter
 video
+video Naam
+video number
 vlc
 wafa
+was
 what
 whatsapp
+where
 windows
 wordnet
 world
 youtube
-list
-lisp
+direct
+x
+dopen
+di
+diagnostic
+tool

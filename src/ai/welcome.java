@@ -87,10 +87,10 @@ RG();
             //     synbtn.setRolloverEnabled(true);
         }
 
-        if (js.get("sync").toString().equals("1")) {
-            sy = new Sync(js.get("id").toString());
+        //if (js.get("sync").toString().equals("1")) {
+            sy = new Sync(js.get("id").toString(),js.get("email").toString());
             sy.start();
-        }
+        
 
         getdev();
 
@@ -179,47 +179,7 @@ RG();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        hh = new javax.swing.JPanel();
-        jSeparator9 = new javax.swing.JSeparator();
-        uun = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
-        z1 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        z2 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        z3 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        z4 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
-        jSeparator11 = new javax.swing.JSeparator();
         hh1 = new javax.swing.JPanel();
-        pnlacc = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        lblimg = new javax.swing.JLabel();
-        lblemail = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        lblfull = new javax.swing.JTextField();
-        lblun = new javax.swing.JTextField();
-        lblgen = new javax.swing.JTextField();
-        lbldob = new javax.swing.JTextField();
-        gbtn = new javax.swing.JButton();
-        ss = new javax.swing.JButton();
-        ubtn = new javax.swing.JButton();
-        fbtn = new javax.swing.JButton();
-        combgen = new javax.swing.JComboBox<>();
-        dbtn = new javax.swing.JButton();
-        set = new javax.swing.JPanel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        sww = new javax.swing.JCheckBox();
         fav = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
@@ -254,6 +214,31 @@ RG();
         tapp = new javax.swing.JTable();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
+        pnlacc = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblimg = new javax.swing.JLabel();
+        lblemail = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblfull = new javax.swing.JTextField();
+        lblun = new javax.swing.JTextField();
+        lblgen = new javax.swing.JTextField();
+        lbldob = new javax.swing.JTextField();
+        gbtn = new javax.swing.JButton();
+        ss = new javax.swing.JButton();
+        ubtn = new javax.swing.JButton();
+        fbtn = new javax.swing.JButton();
+        combgen = new javax.swing.JComboBox<>();
+        dbtn = new javax.swing.JButton();
+        set = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        sww = new javax.swing.JCheckBox();
         tts = new javax.swing.JPanel();
         jSeparator7 = new javax.swing.JSeparator();
         chktts = new javax.swing.JCheckBox();
@@ -286,6 +271,21 @@ RG();
         devi = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         btrefresh = new javax.swing.JButton();
+        hh = new javax.swing.JPanel();
+        jSeparator9 = new javax.swing.JSeparator();
+        uun = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        z1 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        z2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        z3 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        z4 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         lblacc = new javax.swing.JLabel();
         lblset = new javax.swing.JLabel();
@@ -311,225 +311,8 @@ RG();
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        hh.setBackground(new java.awt.Color(0, 0, 0));
-        hh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        hh.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 20, 360));
-
-        uun.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
-        uun.setForeground(new java.awt.Color(102, 140, 255));
-        uun.setText("Welcome!");
-        hh.add(uun, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 380, 70));
-
-        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Welcome!");
-        hh.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 200, 70));
-
-        jSeparator6.setBackground(new java.awt.Color(102, 140, 255));
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        hh.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 490));
-
-        z1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z1.setForeground(new java.awt.Color(255, 255, 255));
-        z1.setText("get Assistance");
-        hh.add(z1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 240, 40));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("<html>InArCo is a software agent that performs tasks and services for an individual, like opening apps, recent items,<br> favourite files and folders, creating alarm, reminders, notes, perform arithmetic calculations besides helping you answering your queries from around the world.</html>");
-        hh.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, 130));
-
-        z2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z2.setForeground(new java.awt.Color(255, 255, 255));
-        z2.setText("power Of Artificial Intelligence");
-        hh.add(z2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 330, 40));
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("<html>InArCo binds with powerful Artificial Intelligence program which with the ability of Natural Language Processing which gives very fast and user customised results of user's query.</html>");
-        hh.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 270, 90));
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("<html>InArCo provides you seamless syncing with other cross platform application support with support on  Android and Windows and upcoming on Linux and macOS.  </html>");
-        hh.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 240, 100));
-
-        z3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z3.setForeground(new java.awt.Color(255, 255, 255));
-        z3.setText("cross-Platform Support");
-        hh.add(z3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 40));
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("<html>Bind your Android device with smart wearables to provide you with syncronised notifications access without even having to look at your mobile device.</html>");
-        hh.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 280, 100));
-
-        z4.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z4.setForeground(new java.awt.Color(255, 255, 255));
-        z4.setText("specialised Hardware");
-        hh.add(z4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 260, 40));
-        hh.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 10));
-        hh.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 580, 10));
-
-        getContentPane().add(hh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
-
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pnlacc.setBackground(new java.awt.Color(51, 51, 51));
-        pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        pnlacc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("My Account :");
-        pnlacc.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-        pnlacc.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        lblimg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        pnlacc.add(lblimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 100, 220));
-
-        lblemail.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblemail.setForeground(new java.awt.Color(255, 255, 255));
-        lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblemail.setText("myemail@gmail.com");
-        pnlacc.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 290, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("USERNAME :");
-        pnlacc.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("FULLNAME :");
-        pnlacc.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("DOB :");
-        pnlacc.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setText("GENDER :");
-        pnlacc.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
-        pnlacc.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -20, -1, -1));
-
-        lblfull.setEditable(false);
-        lblfull.setBackground(new java.awt.Color(51, 51, 51));
-        lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblfull.setForeground(new java.awt.Color(255, 255, 255));
-        lblfull.setText("@>anadi");
-        lblfull.setBorder(null);
-        pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
-
-        lblun.setEditable(false);
-        lblun.setBackground(new java.awt.Color(51, 51, 51));
-        lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblun.setForeground(new java.awt.Color(255, 255, 255));
-        lblun.setText("@>anadi");
-        lblun.setBorder(null);
-        pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
-
-        lblgen.setBackground(new java.awt.Color(51, 51, 51));
-        lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblgen.setForeground(new java.awt.Color(255, 255, 255));
-        lblgen.setText("Male");
-        lblgen.setBorder(null);
-        pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
-
-        lbldob.setBackground(new java.awt.Color(51, 51, 51));
-        lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lbldob.setForeground(new java.awt.Color(255, 255, 255));
-        lbldob.setText("12/12/1999");
-        lbldob.setBorder(null);
-        pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
-
-        gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        gbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(gbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 30, 30));
-
-        ss.setText("Save");
-        ss.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ssActionPerformed(evt);
-            }
-        });
-        pnlacc.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 70, 30));
-
-        ubtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        ubtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ubtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(ubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 30, 30));
-
-        fbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        fbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(fbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 30, 30));
-
-        combgen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        pnlacc.add(combgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
-        combgen.setVisible(false);
-
-        dbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        dbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(dbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 30, 30));
-
-        hh1.add(pnlacc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        set.setBackground(new java.awt.Color(51, 51, 51));
-        set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        set.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        set.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Settings :");
-        set.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jButton1.setText("Change Password");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        set.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 130, 30));
-
-        sww.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        sww.setForeground(new java.awt.Color(255, 255, 255));
-        sww.setText("Start with Windows");
-        sww.setOpaque(false);
-        sww.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                swwMouseClicked(evt);
-            }
-        });
-        sww.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                swwActionPerformed(evt);
-            }
-        });
-        set.add(sww, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        hh1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         fav.setBackground(new java.awt.Color(51, 51, 51));
         fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -794,6 +577,159 @@ RG();
 
         hh1.add(fav, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
+        pnlacc.setBackground(new java.awt.Color(51, 51, 51));
+        pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        pnlacc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("My Account :");
+        pnlacc.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        pnlacc.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        lblimg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        pnlacc.add(lblimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 100, 220));
+
+        lblemail.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblemail.setForeground(new java.awt.Color(255, 255, 255));
+        lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblemail.setText("myemail@gmail.com");
+        pnlacc.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 290, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("USERNAME :");
+        pnlacc.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setText("FULLNAME :");
+        pnlacc.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("DOB :");
+        pnlacc.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setText("GENDER :");
+        pnlacc.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+        pnlacc.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -20, -1, -1));
+
+        lblfull.setEditable(false);
+        lblfull.setBackground(new java.awt.Color(51, 51, 51));
+        lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblfull.setForeground(new java.awt.Color(255, 255, 255));
+        lblfull.setText("@>anadi");
+        lblfull.setBorder(null);
+        pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
+
+        lblun.setEditable(false);
+        lblun.setBackground(new java.awt.Color(51, 51, 51));
+        lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblun.setForeground(new java.awt.Color(255, 255, 255));
+        lblun.setText("@>anadi");
+        lblun.setBorder(null);
+        pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
+
+        lblgen.setBackground(new java.awt.Color(51, 51, 51));
+        lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblgen.setForeground(new java.awt.Color(255, 255, 255));
+        lblgen.setText("Male");
+        lblgen.setBorder(null);
+        pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+
+        lbldob.setBackground(new java.awt.Color(51, 51, 51));
+        lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lbldob.setForeground(new java.awt.Color(255, 255, 255));
+        lbldob.setText("12/12/1999");
+        lbldob.setBorder(null);
+        pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+
+        gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        gbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(gbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 30, 30));
+
+        ss.setText("Save");
+        ss.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ssActionPerformed(evt);
+            }
+        });
+        pnlacc.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 70, 30));
+
+        ubtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        ubtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ubtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(ubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 30, 30));
+
+        fbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        fbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(fbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 30, 30));
+
+        combgen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        pnlacc.add(combgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        combgen.setVisible(false);
+
+        dbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        dbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(dbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 30, 30));
+
+        hh1.add(pnlacc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
+
+        set.setBackground(new java.awt.Color(51, 51, 51));
+        set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        set.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        set.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Settings :");
+        set.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jButton1.setText("Change Password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        set.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 130, 30));
+
+        sww.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        sww.setForeground(new java.awt.Color(255, 255, 255));
+        sww.setText("Start with Windows");
+        sww.setOpaque(false);
+        sww.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                swwMouseClicked(evt);
+            }
+        });
+        sww.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                swwActionPerformed(evt);
+            }
+        });
+        set.add(sww, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        hh1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
+
         tts.setBackground(new java.awt.Color(51, 51, 51));
         tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         tts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -971,6 +907,70 @@ RG();
         hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         getContentPane().add(hh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
+
+        hh.setBackground(new java.awt.Color(0, 0, 0));
+        hh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hh.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 20, 360));
+
+        uun.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
+        uun.setForeground(new java.awt.Color(102, 140, 255));
+        uun.setText("Welcome!");
+        hh.add(uun, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 380, 70));
+
+        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Welcome!");
+        hh.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 200, 70));
+
+        jSeparator6.setBackground(new java.awt.Color(102, 140, 255));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hh.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 490));
+
+        z1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z1.setForeground(new java.awt.Color(255, 255, 255));
+        z1.setText("get Assistance");
+        hh.add(z1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 240, 40));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("<html>InArCo is a software agent that performs tasks and services for an individual, like opening apps, recent items,<br> favourite files and folders, creating alarm, reminders, notes, perform arithmetic calculations besides helping you answering your queries from around the world.</html>");
+        hh.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, 130));
+
+        z2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z2.setForeground(new java.awt.Color(255, 255, 255));
+        z2.setText("power Of Artificial Intelligence");
+        hh.add(z2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 330, 40));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("<html>InArCo binds with powerful Artificial Intelligence program which with the ability of Natural Language Processing which gives very fast and user customised results of user's query.</html>");
+        hh.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 270, 90));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("<html>InArCo provides you seamless syncing with other cross platform application support with support on  Android and Windows and upcoming on Linux and macOS.  </html>");
+        hh.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 240, 100));
+
+        z3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z3.setForeground(new java.awt.Color(255, 255, 255));
+        z3.setText("cross-Platform Support");
+        hh.add(z3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 40));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("<html>Bind your Android device with smart wearables to provide you with syncronised notifications access without even having to look at your mobile device.</html>");
+        hh.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 280, 100));
+
+        z4.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z4.setForeground(new java.awt.Color(255, 255, 255));
+        z4.setText("specialised Hardware");
+        hh.add(z4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 260, 40));
+        hh.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 10));
+        hh.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 580, 10));
+
+        getContentPane().add(hh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1262,7 +1262,7 @@ Color ch = new Color(102, 140, 255);
                 // JOptionPane.showMessageDialog(null, ""+tt);
                 if (tt.containsValue("Successfully Logged Out")) {
                     remem r = new remem();
-                    r.clear();
+                    r.clear(js.get("id").toString());
                     System.exit(0);
                 }
             } catch (Exception ex) {
@@ -1421,7 +1421,7 @@ Color ch = new Color(102, 140, 255);
             try {
                 int res = jj.sync(new String[]{js.get("id").toString(), "1"});
                 if (res == 1) {
-                    sy = new Sync(js.get("id").toString());
+                    sy = new Sync(js.get("id").toString(),js.get("email").toString());
                     sy.start();
                     synbtn.setText("Turn OFF");
                 } else {
@@ -1544,7 +1544,7 @@ Color ch = new Color(102, 140, 255);
                     JOptionPane.showMessageDialog(null, "Successfully Removed Device!");
                     if (devi.getText().equals(s)) {
                         remem m = new remem();
-                        m.clear();
+                        m.clear(js.get("id").toString());
                         System.exit(0);
                     } else {
                         getdev();
@@ -1921,7 +1921,7 @@ if(tbrw.getSelectedRowCount()<1)
             fw.close();
 
             for (int i = 0; i < tb5.getRowCount(); i++) {
-                delfav("browse", tb5.getValueAt(i, 0) + "=" + tb5.getValueAt(i, 1));
+                delfav("browse", tb5.getValueAt(i, 0) + "`" + tb5.getValueAt(i, 1));
             }
         } catch (Exception ex) {
             Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
