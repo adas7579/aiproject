@@ -24,31 +24,48 @@ public class remem {
             DB bb = new DB(db);
             bb.open();
             bb.newuser(new String[]{etem, etpss, etdv});
-
             bb.close();
+
+            FileWriter fw = new FileWriter("assets/9x8nb4.dat");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            pw.println(r.Encode(db, 5, 221));
+            pw.close();
+            bw.close();
+            fw.close();
 
         } catch (Exception ex) {
             System.out.println(ex);
         }
     }
 
-    public String[] dec(String db) {
+    public String[] dec() {
         try {
+            FileReader fr = new FileReader("assets/9x8nb4.dat");
+            BufferedReader br = new BufferedReader(fr);
+
             RSA r = new RSA();
-            DB bb = new DB(db);
+            String s[] = new String[4];
+            s[0] = r.Decode(br.readLine(), 77, 221);
+
+            DB bb = new DB(s[0]);
             bb.open();
             ResultSet rs = bb.getData("select * from login");
 
             rs.next();
-            String s[] = new String[3];
-            s[0] = r.Decode(rs.getString("id"), 77, 221);
-            s[1] = r.Decode(rs.getString("pwd"), 77, 221);
-            s[2] = r.Decode(rs.getString("did"), 77, 221);
+
+            s[1] = r.Decode(rs.getString("id"), 77, 221);
+            s[2] = r.Decode(rs.getString("pwd"), 77, 221);
+            s[3] = r.Decode(rs.getString("did"), 77, 221);
             System.out.println("Pre-Credentials: " + s[0] + " " + s[1] + " " + s[2] + "\n\n");
             bb.close();
+            br.close();
+            fr.close();
+
             return s;
 
         } catch (Exception ex) {
+            System.out.println("\n\n>>>>>>>>:::::::::>.>>\n\n"+ex.getMessage());
         }
         return null;
     }
@@ -60,7 +77,9 @@ public class remem {
             bb.insertData("drop table if exists login");
             bb.insertData("create table login (id string, pwd string,did string)");
             bb.close();
-            
+            FileWriter fw = new FileWriter("assets/9x8nb4.dat");
+            fw.close();
+
         } catch (Exception ex) {
         }
     }

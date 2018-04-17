@@ -61,7 +61,6 @@ JMake jj=new JMake();
         ee1 = new javax.swing.JLabel();
         ee2 = new javax.swing.JLabel();
         ee3 = new javax.swing.JLabel();
-        pwdtx = new javax.swing.JPasswordField();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -74,6 +73,7 @@ JMake jj=new JMake();
         emtxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         pwdtxt = new javax.swing.JPasswordField();
+        pwdtx = new javax.swing.JPasswordField();
         fntxt = new javax.swing.JTextField();
         ee4 = new javax.swing.JLabel();
         gen = new javax.swing.JComboBox<>();
@@ -115,33 +115,6 @@ JMake jj=new JMake();
         ee3.setForeground(new java.awt.Color(255, 0, 0));
         ee3.setText("* Field Cannot be Blank.");
         getContentPane().add(ee3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 150, 120, 20));
-
-        pwdtx.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        pwdtx.setForeground(new java.awt.Color(153, 153, 153));
-        pwdtx.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pwdtx.setText("Re-Enter Password");
-        pwdtx.setToolTipText("Password");
-        pwdtx.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        pwdtx.setEchoChar('\u0000');
-        pwdtx.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                pwdtxFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                pwdtxFocusLost(evt);
-            }
-        });
-        pwdtx.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pwdtxMouseClicked(evt);
-            }
-        });
-        pwdtx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pwdtxActionPerformed(evt);
-            }
-        });
-        getContentPane().add(pwdtx, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 250, 330, 40));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 0, 0));
@@ -202,7 +175,7 @@ JMake jj=new JMake();
         untxt.setForeground(new java.awt.Color(153, 153, 153));
         untxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         untxt.setText("User Name");
-        untxt.setToolTipText("Mobile Number");
+        untxt.setToolTipText("User Name");
         untxt.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 untxtCaretUpdate(evt);
@@ -291,11 +264,33 @@ JMake jj=new JMake();
         });
         getContentPane().add(pwdtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 180, 330, 40));
 
+        pwdtx.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        pwdtx.setForeground(new java.awt.Color(153, 153, 153));
+        pwdtx.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pwdtx.setText("Re-Enter Password");
+        pwdtx.setToolTipText("Password");
+        pwdtx.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        pwdtx.setEchoChar('\u0000');
+        pwdtx.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pwdtxFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pwdtxFocusLost(evt);
+            }
+        });
+        pwdtx.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pwdtxMouseClicked(evt);
+            }
+        });
+        getContentPane().add(pwdtx, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 250, 330, 40));
+
         fntxt.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         fntxt.setForeground(new java.awt.Color(153, 153, 153));
         fntxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fntxt.setText("Full Name");
-        fntxt.setToolTipText("Mobile Number");
+        fntxt.setToolTipText("Full Name");
         fntxt.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 fntxtCaretUpdate(evt);
@@ -322,6 +317,9 @@ JMake jj=new JMake();
         fntxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fntxtKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                fntxtKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fntxtKeyTyped(evt);
@@ -501,14 +499,6 @@ JMake jj=new JMake();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void pwdtxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdtxMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pwdtxMouseClicked
-
-    private void pwdtxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdtxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pwdtxActionPerformed
-
     private void untxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_untxtMouseClicked
         if (untxt.getText().equals("user Name")) {
             untxt.setText("");
@@ -579,8 +569,7 @@ JMake jj=new JMake();
     private void pwdtxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxtFocusGained
         String h = new String(pwdtxt.getPassword());
         if (h.equals("Enter Password")) {
-            pwdtxt.setText("");
-            pwdtxt.setEchoChar('*');
+            pwdtxt.setText("");        
         }
     }//GEN-LAST:event_pwdtxtFocusGained
 
@@ -588,23 +577,9 @@ JMake jj=new JMake();
         String h = new String(pwdtxt.getPassword());
         if (h.equals("")) {
             pwdtxt.setText("Enter Password");
-            pwdtxt.setEchoChar('\u0000');
+          
         }
     }//GEN-LAST:event_pwdtxtFocusLost
-
-    private void pwdtxFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusGained
-        if (pwdtx.getText().equals("Re-Enter Password")) {
-            pwdtx.setEchoChar('*');
-            pwdtx.setText("");
-        }
-    }//GEN-LAST:event_pwdtxFocusGained
-
-    private void pwdtxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusLost
-        if (pwdtx.getText().equals("")) {
-            pwdtx.setText("Re-Enter Password");
-            pwdtx.setEchoChar('\u0000');
-        }
-    }//GEN-LAST:event_pwdtxFocusLost
 
     private void untxtCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_untxtCaretUpdate
 
@@ -636,7 +611,7 @@ JMake jj=new JMake();
     private void fntxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusGained
         if (fntxt.getText().equals("Full Name")) {
             fntxt.setText("");
-        }        // TODO add your handling code here:
+        }    
     }//GEN-LAST:event_fntxtFocusGained
 
     private void fntxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusLost
@@ -655,11 +630,12 @@ JMake jj=new JMake();
     }//GEN-LAST:event_fntxtActionPerformed
 
     private void fntxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyPressed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_fntxtKeyPressed
 
     private void fntxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyTyped
-        // TODO add your handling code here:
+        if(!Character.isLetter(evt.getKeyChar()) && !Character.isWhitespace(evt.getKeyChar()))
+            evt.setKeyChar('\0');
     }//GEN-LAST:event_fntxtKeyTyped
 
     private void mmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmActionPerformed
@@ -752,6 +728,33 @@ JMake jj=new JMake();
     private void alreadyMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alreadyMouseExited
         already.setForeground(Color.BLACK);
     }//GEN-LAST:event_alreadyMouseExited
+
+    private void fntxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyReleased
+    
+   
+        
+    }//GEN-LAST:event_fntxtKeyReleased
+
+    private void pwdtxFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusGained
+String h = new String(pwdtx.getPassword());
+        if (h.equals("Re-Enter Password")) {
+            pwdtx.setText("");        
+        }//
+    }//GEN-LAST:event_pwdtxFocusGained
+
+    private void pwdtxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusLost
+      String h = new String(pwdtx.getPassword());
+        if (h.equals("")) {
+            pwdtx.setText("Re-Enter Password");
+          
+        }
+    }//GEN-LAST:event_pwdtxFocusLost
+
+    private void pwdtxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdtxMouseClicked
+  pwdtx.setText("");
+            pwdtx.setEchoChar('\u25cf');
+            pwdtx.setForeground(Color.BLACK);        // TODO add your handling code here:
+    }//GEN-LAST:event_pwdtxMouseClicked
 
     /**
      * @param args the command line arguments

@@ -53,9 +53,9 @@ public class test extends javax.swing.JFrame {
         hov=hv;
         this.email=email;
         this.syn=syn;
-        if (con.get(1).toString().split("=")[1].equals("1")) {
-            String name = con.get(2).toString().split("=")[1];
-            float frq = Float.parseFloat(con.get(3).toString().split("=")[1]) * 0.2f;
+        if (con.get(0).toString().split("=")[1].equals("1")) {
+            String name = con.get(1).toString().split("=")[1];
+            float frq = Float.parseFloat(con.get(2).toString().split("=")[1]) * 0.2f;
             ms = new Main(name, frq);
         }
         try{
@@ -538,7 +538,7 @@ if (!SystemTray.isSupported()) {
             return;
         }
 
-        if (output.contains("note") && (output.contains("make") || output.contains("type"))) {
+        if (output.contains("note") && (output.contains("make") || output.contains("type")|| output.contains("create"))) {
             nt = 1;
             Instant in = Instant.now();
             String timeStamp = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss").format(new Date());

@@ -38,12 +38,13 @@ public class SpRecog implements GSpeechResponseListener {
         this.uid=uid;
         w.uid = uid;
         this.email=email;
+       w.email = email;
         System.out.println("\nSprecog\n"+uid);
         n = new noteedit(new String[]{"0","1","2","3"},null);
         nn=new notenew(new String[]{"0","1","2","3"});
-        if (con.get(1).toString().split("=")[1].equals("1")) {
-            String name = con.get(2).toString().split("=")[1];
-            float frq = Float.parseFloat(con.get(3).toString().split("=")[1]) * 0.2f;
+        if (con.get(0).toString().split("=")[1].equals("1")) {
+            String name = con.get(1).toString().split("=")[1];
+            float frq = Float.parseFloat(con.get(2).toString().split("=")[1]) * 0.2f;
             ms = new Main(name, frq);
         }
     }
@@ -136,11 +137,11 @@ public class SpRecog implements GSpeechResponseListener {
             return;
         }
 
-        if (output.contains("note") && (output.contains("make") || output.contains("type"))) {
+        if (output.contains("note") && (output.contains("make") || output.contains("type")|| output.contains("create"))) {
             nt = 1;
             Instant in = Instant.now();
             String timeStamp = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss").format(new Date());
-            nn = new notenew(new String[]{uid,in.toString(),timeStamp});
+         nn = new notenew(new String[]{uid, in.toString(), timeStamp, ""});
             nn.jj=jj;
             njf.opt.setText("Creating a Note");
             try {

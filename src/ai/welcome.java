@@ -180,6 +180,34 @@ RG();
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        tts = new javax.swing.JPanel();
+        jSeparator7 = new javax.swing.JSeparator();
+        chktts = new javax.swing.JCheckBox();
+        jLabel15 = new javax.swing.JLabel();
+        pnltts = new javax.swing.JPanel();
+        vname = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        freq = new javax.swing.JSlider();
+        jLabel16 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        sync = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        synbtn = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        devcom = new javax.swing.JComboBox<>();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        devs = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        devn = new javax.swing.JLabel();
+        devt = new javax.swing.JLabel();
+        devi = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        btrefresh = new javax.swing.JButton();
         fav = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
@@ -239,38 +267,10 @@ RG();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         sww = new javax.swing.JCheckBox();
-        tts = new javax.swing.JPanel();
-        jSeparator7 = new javax.swing.JSeparator();
-        chktts = new javax.swing.JCheckBox();
-        jLabel15 = new javax.swing.JLabel();
-        pnltts = new javax.swing.JPanel();
-        vname = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        freq = new javax.swing.JSlider();
-        jLabel16 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         about = new javax.swing.JPanel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        sync = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        synbtn = new javax.swing.JToggleButton();
-        jLabel5 = new javax.swing.JLabel();
-        devcom = new javax.swing.JComboBox<>();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        devs = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        devn = new javax.swing.JLabel();
-        devt = new javax.swing.JLabel();
-        devi = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        btrefresh = new javax.swing.JButton();
         hh = new javax.swing.JPanel();
         jSeparator9 = new javax.swing.JSeparator();
         uun = new javax.swing.JLabel();
@@ -313,6 +313,165 @@ RG();
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tts.setBackground(new java.awt.Color(51, 51, 51));
+        tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        tts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tts.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        chktts.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        chktts.setForeground(new java.awt.Color(255, 255, 255));
+        chktts.setSelected(true);
+        chktts.setText("Enable Text-to-Speech");
+        chktts.setOpaque(false);
+        chktts.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chkttsItemStateChanged(evt);
+            }
+        });
+        chktts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chkttsMouseClicked(evt);
+            }
+        });
+        tts.add(chktts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Text-to-Speech ");
+        tts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        pnltts.setBackground(new java.awt.Color(51, 51, 51));
+        pnltts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        pnltts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        vname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female 1", "Female 2" }));
+        pnltts.add(vname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 220, 30));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Set Frequency :");
+        pnltts.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 130, 30));
+
+        freq.setBackground(new java.awt.Color(255, 255, 255));
+        freq.setMajorTickSpacing(1);
+        freq.setMaximum(10);
+        freq.setPaintLabels(true);
+        freq.setValue(1);
+        freq.setOpaque(false);
+        freq.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                freqStateChanged(evt);
+            }
+        });
+        pnltts.add(freq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 220, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Select Voice :");
+        pnltts.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 30));
+
+        jButton5.setText("Test");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        pnltts.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 70, -1));
+
+        tts.add(pnltts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 440, 260));
+
+        hh1.add(tts, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
+
+        sync.setBackground(new java.awt.Color(51, 51, 51));
+        sync.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        sync.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sync.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 490, 10));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Sync");
+        sync.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        synbtn.setSelected(true);
+        synbtn.setText("Turn ON");
+        synbtn.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                synbtnItemStateChanged(evt);
+            }
+        });
+        synbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                synbtnActionPerformed(evt);
+            }
+        });
+        sync.add(synbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 100, 30));
+
+        jLabel5.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText(" Devices");
+        jLabel5.setToolTipText("");
+        sync.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 70, 30));
+
+        devcom.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                devcomItemStateChanged(evt);
+            }
+        });
+        sync.add(devcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 240, 30));
+        sync.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 480, 20));
+        sync.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 350, 10));
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Status :");
+        sync.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 90, 20));
+
+        devs.setForeground(new java.awt.Color(0, 255, 51));
+        devs.setText("Connected");
+        sync.add(devs, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 240, 20));
+
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("System Type :");
+        sync.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 20));
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Device ID :");
+        sync.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, 20));
+
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Device Name :");
+        sync.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, 20));
+
+        devn.setForeground(new java.awt.Color(255, 255, 51));
+        devn.setText("Device Name :");
+        sync.add(devn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 240, 20));
+
+        devt.setForeground(new java.awt.Color(255, 255, 51));
+        devt.setText("Device Name :");
+        sync.add(devt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 240, 20));
+
+        devi.setForeground(new java.awt.Color(255, 255, 51));
+        devi.setText("Device Name :");
+        sync.add(devi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 290, 20));
+
+        jButton4.setText("Remove Device");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        sync.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 150, 30));
+
+        btrefresh.setBackground(new java.awt.Color(255, 255, 255));
+        btrefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrefreshActionPerformed(evt);
+            }
+        });
+        sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
+
+        hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         fav.setBackground(new java.awt.Color(51, 51, 51));
         fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -730,75 +889,6 @@ RG();
 
         hh1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
-        tts.setBackground(new java.awt.Color(51, 51, 51));
-        tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        tts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        tts.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        chktts.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        chktts.setForeground(new java.awt.Color(255, 255, 255));
-        chktts.setSelected(true);
-        chktts.setText("Enable Text-to-Speech");
-        chktts.setOpaque(false);
-        chktts.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkttsItemStateChanged(evt);
-            }
-        });
-        chktts.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chkttsMouseClicked(evt);
-            }
-        });
-        tts.add(chktts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Text-to-Speech ");
-        tts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        pnltts.setBackground(new java.awt.Color(51, 51, 51));
-        pnltts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        pnltts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        vname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female 1", "Female 2" }));
-        pnltts.add(vname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 220, 30));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Set Frequency :");
-        pnltts.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 130, 30));
-
-        freq.setBackground(new java.awt.Color(255, 255, 255));
-        freq.setMajorTickSpacing(1);
-        freq.setMaximum(10);
-        freq.setPaintLabels(true);
-        freq.setValue(1);
-        freq.setOpaque(false);
-        freq.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                freqStateChanged(evt);
-            }
-        });
-        pnltts.add(freq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 220, -1));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Select Voice :");
-        pnltts.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 30));
-
-        jButton5.setText("Test");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        pnltts.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 70, -1));
-
-        tts.add(pnltts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 440, 260));
-
-        hh1.add(tts, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
         about.setBackground(new java.awt.Color(51, 51, 51));
         about.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         about.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -815,96 +905,6 @@ RG();
         about.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         hh1.add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        sync.setBackground(new java.awt.Color(51, 51, 51));
-        sync.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        sync.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        sync.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 490, 10));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Sync");
-        sync.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        synbtn.setSelected(true);
-        synbtn.setText("Turn ON");
-        synbtn.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                synbtnItemStateChanged(evt);
-            }
-        });
-        synbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                synbtnActionPerformed(evt);
-            }
-        });
-        sync.add(synbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 100, 30));
-
-        jLabel5.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Devices");
-        jLabel5.setToolTipText("");
-        sync.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 70, 30));
-
-        devcom.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                devcomItemStateChanged(evt);
-            }
-        });
-        sync.add(devcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 240, 30));
-        sync.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 480, 20));
-        sync.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 350, 10));
-
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Status :");
-        sync.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 90, 20));
-
-        devs.setForeground(new java.awt.Color(0, 255, 51));
-        devs.setText("Connected");
-        sync.add(devs, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 240, 20));
-
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("System Type :");
-        sync.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 20));
-
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Device ID :");
-        sync.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, 20));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Device Name :");
-        sync.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, 20));
-
-        devn.setForeground(new java.awt.Color(255, 255, 51));
-        devn.setText("Device Name :");
-        sync.add(devn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 240, 20));
-
-        devt.setForeground(new java.awt.Color(255, 255, 51));
-        devt.setText("Device Name :");
-        sync.add(devt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 240, 20));
-
-        devi.setForeground(new java.awt.Color(255, 255, 51));
-        devi.setText("Device Name :");
-        sync.add(devi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 290, 20));
-
-        jButton4.setText("Remove Device");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        sync.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 150, 30));
-
-        btrefresh.setBackground(new java.awt.Color(255, 255, 255));
-        btrefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btrefreshActionPerformed(evt);
-            }
-        });
-        sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
-
-        hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         getContentPane().add(hh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
 
@@ -1282,7 +1282,7 @@ Color ch = new Color(102, 140, 255);
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setConfig();
         this.setVisible(false);
-        int y = Integer.parseInt(ar.get(1).toString().split("=")[1]);
+        //int y = Integer.parseInt(ar.get(1).toString().split("=")[1]);
         test t = new test(js.get("id").toString(), ar, js.get("email").toString(), sy, hov);
         t.detail = js;
         t.pass = pass;
@@ -1580,9 +1580,9 @@ Color ch = new Color(102, 140, 255);
 
     private void chkttsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chkttsMouseClicked
         if (chktts.isSelected()) {
-            ar.set(1, "[tts]=1");
+            ar.set(0, "[tts]=1");
         } else {
-            ar.set(1, "[tts]=0");
+            ar.set(0, "[tts]=0");
         }
         setConfig();
     }//GEN-LAST:event_chkttsMouseClicked
@@ -2142,14 +2142,14 @@ Config cf = new Config();
         cf.read();
         this.ar = cf.ar;
 
-        int y = Integer.parseInt(ar.get(1).toString().split("=")[1]);
+        int y = Integer.parseInt(ar.get(0).toString().split("=")[1]);
         if (y == 1) {
             chktts.setSelected(true);
         } else {
             chktts.setSelected(false);
         }
-        vname.setSelectedItem(ar.get(2).toString().split("=")[1]);
-        int fr = (int) (Math.ceil(Double.parseDouble(ar.get(3).toString().split("=")[1])));
+        vname.setSelectedItem(ar.get(1).toString().split("=")[1]);
+        int fr = (int) (Math.ceil(Double.parseDouble(ar.get(2).toString().split("=")[1])));
         freq.setValue(fr);
        
 //float ff= Float.parseFloat(ar.get(2).toString().split("=")[1])*0.2f;
@@ -2158,12 +2158,12 @@ Config cf = new Config();
     void setConfig() {
 
         if (chktts.isSelected()) {
-            ar.set(1, "[tts]=1");
+            ar.set(0, "[tts]=1");
         } else {
-            ar.set(1, "[tts]=0");
+            ar.set(0, "[tts]=0");
         }
-        ar.set(2, "[voice]=" + vname.getSelectedItem().toString());
-        ar.set(3, "[freq]=" + freq.getValue());
+        ar.set(1, "[voice]=" + vname.getSelectedItem().toString());
+        ar.set(2, "[freq]=" + freq.getValue());
         
 
         cf.ar = this.ar;

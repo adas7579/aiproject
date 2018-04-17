@@ -315,7 +315,7 @@ public class Windows{
 
         } else if (cmd.toLowerCase().contains("set") && cmd.toLowerCase().contains("alarm")) {
             return setalarm(cmd);
-        } else if (cmd.toLowerCase().contains("show") && cmd.toLowerCase().contains("alarm")) {
+        } else if ((cmd.toLowerCase().contains("show") && cmd.toLowerCase().contains("alarm"))||(cmd.toLowerCase().contains("delete") && cmd.toLowerCase().contains("alarm"))) {
             viewalm v = new viewalm(uid, email);
             v.setVisible(true);
             String ss[] = new String[2];
@@ -725,7 +725,7 @@ public class Windows{
         for (int i = 0; i < word.length; i++) {
             String ww = word[i];
             int t = 0;
-            for (int j = 0; j < 1; j++) {
+            for (int j = 0; j < a.length; j++) {
                 if (ww.contains(a[j].toLowerCase())) {
                     t++;
                 }

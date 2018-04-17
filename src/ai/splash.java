@@ -211,20 +211,16 @@ public class splash extends javax.swing.JFrame {
             Logger.getLogger(splash.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (te == 0) {
-            Config cfg=new Config();
-            ArrayList ar;
-            cfg.read();
-            ar=cfg.ar;
-            String uid=ar.get(0).toString().split("=")[1];
+            
             remem r = new remem();
-            if (r.dec(uid) != null) {
+            if (r.dec() != null) {
                 JSONObject i = null;
-                String s[] = r.dec(uid);
+                String s[] = r.dec();
                 JMake jj = new JMake();
                 try {
-                    i = jj.Login(s[0], s[1], s[2]);
+                    i = jj.Login(s[1], s[2], s[3]);
                     welcome nn = new welcome(i);
-                    nn.pass = s[1];
+                    nn.pass = s[2];
                     nn.setVisible(true);
                     splash.getWindows()[0].setVisible(false);
                 } catch (Exception ex) {

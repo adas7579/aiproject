@@ -5,22 +5,10 @@
  */
 package ai;
 
-import java.awt.event.KeyEvent;
-import java.io.FileNotFoundException;
-import java.io.*;
 import java.sql.ResultSet;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.KeyStroke;
-import javax.swing.event.*;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import org.json.simple.JSONObject;
 
@@ -107,7 +95,6 @@ public class viewalm extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tb = new javax.swing.JTable();
-        btsave = new javax.swing.JButton();
         lbl = new javax.swing.JLabel();
         btdel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -160,14 +147,6 @@ public class viewalm extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 392, 327));
-
-        btsave.setText("Save Changes");
-        btsave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsaveActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
 
         lbl.setForeground(new java.awt.Color(0, 102, 204));
         lbl.setText("Changes saved");
@@ -223,13 +202,8 @@ public class viewalm extends javax.swing.JFrame {
             }
             bb.close();
         } catch (Exception ex) {
-            Logger.getLogger(viewalm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    private void btsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsaveActionPerformed
-        save();
-    }//GEN-LAST:event_btsaveActionPerformed
 
     private void btdelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdelActionPerformed
         int a = JOptionPane.showConfirmDialog(null, "Remove this alarm?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
@@ -242,7 +216,7 @@ public class viewalm extends javax.swing.JFrame {
             load();
             
         }catch (Exception ex) {
-                Logger.getLogger(viewalm.class.getName()).log(Level.SEVERE, null, ex);
+              
             }
     }
     }//GEN-LAST:event_btdelActionPerformed
@@ -334,7 +308,6 @@ public class viewalm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdel;
-    private javax.swing.JButton btsave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl;

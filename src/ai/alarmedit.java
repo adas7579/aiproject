@@ -22,8 +22,14 @@ public class alarmedit extends javax.swing.JFrame {
         this.jj=jj;
         initComponents();
         aa=a;
+        if(aa[2].length()==1)
+        hr.setSelectedItem("0"+aa[2]);
+        else
         hr.setSelectedItem(aa[2]);
-        min.setSelectedItem(aa[3]);
+        if(aa[3].length()==1)
+        min.setSelectedItem("0"+aa[3]);
+        else
+            min.setSelectedItem(aa[3]);
         txt.setText(aa[4]);
         this.setLocationRelativeTo(null);
     }
@@ -40,11 +46,11 @@ public class alarmedit extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         hr = new javax.swing.JComboBox<>();
         min = new javax.swing.JComboBox<>();
-        ap = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
         setAlwaysOnTop(true);
@@ -62,7 +68,7 @@ public class alarmedit extends javax.swing.JFrame {
                 hrActionPerformed(evt);
             }
         });
-        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 50, 30));
+        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 80, 30));
 
         min.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         min.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
@@ -71,23 +77,11 @@ public class alarmedit extends javax.swing.JFrame {
                 minActionPerformed(evt);
             }
         });
-        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 50, 30));
-
-        ap.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        ap.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A.M.", "P.M." }));
-        ap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                apActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 60, 30));
+        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 80, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         jLabel2.setText("Time :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 30));
-
-        txt.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        getContentPane().add(txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 180, 80));
 
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +99,15 @@ public class alarmedit extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 60, -1));
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txt.setColumns(20);
+        txt.setFont(new java.awt.Font("Segoe UI Historic", 0, 13)); // NOI18N
+        txt.setRows(5);
+        jScrollPane1.setViewportView(txt);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 180, -1));
+
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setOpaque(true);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 210));
@@ -120,10 +123,6 @@ public class alarmedit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_minActionPerformed
 
-    private void apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_apActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -133,8 +132,8 @@ public class alarmedit extends javax.swing.JFrame {
             DB bb=new DB(aa[0]);
             bb.open();   
             String tm=hr.getSelectedItem().toString()+":"+min.getSelectedItem().toString();
-           // System.out.println("update alarm set alarm_time='"+hr.getSelectedItem().toString()+":"+min.getSelectedItem().toString()+"' , alarm_text='"+txt.getText()+"' where alarm_id ='"+aa[1]+"'");
-            bb.insertData("update alarm set alarm_time='"+hr.getSelectedItem().toString()+":"+min.getSelectedItem().toString()+"' , alarm_text='"+txt.getText()+"' where alarm_id ='"+aa[1]+"'");
+            System.out.println("update alarm set alarm_time='"+tm+"' , alarm_text='"+txt.getText()+"' where alarm_id ='"+aa[1]+"'");
+            bb.insertData("update alarm set alarm_time='"+tm+"' , alarm_text='"+txt.getText()+"' where alarm_id ='"+aa[1]+"'");
             jj.changeAlarm(new String[]{aa[0],aa[1],tm,txt.getText()});
             bb.close();
             this.setVisible(false);
@@ -178,14 +177,14 @@ public class alarmedit extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ap;
     private javax.swing.JComboBox<String> hr;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> min;
-    private javax.swing.JTextField txt;
+    private javax.swing.JTextArea txt;
     // End of variables declaration//GEN-END:variables
 }

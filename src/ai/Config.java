@@ -22,6 +22,7 @@ public class Config {
             BufferedReader br = new BufferedReader(fr);
 
             String ss = "";
+            ar.clear();
             while ((ss = br.readLine()) != null) {
                 ar.add(ss);   
             }

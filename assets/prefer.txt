@@ -11,6 +11,7 @@ DU c
 MTDC
 P.M
 PC
+Pm
 aakhya
 about
 acess
@@ -30,8 +31,10 @@ apps
 arijit
 asefedf
 asphalt
+at
 audio
 baaghi
+backup
 banking
 bca
 blogger
@@ -42,15 +45,21 @@ calculate
 calculator
 castle
 charraiya
+chrome
 chutia
 chutiya
+color
 control
 crm
 cva
+di
+diagnostic
 dil
+direct
 discards
 discord
 document
+dopen
 duc
 duo
 eCRM
@@ -65,8 +74,10 @@ exit
 facebook
 falguni
 file
+filefox
 final
 find Satvik
+firefox
 firewall
 for
 gallery
@@ -89,11 +100,13 @@ irctc
 iron
 is
 java
+keyboard
 kits
 know IP
 link
 lisp
 list
+magni
 mahatma
 man
 maula
@@ -102,6 +115,7 @@ modi
 movie
 movies
 music
+my
 my SQL
 mysql
 narendra
@@ -117,6 +131,7 @@ play
 play Numb
 play in the end
 plus
+pm
 powerless
 qurbani
 raha
@@ -124,8 +139,14 @@ scarlet
 selena
 server
 set
+set alarm at 6:15 P.M
+set alarm at 9:05 P.M
+set an alarm for 6:12 P.M
 sex
 show
+show alarm
+show alarm
+show alarms
 show songs
 sjdbfhdbf
 software
@@ -142,6 +163,8 @@ teri
 the
 this PC
 time
+tool
+tools
 torch
 tum
 twitter
@@ -149,6 +172,7 @@ video
 video Naam
 video number
 vlc
+volum
 wafa
 was
 what
@@ -157,10 +181,8 @@ where
 windows
 wordnet
 world
-youtube
-direct
 x
-dopen
-di
-diagnostic
-tool
+youtube
+create
+make
+a
