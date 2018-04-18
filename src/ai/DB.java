@@ -64,7 +64,7 @@ public class DB {
         statement.executeUpdate("drop table if exists alarm");
         statement.executeUpdate("create table alarm (alarm_id string, alarm_time string, alarm_text string)");
         statement.executeUpdate("drop table if exists reminder");
-        statement.executeUpdate("create table reminder(date string,time string, msg string)");
+        statement.executeUpdate("create table reminder(remind_id string, remind_date string,remind_time string, remind_text string)");
         statement.executeUpdate("drop table if exists notes");
         statement.executeUpdate("create table notes(note_id string,note_date string,note_data string)");
         statement.executeUpdate("drop table if exists prefer");

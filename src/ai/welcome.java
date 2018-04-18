@@ -20,6 +20,7 @@ import org.json.simple.JSONObject;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import mslinks.ShellLink;
 
@@ -45,19 +46,20 @@ public class welcome extends javax.swing.JFrame {
     DefaultTableModel tb1, tb2, tb3, tb4, tb5, tb6;
     String val = "";
     Color ccd = new Color(255, 51, 51);
-private void RG()
-{
-z1.setForeground(Color.RED);
-z2.setForeground(Color.GREEN);
-z3.setForeground(Color.BLUE);
-z4.setForeground(Color.RED);
-RGB rr=new RGB(this);
-rr.start();
-}
+
+    private void RG() {
+        z1.setForeground(Color.RED);
+        z2.setForeground(Color.GREEN);
+        z3.setForeground(Color.BLUE);
+        z4.setForeground(Color.RED);
+        RGB rr = new RGB(this);
+        rr.start();
+    }
+
     public welcome(JSONObject js) {
         this.js = js;
         initComponents();
-RG();
+        RG();
         tb1 = (DefaultTableModel) tdoc.getModel();
         tb2 = (DefaultTableModel) tas.getModel();
         tb3 = (DefaultTableModel) tvs.getModel();
@@ -72,8 +74,8 @@ RG();
         lblun.setText((String) js.get("username"));
         lblemail.setText((String) js.get("email"));
         lblfull.setText((String) js.get("fullname").toString().toUpperCase());
-        char ffn=lblfull.getText().charAt(0);       
-        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
+        char ffn = lblfull.getText().charAt(0);
+        lblimg.setIcon(new ImageIcon("assets/alpha/" + ffn + ".png"));
         lbldob.setText((String) js.get("dob"));
         lblgen.setText((String) js.get("gender").toString().toUpperCase());
         val = js.get("sync").toString();
@@ -90,9 +92,8 @@ RG();
         }
 
         //if (js.get("sync").toString().equals("1")) {
-            sy = new Sync(js.get("id").toString(),js.get("email").toString());
-            sy.start();
-        
+        sy = new Sync(js.get("id").toString(), js.get("email").toString());
+        sy.start();
 
         getdev();
 
@@ -134,8 +135,8 @@ RG();
         lblun.setText((String) js.get("username"));
         lblemail.setText((String) js.get("email"));
         lblfull.setText((String) js.get("fullname").toString().toUpperCase());
-            char ffn=lblfull.getText().charAt(0);       
-        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
+        char ffn = lblfull.getText().charAt(0);
+        lblimg.setIcon(new ImageIcon("assets/alpha/" + ffn + ".png"));
         lbldob.setText((String) js.get("dob"));
         lblgen.setText((String) js.get("gender").toString().toUpperCase());
         val = js.get("sync").toString();
@@ -379,6 +380,7 @@ RG();
         lblgen.setBorder(null);
         pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
+        lbldob.setEditable(false);
         lbldob.setBackground(new java.awt.Color(51, 51, 51));
         lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lbldob.setForeground(new java.awt.Color(255, 255, 255));
@@ -1378,8 +1380,8 @@ Color ch = new Color(102, 140, 255);
             int i = jj.UpdateDetails(data);
             if (i == 1) {
                 JOptionPane.showMessageDialog(null, "Details Updated Successfully");
-                    char ffn=lblfull.getText().charAt(0);       
-        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
+                char ffn = lblfull.getText().charAt(0);
+                lblimg.setIcon(new ImageIcon("assets/alpha/" + ffn + ".png"));
             } else {
                 JOptionPane.showMessageDialog(null, "Failed To Update!");
                 lblun.setText(data[1]);
@@ -1425,7 +1427,7 @@ Color ch = new Color(102, 140, 255);
             try {
                 int res = jj.sync(new String[]{js.get("id").toString(), "1"});
                 if (res == 1) {
-                    sy = new Sync(js.get("id").toString(),js.get("email").toString());
+                    sy = new Sync(js.get("id").toString(), js.get("email").toString());
                     sy.start();
                     synbtn.setText("Turn OFF");
                 } else {
@@ -1694,14 +1696,14 @@ Color ch = new Color(102, 140, 255);
 
     private void getFav() {
         try {
-         
+
             FileReader fr = new FileReader("assets/fav/folder.txt");
             BufferedReader br = new BufferedReader(fr);
             String s = "";
             while ((s = br.readLine()) != null) {
                 String a[] = s.split("=");
                 tb1.addRow(new Object[]{a[0], a[1]});
-            
+
             }
             br.close();
             fr.close();
@@ -1779,13 +1781,22 @@ Color ch = new Color(102, 140, 255);
                     return;
                 }
             }
-            tb1.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
-            addfav("folder", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            String s1 = FileSystemView.getFileSystemView().getSystemDisplayName(fc.getCurrentDirectory());
+            
+            if (fc.getCurrentDirectory().getParent() == null) {
+                tb1.addRow(new Object[]{s1, fc.getCurrentDirectory()});
+                addfav("folder", s1 + "=" + fc.getCurrentDirectory());
+            }
+            else
+            {
+                 tb1.addRow(new Object[]{fc.getCurrentDirectory(), fc.getCurrentDirectory()});
+                addfav("folder", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            }
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
         fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = fc.showOpenDialog(this);
@@ -1797,8 +1808,7 @@ Color ch = new Color(102, 140, 255);
                 }
             }
             tb2.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
-            
-        
+
             addfav("audio", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -1821,7 +1831,7 @@ Color ch = new Color(102, 140, 255);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-    JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
         fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = fc.showOpenDialog(this);
@@ -1838,8 +1848,9 @@ Color ch = new Color(102, 140, 255);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-if(tdoc.getSelectedRowCount()<1)
-    return;
+        if (tdoc.getSelectedRowCount() < 1) {
+            return;
+        }
 
         try {
             tb1.removeRow(tdoc.getSelectedRow());
@@ -1861,8 +1872,9 @@ if(tdoc.getSelectedRowCount()<1)
 //        tb5 = (DefaultTableModel) tbrw.getModel();
 //        tb6 = (DefaultTableModel) tapp.getModel();
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-if(tas.getSelectedRowCount()<1)
-    return;
+        if (tas.getSelectedRowCount() < 1) {
+            return;
+        }
         try {
             tb2.removeRow(tas.getSelectedRow());
             System.out.println(tb2.getRowCount());
@@ -1879,9 +1891,10 @@ if(tas.getSelectedRowCount()<1)
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-if(tvs.getSelectedRowCount()<1)
-    return;
-try {
+        if (tvs.getSelectedRowCount() < 1) {
+            return;
+        }
+        try {
             tb3.removeRow(tvs.getSelectedRow());
             System.out.println(tb3.getRowCount());
 
@@ -1897,8 +1910,9 @@ try {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-if(tmv.getSelectedRowCount()<1)
-    return;
+        if (tmv.getSelectedRowCount() < 1) {
+            return;
+        }
         try {
             tb4.removeRow(tmv.getSelectedRow());
             System.out.println(tb4.getRowCount());
@@ -1915,8 +1929,9 @@ if(tmv.getSelectedRowCount()<1)
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-if(tbrw.getSelectedRowCount()<1)
-    return;
+        if (tbrw.getSelectedRowCount() < 1) {
+            return;
+        }
         try {
             tb5.removeRow(tbrw.getSelectedRow());
             System.out.println(tb5.getRowCount());
@@ -1933,15 +1948,14 @@ if(tbrw.getSelectedRowCount()<1)
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-      website wb=new website(this);
-      wb.setVisible(true);
-       
-       
-       
+        website wb = new website(this);
+        wb.setVisible(true);
+
+
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-      JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
         fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = fc.showOpenDialog(this);
@@ -1952,8 +1966,9 @@ if(tbrw.getSelectedRowCount()<1)
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-if(tapp.getSelectedRowCount()<1)
-    return;
+        if (tapp.getSelectedRowCount() < 1) {
+            return;
+        }
         try {
             tb6.removeRow(tapp.getSelectedRow());
             System.out.println(tb6.getRowCount());
@@ -2155,7 +2170,7 @@ Config cf = new Config();
         vname.setSelectedItem(ar.get(1).toString().split("=")[1]);
         int fr = (int) (Math.ceil(Double.parseDouble(ar.get(2).toString().split("=")[1])));
         freq.setValue(fr);
-       
+
 //float ff= Float.parseFloat(ar.get(2).toString().split("=")[1])*0.2f;
     }
 
@@ -2168,7 +2183,6 @@ Config cf = new Config();
         }
         ar.set(1, "[voice]=" + vname.getSelectedItem().toString());
         ar.set(2, "[freq]=" + freq.getValue());
-        
 
         cf.ar = this.ar;
 

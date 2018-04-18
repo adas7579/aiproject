@@ -84,7 +84,7 @@ public class remind extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 70));
 
         lbl.setBackground(new java.awt.Color(255, 255, 255));
         lbl.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N

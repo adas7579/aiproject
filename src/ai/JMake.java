@@ -317,7 +317,8 @@ public class JMake {
     }
 
     public int changeRem(String a[]) throws Exception {
-
+     System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+a[2]);
+     
         JSONObject tt = rr.decodeJson(rr.putRequest("api/Reminder/1", rr.encodeJSON(new String[][]{{"id", a[0]}, {"rem_id", a[1]}, {"reminder_date", a[2]}, {"reminder_time", a[3]}, {"reminder_text", a[4]}})));
         if (tt.containsValue("Successfully Updated Reminder")) {
             return 1;

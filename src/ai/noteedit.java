@@ -5,6 +5,7 @@
  */
 package ai;
 
+import javax.swing.JOptionPane;
 import org.json.simple.JSONObject;
 
 /**
@@ -42,6 +43,7 @@ public class noteedit extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -92,7 +94,7 @@ public class noteedit extends javax.swing.JFrame {
         jj.changeNotes(new String[]{aa[0],aa[1],aa[2],txt.getText()});
         this.setVisible(false);
         }
-        catch(Exception ex){}
+        catch(Exception ex){JOptionPane.showMessageDialog(null, "Failed to update note.","Error",JOptionPane.OK_OPTION);}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

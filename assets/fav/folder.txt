@@ -1,1 +1,1 @@
-ANADI FOLDER=J:\Main\ANADI FOLDER
+AD Drive (J:)=J:\

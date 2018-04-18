@@ -216,15 +216,17 @@ public class notes extends javax.swing.JFrame {
     }//GEN-LAST:event_ntabMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Remove this note?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
-        if (a == JOptionPane.YES_OPTION) {
-            try {
-                jj.deleteNotes(new String[]{uid, ntab.getValueAt(ntab.getSelectedRow(), 0).toString()});
-                tm.removeRow(ntab.getSelectedRow());
-                save();
-                load();
+        if (tm.getRowCount() > 0) {
+            int a = JOptionPane.showConfirmDialog(null, "Remove this note?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
+            if (a == JOptionPane.YES_OPTION) {
+                try {
+                    jj.deleteNotes(new String[]{uid, ntab.getValueAt(ntab.getSelectedRow(), 0).toString()});
+                    tm.removeRow(ntab.getSelectedRow());
+                    save();
+                    load();
 
-            } catch (Exception ex) {
+                } catch (Exception ex) {
+                }
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed

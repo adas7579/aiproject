@@ -5,6 +5,7 @@
  */
 package ai;
 
+import javax.swing.JOptionPane;
 import org.json.simple.JSONObject;
 
 /**
@@ -18,6 +19,7 @@ public class alarmedit extends javax.swing.JFrame {
      */
     String aa[];
     JMake jj;
+    
     public alarmedit(String a[],JMake jj) {
         this.jj=jj;
         initComponents();
@@ -138,7 +140,7 @@ public class alarmedit extends javax.swing.JFrame {
             bb.close();
             this.setVisible(false);
         }
-        catch(Exception ex){}
+        catch(Exception ex){JOptionPane.showMessageDialog(null, "Failed to update alarm.","Error",JOptionPane.OK_OPTION);}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

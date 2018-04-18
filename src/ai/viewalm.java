@@ -45,7 +45,7 @@ public class viewalm extends javax.swing.JFrame {
 
             try {
                 tt = jj.getAlarm(uid);
-                
+
                 for (int i = 0; i < tt.length; i++) {
                     tm.addRow(new Object[]{tt[i].get("alarm_id").toString(), tt[i].get("alarm_time"), tt[i].get("alarm_text")});
                 }
@@ -206,19 +206,20 @@ public class viewalm extends javax.swing.JFrame {
     }
 
     private void btdelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdelActionPerformed
-        int a = JOptionPane.showConfirmDialog(null, "Remove this alarm?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
-        if (a == JOptionPane.YES_OPTION) {
-            try {
-            jj.deleteAlarm(new String[]{uid, tb.getValueAt(tb.getSelectedRow(), 0).toString()});
-            tm.removeRow(tb.getSelectedRow());
-            save();
-            //btdel.setVisible(false);
-            load();
-            
-        }catch (Exception ex) {
-              
+        if (tm.getRowCount() > 0) {
+            int a = JOptionPane.showConfirmDialog(null, "Remove this alarm?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
+            if (a == JOptionPane.YES_OPTION) {
+                try {
+                    jj.deleteAlarm(new String[]{uid, tb.getValueAt(tb.getSelectedRow(), 0).toString()});
+                    tm.removeRow(tb.getSelectedRow());
+                    save();
+                    //btdel.setVisible(false);
+                    load();
+
+                } catch (Exception ex) {
+                }
             }
-    }
+        }
     }//GEN-LAST:event_btdelActionPerformed
 
     private void tbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMouseClicked
@@ -247,28 +248,24 @@ public class viewalm extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(viewalm.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(viewalm.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(viewalm.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(viewalm.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

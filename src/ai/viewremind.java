@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ai;
 
 import java.io.FileNotFoundException;
 import java.io.*;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.*;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -24,48 +21,66 @@ public class viewremind extends javax.swing.JFrame {
     /**
      * Creates new form viewremind
      */
-    
     DefaultTableModel tm;
-    public viewremind() {
+    String uid, sync;
+    JMake jj = new JMake();
+    JSONObject[] tt;
+    JSONObject user;
+
+    public viewremind(String ud, String email) {
         initComponents();
+        uid = ud;
 
         this.setLocationRelativeTo(null);
         this.pack();
         tm = (DefaultTableModel) tb.getModel();
-        btsave.setVisible(false);
-        btdel.setVisible(false);
-        lbl.setVisible(false);
-        FileReader fr;
         try {
-            fr = new FileReader("assets/reminder.txt");
-            BufferedReader br = new BufferedReader(fr);
-            String s;
-            while ((s = br.readLine()) != null) {
-                tm.addRow(new Object[]{s.substring(0, s.indexOf("=")), s.substring(s.indexOf("=") + 1, s.lastIndexOf("=")), s.substring(s.lastIndexOf("=") + 1)});
-            }
+            user = jj.getUser(email);
+            sync = user.get("sync").toString();
         } catch (Exception ex) {
-            Logger.getLogger(viewalm.class.getName()).log(Level.SEVERE, null, ex);
+           
         }
+        if (sync.equals("1")) {
 
-        //BufferedReader br=new BufferedReader();
-        //tm.addRow(new Object[]{"a","b","c"});
-        tb.getModel().addTableModelListener(new TableModelListener() {
-            public void tableChanged(TableModelEvent e) {
-                //System.out.println(e);
-                btsave.setVisible(true);
-                btdel.setVisible(false);
-            }
-        });
+            try {
+                tt = jj.getRem(uid);
 
-        tb.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent event) {
-                // do some actions here, for example
-                // print first column value from selected row
-                //System.out.println(tb.getValueAt(table.getSelectedRow(), 0).toString());
-                btsave.setVisible(false);
-                btdel.setVisible(true);
+                for (int i = 0; i < tt.length; i++) {
+                    tm.addRow(new Object[]{tt[i].get("rem_id").toString(), tt[i].get("reminder_date"),tt[i].get("reminder_time"), tt[i].get("reminder_text")});
+                }
+                load();
+                save();
+            } catch (Exception ex) {
+               load();
             }
-        });
+        } else {
+            load();
+        }
+        lbl.setVisible(false);
+
+    }
+
+    public void load() {
+        try {
+            DB bb = new DB(uid);
+            bb.open();
+            ResultSet rs = bb.getData("select * from reminder");
+            //tm.setRowCount(0);
+            while (rs.next()) {
+                int y = 0;
+                for (int i = 0; i < tb.getRowCount(); i++) {
+                    if (tb.getValueAt(i, 0).toString().equals(rs.getString("remind_id"))) {
+                        y++;
+                    }
+                }
+                if (y != 1) {
+                    tm.addRow(new Object[]{(rs.getString("remind_id")), rs.getString("remind_date"), rs.getString("remind_time"), rs.getString("remind_text")});
+                    y = 0;
+                }
+            }
+            bb.close();
+        } catch (Exception ex) {
+        }
     }
 
     /**
@@ -77,53 +92,56 @@ public class viewremind extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbl = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb = new javax.swing.JTable();
-        btsave = new javax.swing.JButton();
-        lbl = new javax.swing.JLabel();
         btdel = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setTitle("Reminders");
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbl.setForeground(new java.awt.Color(0, 102, 204));
+        lbl.setText("Changes saved");
+        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 344, -1, 20));
+
+        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Date", "Time", "Title"
+                "Reminder ID", "Reminder Date", "Reminder Time", "Reminder Text"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        jScrollPane1.setViewportView(tb);
-        if (tb.getColumnModel().getColumnCount() > 0) {
-            tb.getColumnModel().getColumn(0).setResizable(false);
-            tb.getColumnModel().getColumn(1).setResizable(false);
-            tb.getColumnModel().getColumn(2).setResizable(false);
-        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 392, 327));
-
-        btsave.setText("Save Changes");
-        btsave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btsaveActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        getContentPane().add(btsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, -1));
+        tb.setColumnSelectionAllowed(true);
+        tb.getTableHeader().setReorderingAllowed(false);
+        tb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tb);
+        tb.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        lbl.setForeground(new java.awt.Color(0, 102, 204));
-        lbl.setText("Changes saved");
-        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 392, 327));
 
         btdel.setText("Delete Reminder");
         btdel.addActionListener(new java.awt.event.ActionListener() {
@@ -133,20 +151,45 @@ public class viewremind extends javax.swing.JFrame {
         });
         getContentPane().add(btdel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 420, 370));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsaveActionPerformed
-        save();
-    }//GEN-LAST:event_btsaveActionPerformed
+    private void tbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMouseClicked
+        if (evt.getClickCount() == 2) {
+            String aid = tb.getValueAt(tb.getSelectedRow(), 0).toString();
+            String dd = tb.getValueAt(tb.getSelectedRow(), 1).toString().split("/")[0];
+            String mm = tb.getValueAt(tb.getSelectedRow(), 1).toString().split("/")[1];
+            String yy = tb.getValueAt(tb.getSelectedRow(), 1).toString().split("/")[2];
+            String h = tb.getValueAt(tb.getSelectedRow(), 2).toString().split(":")[0];
+            String m = tb.getValueAt(tb.getSelectedRow(), 2).toString().split(":")[1];
+            String tx = tb.getValueAt(tb.getSelectedRow(), 3).toString();
+
+            System.out.println("\n\n\n" + aid + " " + dd + " " + mm + " " + yy + " " + h + " " + m + " " + tx + " " + "\n\n\n");
+
+            remindedit al = new remindedit(new String[]{uid, aid, dd, mm, yy, h, m, tx}, jj);
+            al.setVisible(true);
+        }
+    }//GEN-LAST:event_tbMouseClicked
 
     private void btdelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdelActionPerformed
-        int a=JOptionPane.showConfirmDialog(null, "Remove this Reminder?","Confirm an action:",JOptionPane.YES_NO_OPTION);
-        if(a==JOptionPane.YES_OPTION)
-        {
-            tm.removeRow(tb.getSelectedRow());
-            save();
-            btdel.setVisible(false);
+        if (tm.getRowCount() > 0) {
+            int a = JOptionPane.showConfirmDialog(null, "Remove this reminder?", "Confirm an action:", JOptionPane.YES_NO_OPTION);
+            if (a == JOptionPane.YES_OPTION) {
+                try {
+                    jj.deleteRem(new String[]{uid, tb.getValueAt(tb.getSelectedRow(), 0).toString()});
+                    tm.removeRow(tb.getSelectedRow());
+                    save();
+                    //btdel.setVisible(false);
+                    load();
+
+                } catch (Exception ex) {
+
+                }
+            }
         }
     }//GEN-LAST:event_btdelActionPerformed
 
@@ -180,32 +223,41 @@ public class viewremind extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewremind().setVisible(true);
+                //new viewremind().setVisible(true);
             }
         });
     }
 
-    public void save()
-    {
+    public void save() {
         try {
-            FileWriter fw = new FileWriter("assets/reminder.txt");
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            for (int i = 0; i < tb.getRowCount(); i++) {
-                pw.println(tb.getValueAt(i, 0) + "=" + tb.getValueAt(i, 1) + "=" + tb.getValueAt(i, 2));
-            }
-            pw.close();
-            bw.close();
-            fw.close();
+            DB bb = new DB(uid);
+            bb.open();
+            bb.insertData("delete from reminder");
 
+            for (int i = 0; i < tb.getRowCount(); i++) {
+                System.out.println("insert into reminder values('" + tm.getValueAt(i, 0).toString() + "','" + tm.getValueAt(i, 1).toString() + "','" + tm.getValueAt(i, 2).toString() + "','" + tm.getValueAt(i, 3).toString() + "')");
+                bb.insertData("insert into reminder values('" + tm.getValueAt(i, 0).toString() + "','" + tm.getValueAt(i, 1).toString() + "','" + tm.getValueAt(i, 2).toString() + "','" + tm.getValueAt(i, 3).toString() + "')");
+            }
+            bb.close();
+            if (sync.equals("1")) {
+                for (int i = 0; i < tb.getRowCount(); i++) {
+                    jj.deleteRem(new String[]{uid, tb.getValueAt(i, 0).toString()});
+                }
+                for (int i = 0; i < tb.getRowCount(); i++) {
+                    jj.InsertRem(new String[]{uid, tb.getValueAt(i, 0).toString(), tb.getValueAt(i, 1).toString(), tb.getValueAt(i, 2).toString(), tb.getValueAt(i, 3).toString()});
+                }
+            }
         } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
         lbl.setVisible(true);
+//        load();
     }
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdel;
-    private javax.swing.JButton btsave;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl;
     public javax.swing.JTable tb;

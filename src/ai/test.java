@@ -84,7 +84,7 @@ public class test extends javax.swing.JFrame {
 
         alarm a = new alarm(uid);
         a.start();
-        remnd r = new remnd();
+        remnd r = new remnd(uid);
         r.start();
         
 
