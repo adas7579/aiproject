@@ -114,12 +114,100 @@ public class Windows{
             "notepad",
             "google chrome web browser"
         };
-
+       
         getFav1();
     }
     String fname;
     String pth = "";
-
+    ArrayList mus,vid,doc,ap;
+    private void favext()
+    {
+      mus=new ArrayList();
+        mus.add(".aif");
+        mus.add(".iff");
+        mus.add(".m3u");
+        mus.add(".m4a");
+        mus.add(".mid");
+        mus.add(".mp3");
+        mus.add(".mpa");
+        mus.add(".wav");
+        mus.add(".wma");
+    vid=new ArrayList();
+        vid.add(".3g2");
+        vid.add(".3gp");
+        vid.add(".asf");
+        vid.add(".avi");
+        vid.add(".flv");
+        vid.add(".mp4");
+        vid.add(".mpg");
+        vid.add(".rm");
+        vid.add(".swf");
+        vid.add(".vob");
+        vid.add(".wmv");
+     doc=new ArrayList(); 
+        doc.add(".doc");
+        doc.add(".docx");
+        doc.add(".log");
+        doc.add(".msg");
+        doc.add(".odt");
+        doc.add(".pages");
+        doc.add(".rtf");
+        doc.add(".tex");
+        doc.add(".txt");
+        doc.add(".wpd");
+        doc.add(".wps");
+        doc.add(".csv");
+        doc.add(".dat");
+        doc.add(".ged");
+        doc.add(".key");
+        doc.add(".keychain");
+        doc.add(".pps");
+        doc.add(".ppt");
+        doc.add(".pptx");
+        doc.add(".sdf");
+        doc.add(".tar");
+        doc.add(".vcf");
+        doc.add(".xml");
+        doc.add(".accdb");
+        doc.add(".db");
+        doc.add(".pdf");
+        doc.add(".mdb");
+        doc.add(".sql");
+        doc.add(".asp");
+        doc.add(".aspx");
+        doc.add(".css");
+        doc.add(".js");
+        doc.add(".jsp");
+        doc.add(".php");
+        doc.add(".html");
+        doc.add(".ttf");
+        doc.add(".dll");
+        doc.add(".7z");
+        doc.add(".cbr");
+        doc.add(".zip");
+        doc.add(".pkg");
+        doc.add(".iso");
+        doc.add(".dmg");
+        doc.add(".c");
+        doc.add(".java");
+        doc.add(".cs");
+        doc.add(".cpp");
+        doc.add(".h");
+        doc.add(".lua");
+        doc.add(".vb");
+        doc.add(".bak");
+        doc.add(".torrent");
+        doc.add(".msi");
+        
+         ap=new ArrayList(); 
+        ap.add(".apk"); 
+        ap.add(".exe");
+        ap.add(".bat"); 
+        ap.add(".jar"); 
+        ap.add(".wsf"); 
+        ap.add(".com"); 
+    }
+    
     private void getFav1() {
         try {
             FileReader fr = new FileReader("assets/fav/folder.txt");
@@ -351,7 +439,8 @@ public class Windows{
             }
             ArrayList asd = new ArrayList();
             for (int i = 0; i < ar.size(); i++) {
-                if (ar.get(i).toString().split("=")[0].toLowerCase().contains(cm.toLowerCase())) {
+                String nm=ar.get(i).toString().split("=")[0].toLowerCase();
+                if (nm.contains(cm.toLowerCase())) {
                     asd.add(ar.get(i));
                 }
             }

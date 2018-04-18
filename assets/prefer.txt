@@ -12,6 +12,7 @@ MTDC
 P.M
 PC
 Pm
+a
 aakhya
 about
 acess
@@ -50,6 +51,7 @@ chutia
 chutiya
 color
 control
+create
 crm
 cva
 di
@@ -108,6 +110,7 @@ lisp
 list
 magni
 mahatma
+make
 man
 maula
 maulaa
@@ -183,6 +186,3 @@ wordnet
 world
 x
 youtube
-create
-make
-a

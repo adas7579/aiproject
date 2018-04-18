@@ -72,6 +72,8 @@ RG();
         lblun.setText((String) js.get("username"));
         lblemail.setText((String) js.get("email"));
         lblfull.setText((String) js.get("fullname").toString().toUpperCase());
+        char ffn=lblfull.getText().charAt(0);       
+        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
         lbldob.setText((String) js.get("dob"));
         lblgen.setText((String) js.get("gender").toString().toUpperCase());
         val = js.get("sync").toString();
@@ -132,6 +134,8 @@ RG();
         lblun.setText((String) js.get("username"));
         lblemail.setText((String) js.get("email"));
         lblfull.setText((String) js.get("fullname").toString().toUpperCase());
+            char ffn=lblfull.getText().charAt(0);       
+        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
         lbldob.setText((String) js.get("dob"));
         lblgen.setText((String) js.get("gender").toString().toUpperCase());
         val = js.get("sync").toString();
@@ -180,6 +184,26 @@ RG();
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        pnlacc = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblimg = new javax.swing.JLabel();
+        lblemail = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblfull = new javax.swing.JTextField();
+        lblun = new javax.swing.JTextField();
+        lblgen = new javax.swing.JTextField();
+        lbldob = new javax.swing.JTextField();
+        gbtn = new javax.swing.JButton();
+        ss = new javax.swing.JButton();
+        ubtn = new javax.swing.JButton();
+        fbtn = new javax.swing.JButton();
+        combgen = new javax.swing.JComboBox<>();
+        dbtn = new javax.swing.JButton();
         tts = new javax.swing.JPanel();
         jSeparator7 = new javax.swing.JSeparator();
         chktts = new javax.swing.JCheckBox();
@@ -242,26 +266,6 @@ RG();
         tapp = new javax.swing.JTable();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        pnlacc = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        lblimg = new javax.swing.JLabel();
-        lblemail = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        lblfull = new javax.swing.JTextField();
-        lblun = new javax.swing.JTextField();
-        lblgen = new javax.swing.JTextField();
-        lbldob = new javax.swing.JTextField();
-        gbtn = new javax.swing.JButton();
-        ss = new javax.swing.JButton();
-        ubtn = new javax.swing.JButton();
-        fbtn = new javax.swing.JButton();
-        combgen = new javax.swing.JComboBox<>();
-        dbtn = new javax.swing.JButton();
         set = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -313,6 +317,120 @@ RG();
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlacc.setBackground(new java.awt.Color(51, 51, 51));
+        pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        pnlacc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("My Account :");
+        pnlacc.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        pnlacc.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+        pnlacc.add(lblimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 110, 110));
+
+        lblemail.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblemail.setForeground(new java.awt.Color(255, 255, 255));
+        lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblemail.setText("myemail@gmail.com");
+        pnlacc.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 290, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("USERNAME :");
+        pnlacc.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel7.setText("FULLNAME :");
+        pnlacc.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("DOB :");
+        pnlacc.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setText("GENDER :");
+        pnlacc.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+        pnlacc.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -20, -1, -1));
+
+        lblfull.setEditable(false);
+        lblfull.setBackground(new java.awt.Color(51, 51, 51));
+        lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblfull.setForeground(new java.awt.Color(255, 255, 255));
+        lblfull.setText("@>anadi");
+        lblfull.setBorder(null);
+        pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
+
+        lblun.setEditable(false);
+        lblun.setBackground(new java.awt.Color(51, 51, 51));
+        lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblun.setForeground(new java.awt.Color(255, 255, 255));
+        lblun.setText("@>anadi");
+        lblun.setBorder(null);
+        pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
+
+        lblgen.setBackground(new java.awt.Color(51, 51, 51));
+        lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lblgen.setForeground(new java.awt.Color(255, 255, 255));
+        lblgen.setText("Male");
+        lblgen.setBorder(null);
+        pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+
+        lbldob.setBackground(new java.awt.Color(51, 51, 51));
+        lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        lbldob.setForeground(new java.awt.Color(255, 255, 255));
+        lbldob.setText("12/12/1999");
+        lbldob.setBorder(null);
+        pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+
+        gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        gbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(gbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 30, 30));
+
+        ss.setText("Save");
+        ss.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ssActionPerformed(evt);
+            }
+        });
+        pnlacc.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 70, 30));
+
+        ubtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        ubtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ubtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(ubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 30, 30));
+
+        fbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        fbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(fbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 30, 30));
+
+        combgen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        pnlacc.add(combgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        combgen.setVisible(false);
+
+        dbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        dbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbtnActionPerformed(evt);
+            }
+        });
+        pnlacc.add(dbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 30, 30));
+
+        hh1.add(pnlacc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         tts.setBackground(new java.awt.Color(51, 51, 51));
         tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -735,122 +853,6 @@ RG();
         fav.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 470, 310));
 
         hh1.add(fav, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        pnlacc.setBackground(new java.awt.Color(51, 51, 51));
-        pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        pnlacc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("My Account :");
-        pnlacc.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-        pnlacc.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        lblimg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        pnlacc.add(lblimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 100, 220));
-
-        lblemail.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblemail.setForeground(new java.awt.Color(255, 255, 255));
-        lblemail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblemail.setText("myemail@gmail.com");
-        pnlacc.add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 290, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("USERNAME :");
-        pnlacc.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("FULLNAME :");
-        pnlacc.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel6.setText("DOB :");
-        pnlacc.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setText("GENDER :");
-        pnlacc.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
-        pnlacc.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, -20, -1, -1));
-
-        lblfull.setEditable(false);
-        lblfull.setBackground(new java.awt.Color(51, 51, 51));
-        lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblfull.setForeground(new java.awt.Color(255, 255, 255));
-        lblfull.setText("@>anadi");
-        lblfull.setBorder(null);
-        pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
-
-        lblun.setEditable(false);
-        lblun.setBackground(new java.awt.Color(51, 51, 51));
-        lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblun.setForeground(new java.awt.Color(255, 255, 255));
-        lblun.setText("@>anadi");
-        lblun.setBorder(null);
-        pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
-
-        lblgen.setBackground(new java.awt.Color(51, 51, 51));
-        lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lblgen.setForeground(new java.awt.Color(255, 255, 255));
-        lblgen.setText("Male");
-        lblgen.setBorder(null);
-        pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
-
-        lbldob.setBackground(new java.awt.Color(51, 51, 51));
-        lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        lbldob.setForeground(new java.awt.Color(255, 255, 255));
-        lbldob.setText("12/12/1999");
-        lbldob.setBorder(null);
-        pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
-
-        gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        gbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(gbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 30, 30));
-
-        ss.setText("Save");
-        ss.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ssActionPerformed(evt);
-            }
-        });
-        pnlacc.add(ss, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 70, 30));
-
-        ubtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        ubtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ubtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(ubtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 30, 30));
-
-        fbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        fbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(fbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 30, 30));
-
-        combgen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        pnlacc.add(combgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
-        combgen.setVisible(false);
-
-        dbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        dbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dbtnActionPerformed(evt);
-            }
-        });
-        pnlacc.add(dbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 30, 30));
-
-        hh1.add(pnlacc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         set.setBackground(new java.awt.Color(51, 51, 51));
         set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -1376,6 +1378,8 @@ Color ch = new Color(102, 140, 255);
             int i = jj.UpdateDetails(data);
             if (i == 1) {
                 JOptionPane.showMessageDialog(null, "Details Updated Successfully");
+                    char ffn=lblfull.getText().charAt(0);       
+        lblimg.setIcon(new ImageIcon("assets/alpha/"+ffn+".png"));
             } else {
                 JOptionPane.showMessageDialog(null, "Failed To Update!");
                 lblun.setText(data[1]);
