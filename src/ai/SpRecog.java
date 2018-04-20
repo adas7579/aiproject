@@ -279,8 +279,8 @@ public class SpRecog implements GSpeechResponseListener {
     Aires ai;
     public void sorry(String a) {
       try {
-        JSONObject tt=jj.aiResponse(a);
-        ai=new Aires(tt);
+        JSONObject tt=jj.aiResponse("desktop:"+a);
+        Aires ai=new Aires(tt);
         ai.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);

@@ -89,10 +89,10 @@ public class welcome extends javax.swing.JFrame {
             //     synbtn.setRolloverEnabled(true);
         }
 
-        //if (js.get("sync").toString().equals("1")) {
+        if (js.get("sync").toString().equals("1")) {
         sy = new Sync(js.get("id").toString(), js.get("email").toString());
         sy.start();
-
+        }
         getdev();
 
         ubtn.setIcon(new ImageIcon("assets/edit.png"));
@@ -204,6 +204,24 @@ RSA rs=new RSA();
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        sync = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        synbtn = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        devcom = new javax.swing.JComboBox<>();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        devs = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        devn = new javax.swing.JLabel();
+        devt = new javax.swing.JLabel();
+        devi = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        btrefresh = new javax.swing.JButton();
         pnlacc = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -240,24 +258,6 @@ RSA rs=new RSA();
         freq = new javax.swing.JSlider();
         jLabel16 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        sync = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        synbtn = new javax.swing.JToggleButton();
-        jLabel5 = new javax.swing.JLabel();
-        devcom = new javax.swing.JComboBox<>();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        devs = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        devn = new javax.swing.JLabel();
-        devt = new javax.swing.JLabel();
-        devi = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        btrefresh = new javax.swing.JButton();
         fav = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
@@ -338,6 +338,96 @@ RSA rs=new RSA();
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        sync.setBackground(new java.awt.Color(51, 51, 51));
+        sync.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        sync.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sync.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 490, 10));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Sync");
+        sync.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        synbtn.setSelected(true);
+        synbtn.setText("Turn ON");
+        synbtn.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                synbtnItemStateChanged(evt);
+            }
+        });
+        synbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                synbtnActionPerformed(evt);
+            }
+        });
+        sync.add(synbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 100, 30));
+
+        jLabel5.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText(" Devices");
+        jLabel5.setToolTipText("");
+        sync.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 70, 30));
+
+        devcom.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                devcomItemStateChanged(evt);
+            }
+        });
+        sync.add(devcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 240, 30));
+        sync.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 480, 20));
+        sync.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 350, 10));
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Status :");
+        sync.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 90, 20));
+
+        devs.setForeground(new java.awt.Color(0, 255, 51));
+        devs.setText("Connected");
+        sync.add(devs, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 240, 20));
+
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("System Type :");
+        sync.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 20));
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Device ID :");
+        sync.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, 20));
+
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Device Name :");
+        sync.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, 20));
+
+        devn.setForeground(new java.awt.Color(255, 255, 51));
+        devn.setText("Device Name :");
+        sync.add(devn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 240, 20));
+
+        devt.setForeground(new java.awt.Color(255, 255, 51));
+        devt.setText("Device Name :");
+        sync.add(devt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 240, 20));
+
+        devi.setForeground(new java.awt.Color(255, 255, 51));
+        devi.setText("Device Name :");
+        sync.add(devi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 290, 20));
+
+        jButton4.setText("Remove Device");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        sync.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 150, 30));
+
+        btrefresh.setBackground(new java.awt.Color(255, 255, 255));
+        btrefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btrefreshActionPerformed(evt);
+            }
+        });
+        sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
+
+        hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         pnlacc.setBackground(new java.awt.Color(51, 51, 51));
         pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -560,96 +650,6 @@ RSA rs=new RSA();
         tts.add(pnltts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 440, 260));
 
         hh1.add(tts, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        sync.setBackground(new java.awt.Color(51, 51, 51));
-        sync.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        sync.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        sync.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 490, 10));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Sync");
-        sync.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        synbtn.setSelected(true);
-        synbtn.setText("Turn ON");
-        synbtn.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                synbtnItemStateChanged(evt);
-            }
-        });
-        synbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                synbtnActionPerformed(evt);
-            }
-        });
-        sync.add(synbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 100, 30));
-
-        jLabel5.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText(" Devices");
-        jLabel5.setToolTipText("");
-        sync.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 70, 30));
-
-        devcom.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                devcomItemStateChanged(evt);
-            }
-        });
-        sync.add(devcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 240, 30));
-        sync.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 480, 20));
-        sync.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 350, 10));
-
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Status :");
-        sync.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 90, 20));
-
-        devs.setForeground(new java.awt.Color(0, 255, 51));
-        devs.setText("Connected");
-        sync.add(devs, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 240, 20));
-
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("System Type :");
-        sync.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 20));
-
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Device ID :");
-        sync.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 90, 20));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Device Name :");
-        sync.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, 20));
-
-        devn.setForeground(new java.awt.Color(255, 255, 51));
-        devn.setText("Device Name :");
-        sync.add(devn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 240, 20));
-
-        devt.setForeground(new java.awt.Color(255, 255, 51));
-        devt.setText("Device Name :");
-        sync.add(devt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 240, 20));
-
-        devi.setForeground(new java.awt.Color(255, 255, 51));
-        devi.setText("Device Name :");
-        sync.add(devi, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 290, 20));
-
-        jButton4.setText("Remove Device");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        sync.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 150, 30));
-
-        btrefresh.setBackground(new java.awt.Color(255, 255, 255));
-        btrefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btrefreshActionPerformed(evt);
-            }
-        });
-        sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
-
-        hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         fav.setBackground(new java.awt.Color(51, 51, 51));
         fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));

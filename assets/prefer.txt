@@ -94,6 +94,7 @@ find Satvik
 firefox
 firewall
 for
+from
 fuck
 gallery
 games
@@ -144,6 +145,7 @@ my
 my SQL
 mysql
 narendra
+news
 note
 notepad
 notes
@@ -186,15 +188,20 @@ show reminders
 show songs
 sjdbfhdbf
 software
+some
 son
 song
 songs
 songs
+sport
+sports
 spotify
 sql
 studio
 sunn
 technology
+teel
+tell
 teri
 the
 this PC
@@ -224,3 +231,6 @@ x
 ye
 ye_duniya
 youtube
+tell news
+news news news
+where Barack Obama born

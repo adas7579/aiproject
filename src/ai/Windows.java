@@ -345,7 +345,7 @@ public class Windows {
                     d = d + ch;
                 }
             }
-            System.out.println("?????????????????????????????  " + d);
+          
             ss[1] = String.valueOf(nc.evaluate(d));
             ss[0] = "@#$";
             return ss;

@@ -771,7 +771,7 @@ private void logout()
 //        this.opt.setText("Need assistance?");
 //        this.response.setText("");
         try {
-        JSONObject tt=jj.aiResponse("android:"+a);
+        JSONObject tt=jj.aiResponse("desktop:"+a);
         Aires ai=new Aires(tt);
         ai.setVisible(true);
         } catch (Exception ex) {

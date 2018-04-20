@@ -310,6 +310,15 @@ public class Home extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Device Already Binded!", "Warning", 2);
                 } else {
                     i = json.Login(txtemail.getText(), txtpss.getText(), s);
+                    
+                    if (chkremem.isSelected() == true) {
+                    remem r = new remem();
+                    r.enc(i.get("id").toString(), txtemail.getText(), txtpss.getText(), s);
+//                    DB bb = new DB(i.get("id").toString());
+//                    bb.open();
+//                    bb.newuser(new String[]{txtemail.getText(), txtpss.getText(), s});
+//                    bb.close();
+                }
                     welcome w = new welcome(i);
                     w.pass = txtpss.getText();
                     w.setVisible(true);

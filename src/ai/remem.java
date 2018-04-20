@@ -51,10 +51,11 @@ public class remem {
             DB bb = new DB(s[0]);
             bb.open();
             ResultSet rs = bb.getData("select * from login");
-
+            
             rs.next();
-
+    
             s[1] = r.Decode(rs.getString("id"), 77, 221);
+        
             s[2] = r.Decode(rs.getString("pwd"), 77, 221);
             s[3] = r.Decode(rs.getString("did"), 77, 221);
             System.out.println("Pre-Credentials: " + s[0] + " " + s[1] + " " + s[2] + "\n\n");
@@ -65,7 +66,7 @@ public class remem {
             return s;
 
         } catch (Exception ex) {
-            System.out.println("\n\n>>>>>>>>:::::::::>.>>\n\n"+ex.getMessage());
+            System.out.println("\n\n Reme.java>>>>>>>>:::::::::>.>>\n\n"+ex.getMessage());
         }
         return null;
     }
