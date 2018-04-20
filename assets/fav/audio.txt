@@ -1,1 +1,1 @@
-Songs=G:\aNaDi\Songs
+Linkin Park=G:\aNaDi\Songs\New folder\songs\Linkin Park

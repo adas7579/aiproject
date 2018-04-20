@@ -9,8 +9,11 @@ AVG
 Asphalt
 DSC
 DU c
+Gujarat Somnath
+Gujarati Gani
 MTDC
 P.M
+P.m
 PC
 Pm
 a
@@ -46,10 +49,15 @@ blogger
 born
 browse
 bubububg
+bulleya
 calculate
 calculator
 castle
+chaa
+chammak
+chammakak
 charraiya
+chat
 chrome
 chutia
 chutiya
@@ -86,6 +94,7 @@ find Satvik
 firefox
 firewall
 for
+fuck
 gallery
 games
 gandhi
@@ -111,6 +120,7 @@ java
 keyboard
 kits
 know IP
+leela
 link
 lisp
 list
@@ -122,10 +132,13 @@ man
 maula
 maulaa
 me
+mera
 meri
 modi
 movie
 movies
+mujra
+mujra Chikni
 music
 my
 my SQL
@@ -135,16 +148,22 @@ note
 notepad
 notes
 numb
+of
 online
 open
 panel
 pirates
 play
+play Castle
+play Linkin
+play Numb
 play Numb
 play in the end
+play powerless
 plus
 pm
 powerless
+prem
 qurbani
 raha
 remind
@@ -163,6 +182,7 @@ show
 show alarm
 show alarm
 show alarms
+show reminders
 show songs
 sjdbfhdbf
 software
@@ -180,6 +200,7 @@ the
 this PC
 time
 to
+tomorrow
 tool
 tools
 torch
@@ -200,4 +221,6 @@ windows
 wordnet
 world
 x
+ye
+ye_duniya
 youtube

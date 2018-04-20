@@ -6,19 +6,17 @@
 package ai;
 
 import application.Main;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.WriterException;
 import java.awt.Color;
-import java.io.FileNotFoundException;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
-import javax.swing.border.Border;
 import org.json.simple.JSONObject;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
@@ -110,12 +108,33 @@ public class welcome extends javax.swing.JFrame {
         about.setVisible(false);
         uun.setText(lblun.getText().toLowerCase());
 
+   
         getConfig();
         getFav();
+          
 //        fname = "AI.lnk";
 //        file("C:\\Users\\aNaWorLd\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup");
     }
-
+private void qrc()
+{
+RSA rs=new RSA();
+        try {
+         
+            String bar=js.get("email").toString()+":"+rs.Encode(pass, 5,221);
+           
+            QRCode qq=new QRCode();
+            try {
+                qq.createCode(bar);
+            } catch (WriterException ex) {
+             
+            } catch (NotFoundException ex) {
+               
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        qr.setIcon(new ImageIcon("assets/qr.png"));
+}
     public welcome(JSONObject js, Sync sy) {
         this.js = js;
         initComponents();
@@ -185,6 +204,12 @@ public class welcome extends javax.swing.JFrame {
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        set = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        sww = new javax.swing.JCheckBox();
+        qr = new javax.swing.JLabel();
         pnlacc = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -267,11 +292,6 @@ public class welcome extends javax.swing.JFrame {
         tapp = new javax.swing.JTable();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        set = new javax.swing.JPanel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        sww = new javax.swing.JCheckBox();
         about = new javax.swing.JPanel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
@@ -319,6 +339,44 @@ public class welcome extends javax.swing.JFrame {
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        set.setBackground(new java.awt.Color(51, 51, 51));
+        set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        set.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        set.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Settings :");
+        set.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        jButton1.setText("Change Password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        set.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 130, 30));
+
+        sww.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        sww.setForeground(new java.awt.Color(255, 255, 255));
+        sww.setText("Start with Windows");
+        sww.setOpaque(false);
+        sww.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                swwMouseClicked(evt);
+            }
+        });
+        sww.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                swwActionPerformed(evt);
+            }
+        });
+        set.add(sww, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        set.add(qr, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 310, 210));
+
+        hh1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
+
         pnlacc.setBackground(new java.awt.Color(51, 51, 51));
         pnlacc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         pnlacc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -362,7 +420,6 @@ public class welcome extends javax.swing.JFrame {
         lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblfull.setForeground(new java.awt.Color(255, 255, 255));
         lblfull.setText("@>anadi");
-        lblfull.setBorder(null);
         pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
 
         lblun.setEditable(false);
@@ -370,14 +427,12 @@ public class welcome extends javax.swing.JFrame {
         lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblun.setForeground(new java.awt.Color(255, 255, 255));
         lblun.setText("@>anadi");
-        lblun.setBorder(null);
         pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
 
         lblgen.setBackground(new java.awt.Color(51, 51, 51));
         lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblgen.setForeground(new java.awt.Color(255, 255, 255));
         lblgen.setText("Male");
-        lblgen.setBorder(null);
         pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
         lbldob.setEditable(false);
@@ -385,7 +440,6 @@ public class welcome extends javax.swing.JFrame {
         lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lbldob.setForeground(new java.awt.Color(255, 255, 255));
         lbldob.setText("12/12/1999");
-        lbldob.setBorder(null);
         pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
@@ -856,43 +910,6 @@ public class welcome extends javax.swing.JFrame {
 
         hh1.add(fav, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
-        set.setBackground(new java.awt.Color(51, 51, 51));
-        set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        set.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        set.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Settings :");
-        set.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jButton1.setText("Change Password");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        set.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 130, 30));
-
-        sww.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
-        sww.setForeground(new java.awt.Color(255, 255, 255));
-        sww.setText("Start with Windows");
-        sww.setOpaque(false);
-        sww.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                swwMouseClicked(evt);
-            }
-        });
-        sww.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                swwActionPerformed(evt);
-            }
-        });
-        set.add(sww, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        hh1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
         about.setBackground(new java.awt.Color(51, 51, 51));
         about.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         about.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1170,6 +1187,7 @@ Color ch = new Color(102, 140, 255);
         off();
         lblset.setBackground(ch);
         set.setVisible(true);
+        qrc();
     }//GEN-LAST:event_lblsetMouseClicked
 
     private void lblsetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblsetMouseEntered
@@ -1782,14 +1800,12 @@ Color ch = new Color(102, 140, 255);
                 }
             }
             String s1 = FileSystemView.getFileSystemView().getSystemDisplayName(fc.getCurrentDirectory());
-            
+
             if (fc.getCurrentDirectory().getParent() == null) {
                 tb1.addRow(new Object[]{s1, fc.getCurrentDirectory()});
                 addfav("folder", s1 + "=" + fc.getCurrentDirectory());
-            }
-            else
-            {
-                 tb1.addRow(new Object[]{fc.getCurrentDirectory(), fc.getCurrentDirectory()});
+            } else {
+                tb1.addRow(new Object[]{fc.getCurrentDirectory(), fc.getCurrentDirectory()});
                 addfav("folder", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
             }
         }
@@ -1807,9 +1823,15 @@ Color ch = new Color(102, 140, 255);
                     return;
                 }
             }
-            tb2.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
+            String s1 = FileSystemView.getFileSystemView().getSystemDisplayName(fc.getCurrentDirectory());
 
-            addfav("audio", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            if (fc.getCurrentDirectory().getParent() == null) {
+                tb2.addRow(new Object[]{s1, fc.getCurrentDirectory()});
+                addfav("audio", s1 + "=" + fc.getCurrentDirectory());
+            } else {
+                tb2.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
+                addfav("audio", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            }
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -1825,8 +1847,15 @@ Color ch = new Color(102, 140, 255);
                     return;
                 }
             }
-            tb3.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
-            addfav("video", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            String s1 = FileSystemView.getFileSystemView().getSystemDisplayName(fc.getCurrentDirectory());
+
+            if (fc.getCurrentDirectory().getParent() == null) {
+                tb3.addRow(new Object[]{s1, fc.getCurrentDirectory()});
+                addfav("video", s1 + "=" + fc.getCurrentDirectory());
+            } else {
+                tb3.addRow(new Object[]{fc.getCurrentDirectory().getName(), fc.getCurrentDirectory()});
+                addfav("video", fc.getCurrentDirectory().getName() + "=" + fc.getCurrentDirectory());
+            }
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -2135,6 +2164,7 @@ Color ch = new Color(102, 140, 255);
     private javax.swing.JLabel lblwel;
     private javax.swing.JPanel pnlacc;
     private javax.swing.JPanel pnltts;
+    private javax.swing.JLabel qr;
     private javax.swing.JPanel set;
     private javax.swing.JButton ss;
     private javax.swing.JCheckBox sww;

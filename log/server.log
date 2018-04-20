@@ -3761,3 +3761,417 @@
 2018-04-19 03:34:46,971 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Starting power-on self test.
 2018-04-19 03:34:46,971 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Power-on self test complete.
 2018-04-19 03:34:46,972 [AWT-EventQueue-0] INFO  marytts.main Startup complete.
+2018-04-19 11:28:02,916 [AWT-EventQueue-0] INFO  marytts.main Mary starting up...
+2018-04-19 11:28:02,925 [AWT-EventQueue-0] INFO  marytts.main Specification version 5.2
+2018-04-19 11:28:02,925 [AWT-EventQueue-0] INFO  marytts.main Implementation version unknown
+2018-04-19 11:28:02,925 [AWT-EventQueue-0] INFO  marytts.main Running on a Java 1.8.0_60 implementation by Oracle Corporation, on a Windows 10 platform (amd64, 10.0)
+2018-04-19 11:28:03,341 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2018-04-19 11:28:03,375 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2018-04-19 11:28:03,376 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2018-04-19 11:28:03,377 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2018-04-19 11:28:03,378 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2018-04-19 11:28:03,390 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2018-04-19 11:28:03,391 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2018-04-19 11:28:03,392 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2018-04-19 11:28:03,392 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2018-04-19 11:28:03,395 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2018-04-19 11:28:03,407 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2018-04-19 11:28:03,408 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2018-04-19 11:28:03,408 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2018-04-19 11:28:03,420 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2018-04-19 11:28:03,421 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2018-04-19 11:28:03,421 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2018-04-19 11:28:03,423 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2018-04-19 11:28:03,424 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.JTokeniser'
+2018-04-19 11:28:03,425 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Preprocess'
+2018-04-19 11:28:03,775 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_US.)'
+2018-04-19 11:28:03,776 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_US.txt' for locale 'en_US' does not exist. Ignoring.
+2018-04-19 11:28:03,819 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_GB.)'
+2018-04-19 11:28:03,820 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_GB.txt' for locale 'en_GB' does not exist. Ignoring.
+2018-04-19 11:28:03,840 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Prosody'
+2018-04-19 11:28:03,840 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SimplePhoneme2AP(en_US)'
+2018-04-19 11:28:03,841 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.PronunciationModel'
+2018-04-19 11:28:03,841 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.OpenNLPPosTagger(en,en.pos)'
+2018-04-19 11:28:03,846 [AWT-EventQueue-0] INFO  marytts.UnitSelectionSynthesizer started.
+2018-04-19 11:28:03,847 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2018-04-19 11:28:03,847 [AWT-EventQueue-0] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2018-04-19 11:28:03,875 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:28:03,940 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:28:04,052 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-rms-hsmm': male, locale en_US
+2018-04-19 11:28:04,052 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_US: cmu-rms-hsmm (desire 0)
+2018-04-19 11:28:04,070 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:28:04,136 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:28:04,192 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-slt-hsmm': female, locale en_US
+2018-04-19 11:28:04,204 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:28:04,334 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:28:04,392 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `dfki-poppy-hsmm': female, locale en_GB
+2018-04-19 11:28:04,392 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_GB: dfki-poppy-hsmm (desire 0)
+2018-04-19 11:28:04,392 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer started.
+2018-04-19 11:28:04,392 [AWT-EventQueue-0] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2018-04-19 11:28:04,392 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2018-04-19 11:28:04,418 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Power-on self test complete.
+2018-04-19 11:28:04,419 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2018-04-19 11:28:04,419 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Starting power-on self test.
+2018-04-19 11:28:04,425 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 11:28:04,426 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 11:28:04,426 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Power-on self test complete.
+2018-04-19 11:28:04,877 [AWT-EventQueue-0] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2018-04-19 11:28:04,877 [AWT-EventQueue-0] INFO  marytts.SableParser Starting power-on self test.
+2018-04-19 11:28:04,877 [AWT-EventQueue-0] INFO  marytts.SableParser Power-on self test complete.
+2018-04-19 11:28:04,926 [AWT-EventQueue-0] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2018-04-19 11:28:04,926 [AWT-EventQueue-0] INFO  marytts.SSMLParser Starting power-on self test.
+2018-04-19 11:28:04,926 [AWT-EventQueue-0] INFO  marytts.SSMLParser Power-on self test complete.
+2018-04-19 11:28:04,990 [AWT-EventQueue-0] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2018-04-19 11:28:04,991 [AWT-EventQueue-0] INFO  marytts.APMLParser Starting power-on self test.
+2018-04-19 11:28:04,991 [AWT-EventQueue-0] INFO  marytts.APMLParser Power-on self test complete.
+2018-04-19 11:28:05,019 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2018-04-19 11:28:05,019 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Starting power-on self test.
+2018-04-19 11:28:05,019 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Power-on self test complete.
+2018-04-19 11:28:05,019 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2018-04-19 11:28:05,066 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 11:28:05,066 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 11:28:05,067 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2018-04-19 11:28:05,067 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2018-04-19 11:28:05,067 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2018-04-19 11:28:05,070 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2018-04-19 11:28:05,070 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Starting power-on self test.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Power-on self test complete.
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Module started (REALISED_ACOUSTPARAMS->PRAAT_TEXTGRID, locale null).
+2018-04-19 11:28:05,071 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2018-04-19 11:28:05,072 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2018-04-19 11:28:05,072 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale en).
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.Preprocess Module started (TOKENS->WORDS, locale en).
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.Preprocess Starting power-on self test.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.Preprocess Power-on self test complete.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_US).
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_GB).
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 11:28:05,081 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 11:28:05,084 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale en).
+2018-04-19 11:28:05,084 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 11:28:05,084 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 11:28:05,085 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Module started (SIMPLEPHONEMES->ACOUSTPARAMS, locale en_US).
+2018-04-19 11:28:05,085 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Starting power-on self test.
+2018-04-19 11:28:05,086 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Power-on self test complete.
+2018-04-19 11:28:05,086 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale en).
+2018-04-19 11:28:05,086 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 11:28:05,086 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 11:28:05,086 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Module started (WORDS->PARTSOFSPEECH, locale en).
+2018-04-19 11:28:05,989 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Starting power-on self test.
+2018-04-19 11:28:05,989 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Power-on self test complete.
+2018-04-19 11:28:05,990 [AWT-EventQueue-0] INFO  marytts.main Startup complete.
+2018-04-19 11:29:57,393 [Thread-11] INFO  marytts.main Shutting down modules...
+2018-04-19 11:29:57,393 [Thread-11] INFO  marytts.Synthesis Module shut down.
+2018-04-19 11:29:57,393 [Thread-11] INFO  marytts.TextToMaryXML Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.SableParser Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.SSMLParser Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.APMLParser Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.EmotionmlParser Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.JTokeniser Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.DummyTokens2Words Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.Prosody Module shut down.
+2018-04-19 11:29:57,394 [Thread-11] INFO  marytts.PronunciationModel Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.TargetFeatureLister Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.TargetFeatureLister Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.AcousticModeller Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.Realised acoustparams extractor Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.Realised durations extractor Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.HTSEngine Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.Praat TextGrid generator Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.JTokeniser Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.Preprocess Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.JPhonemiser Module shut down.
+2018-04-19 11:29:57,395 [Thread-11] INFO  marytts.JPhonemiser Module shut down.
+2018-04-19 11:29:57,396 [Thread-11] INFO  marytts.Prosody Module shut down.
+2018-04-19 11:29:57,396 [Thread-11] INFO  marytts.SimplePhoneme2AP Module shut down.
+2018-04-19 11:29:57,396 [Thread-11] INFO  marytts.PronunciationModel Module shut down.
+2018-04-19 11:29:57,396 [Thread-11] INFO  marytts.OpenNLPPosTagger Module shut down.
+2018-04-19 11:29:57,396 [Thread-11] INFO  marytts.main Shutdown complete.
+2018-04-19 11:38:04,137 [AWT-EventQueue-0] INFO  marytts.main Mary starting up...
+2018-04-19 11:38:04,139 [AWT-EventQueue-0] INFO  marytts.main Specification version 5.2
+2018-04-19 11:38:04,139 [AWT-EventQueue-0] INFO  marytts.main Implementation version unknown
+2018-04-19 11:38:04,139 [AWT-EventQueue-0] INFO  marytts.main Running on a Java 1.8.0_60 implementation by Oracle Corporation, on a Windows 10 platform (amd64, 10.0)
+2018-04-19 11:38:04,214 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2018-04-19 11:38:04,217 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2018-04-19 11:38:04,217 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2018-04-19 11:38:04,218 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2018-04-19 11:38:04,218 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2018-04-19 11:38:04,219 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2018-04-19 11:38:04,219 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2018-04-19 11:38:04,220 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2018-04-19 11:38:04,220 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2018-04-19 11:38:04,223 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2018-04-19 11:38:04,225 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2018-04-19 11:38:04,225 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2018-04-19 11:38:04,226 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2018-04-19 11:38:04,227 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2018-04-19 11:38:04,227 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2018-04-19 11:38:04,228 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2018-04-19 11:38:04,229 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2018-04-19 11:38:04,230 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.JTokeniser'
+2018-04-19 11:38:04,230 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Preprocess'
+2018-04-19 11:38:04,355 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_US.)'
+2018-04-19 11:38:04,356 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_US.txt' for locale 'en_US' does not exist. Ignoring.
+2018-04-19 11:38:04,394 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_GB.)'
+2018-04-19 11:38:04,394 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_GB.txt' for locale 'en_GB' does not exist. Ignoring.
+2018-04-19 11:38:04,417 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Prosody'
+2018-04-19 11:38:04,417 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SimplePhoneme2AP(en_US)'
+2018-04-19 11:38:04,418 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.PronunciationModel'
+2018-04-19 11:38:04,419 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.OpenNLPPosTagger(en,en.pos)'
+2018-04-19 11:38:04,422 [AWT-EventQueue-0] INFO  marytts.UnitSelectionSynthesizer started.
+2018-04-19 11:38:04,423 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2018-04-19 11:38:04,423 [AWT-EventQueue-0] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2018-04-19 11:38:04,435 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:38:04,484 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:38:04,579 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-rms-hsmm': male, locale en_US
+2018-04-19 11:38:04,579 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_US: cmu-rms-hsmm (desire 0)
+2018-04-19 11:38:04,581 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:38:04,605 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:38:04,684 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-slt-hsmm': female, locale en_US
+2018-04-19 11:38:04,686 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 11:38:04,722 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 11:38:04,767 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `dfki-poppy-hsmm': female, locale en_GB
+2018-04-19 11:38:04,767 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_GB: dfki-poppy-hsmm (desire 0)
+2018-04-19 11:38:04,767 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer started.
+2018-04-19 11:38:04,767 [AWT-EventQueue-0] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2018-04-19 11:38:04,768 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2018-04-19 11:38:04,770 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Power-on self test complete.
+2018-04-19 11:38:04,770 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2018-04-19 11:38:04,770 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Starting power-on self test.
+2018-04-19 11:38:04,775 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 11:38:04,775 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 11:38:04,775 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Power-on self test complete.
+2018-04-19 11:38:04,906 [AWT-EventQueue-0] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2018-04-19 11:38:04,906 [AWT-EventQueue-0] INFO  marytts.SableParser Starting power-on self test.
+2018-04-19 11:38:04,906 [AWT-EventQueue-0] INFO  marytts.SableParser Power-on self test complete.
+2018-04-19 11:38:05,056 [AWT-EventQueue-0] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2018-04-19 11:38:05,056 [AWT-EventQueue-0] INFO  marytts.SSMLParser Starting power-on self test.
+2018-04-19 11:38:05,056 [AWT-EventQueue-0] INFO  marytts.SSMLParser Power-on self test complete.
+2018-04-19 11:38:05,098 [AWT-EventQueue-0] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2018-04-19 11:38:05,098 [AWT-EventQueue-0] INFO  marytts.APMLParser Starting power-on self test.
+2018-04-19 11:38:05,098 [AWT-EventQueue-0] INFO  marytts.APMLParser Power-on self test complete.
+2018-04-19 11:38:05,123 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2018-04-19 11:38:05,123 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Starting power-on self test.
+2018-04-19 11:38:05,124 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Power-on self test complete.
+2018-04-19 11:38:05,124 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2018-04-19 11:38:05,155 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 11:38:05,155 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 11:38:05,155 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2018-04-19 11:38:05,156 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2018-04-19 11:38:05,156 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2018-04-19 11:38:05,164 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Starting power-on self test.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Power-on self test complete.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Starting power-on self test.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Power-on self test complete.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Module started (REALISED_ACOUSTPARAMS->PRAAT_TEXTGRID, locale null).
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2018-04-19 11:38:05,165 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale en).
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.Preprocess Module started (TOKENS->WORDS, locale en).
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.Preprocess Starting power-on self test.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.Preprocess Power-on self test complete.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_US).
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_GB).
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 11:38:05,175 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 11:38:05,178 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale en).
+2018-04-19 11:38:05,178 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 11:38:05,178 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 11:38:05,179 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Module started (SIMPLEPHONEMES->ACOUSTPARAMS, locale en_US).
+2018-04-19 11:38:05,179 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Starting power-on self test.
+2018-04-19 11:38:05,180 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Power-on self test complete.
+2018-04-19 11:38:05,180 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale en).
+2018-04-19 11:38:05,180 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 11:38:05,180 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 11:38:05,180 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Module started (WORDS->PARTSOFSPEECH, locale en).
+2018-04-19 11:38:05,778 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Starting power-on self test.
+2018-04-19 11:38:05,778 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Power-on self test complete.
+2018-04-19 11:38:05,778 [AWT-EventQueue-0] INFO  marytts.main Startup complete.
+2018-04-19 11:40:22,585 [Thread-11] INFO  marytts.main Shutting down modules...
+2018-04-19 11:40:22,586 [Thread-11] INFO  marytts.Synthesis Module shut down.
+2018-04-19 11:40:22,586 [Thread-11] INFO  marytts.TextToMaryXML Module shut down.
+2018-04-19 11:40:22,587 [Thread-11] INFO  marytts.SableParser Module shut down.
+2018-04-19 11:40:22,587 [Thread-11] INFO  marytts.SSMLParser Module shut down.
+2018-04-19 11:40:22,587 [Thread-11] INFO  marytts.APMLParser Module shut down.
+2018-04-19 11:40:22,587 [Thread-11] INFO  marytts.EmotionmlParser Module shut down.
+2018-04-19 11:40:22,588 [Thread-11] INFO  marytts.JTokeniser Module shut down.
+2018-04-19 11:40:22,588 [Thread-11] INFO  marytts.DummyTokens2Words Module shut down.
+2018-04-19 11:40:22,588 [Thread-11] INFO  marytts.Prosody Module shut down.
+2018-04-19 11:40:22,588 [Thread-11] INFO  marytts.PronunciationModel Module shut down.
+2018-04-19 11:40:22,588 [Thread-11] INFO  marytts.TargetFeatureLister Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.TargetFeatureLister Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.AcousticModeller Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.Realised acoustparams extractor Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.Realised durations extractor Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.HTSEngine Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.Praat TextGrid generator Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.JTokeniser Module shut down.
+2018-04-19 11:40:22,589 [Thread-11] INFO  marytts.Preprocess Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.JPhonemiser Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.JPhonemiser Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.Prosody Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.SimplePhoneme2AP Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.PronunciationModel Module shut down.
+2018-04-19 11:40:22,590 [Thread-11] INFO  marytts.OpenNLPPosTagger Module shut down.
+2018-04-19 11:40:22,591 [Thread-11] INFO  marytts.main Shutdown complete.
+2018-04-19 12:17:10,329 [AWT-EventQueue-0] INFO  marytts.main Mary starting up...
+2018-04-19 12:17:10,331 [AWT-EventQueue-0] INFO  marytts.main Specification version 5.2
+2018-04-19 12:17:10,331 [AWT-EventQueue-0] INFO  marytts.main Implementation version unknown
+2018-04-19 12:17:10,331 [AWT-EventQueue-0] INFO  marytts.main Running on a Java 1.8.0_60 implementation by Oracle Corporation, on a Windows 10 platform (amd64, 10.0)
+2018-04-19 12:17:10,414 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2018-04-19 12:17:10,417 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2018-04-19 12:17:10,417 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2018-04-19 12:17:10,418 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2018-04-19 12:17:10,418 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2018-04-19 12:17:10,418 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2018-04-19 12:17:10,419 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2018-04-19 12:17:10,419 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2018-04-19 12:17:10,420 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2018-04-19 12:17:10,423 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2018-04-19 12:17:10,424 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2018-04-19 12:17:10,425 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2018-04-19 12:17:10,425 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2018-04-19 12:17:10,429 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2018-04-19 12:17:10,430 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2018-04-19 12:17:10,430 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2018-04-19 12:17:10,431 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2018-04-19 12:17:10,432 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.JTokeniser'
+2018-04-19 12:17:10,433 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Preprocess'
+2018-04-19 12:17:10,574 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_US.)'
+2018-04-19 12:17:10,575 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_US.txt' for locale 'en_US' does not exist. Ignoring.
+2018-04-19 12:17:10,609 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_GB.)'
+2018-04-19 12:17:10,610 [AWT-EventQueue-0] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_GB.txt' for locale 'en_GB' does not exist. Ignoring.
+2018-04-19 12:17:10,639 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Prosody'
+2018-04-19 12:17:10,639 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SimplePhoneme2AP(en_US)'
+2018-04-19 12:17:10,640 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.PronunciationModel'
+2018-04-19 12:17:10,640 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.OpenNLPPosTagger(en,en.pos)'
+2018-04-19 12:17:10,646 [AWT-EventQueue-0] INFO  marytts.UnitSelectionSynthesizer started.
+2018-04-19 12:17:10,647 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2018-04-19 12:17:10,647 [AWT-EventQueue-0] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2018-04-19 12:17:10,659 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 12:17:10,740 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 12:17:10,832 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-rms-hsmm': male, locale en_US
+2018-04-19 12:17:10,832 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_US: cmu-rms-hsmm (desire 0)
+2018-04-19 12:17:10,835 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 12:17:10,862 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 12:17:10,926 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `cmu-slt-hsmm': female, locale en_US
+2018-04-19 12:17:10,929 [AWT-EventQueue-0] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2018-04-19 12:17:10,963 [AWT-EventQueue-0] INFO  marytts.HMMData Loading GV Model Set:
+2018-04-19 12:17:11,020 [AWT-EventQueue-0] INFO  marytts.Voice Registering voice `dfki-poppy-hsmm': female, locale en_GB
+2018-04-19 12:17:11,020 [AWT-EventQueue-0] INFO  marytts.Voice New default voice for locale en_GB: dfki-poppy-hsmm (desire 0)
+2018-04-19 12:17:11,020 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer started.
+2018-04-19 12:17:11,020 [AWT-EventQueue-0] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2018-04-19 12:17:11,021 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2018-04-19 12:17:11,023 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Power-on self test complete.
+2018-04-19 12:17:11,023 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2018-04-19 12:17:11,023 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Starting power-on self test.
+2018-04-19 12:17:11,029 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 12:17:11,029 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2018-04-19 12:17:11,029 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Power-on self test complete.
+2018-04-19 12:17:11,166 [AWT-EventQueue-0] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2018-04-19 12:17:11,166 [AWT-EventQueue-0] INFO  marytts.SableParser Starting power-on self test.
+2018-04-19 12:17:11,166 [AWT-EventQueue-0] INFO  marytts.SableParser Power-on self test complete.
+2018-04-19 12:17:11,210 [AWT-EventQueue-0] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2018-04-19 12:17:11,211 [AWT-EventQueue-0] INFO  marytts.SSMLParser Starting power-on self test.
+2018-04-19 12:17:11,211 [AWT-EventQueue-0] INFO  marytts.SSMLParser Power-on self test complete.
+2018-04-19 12:17:11,259 [AWT-EventQueue-0] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2018-04-19 12:17:11,259 [AWT-EventQueue-0] INFO  marytts.APMLParser Starting power-on self test.
+2018-04-19 12:17:11,259 [AWT-EventQueue-0] INFO  marytts.APMLParser Power-on self test complete.
+2018-04-19 12:17:11,282 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2018-04-19 12:17:11,282 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Starting power-on self test.
+2018-04-19 12:17:11,282 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Power-on self test complete.
+2018-04-19 12:17:11,282 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2018-04-19 12:17:11,306 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 12:17:11,306 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 12:17:11,306 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2018-04-19 12:17:11,306 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2018-04-19 12:17:11,306 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2018-04-19 12:17:11,310 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Starting power-on self test.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Power-on self test complete.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Starting power-on self test.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Power-on self test complete.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Module started (REALISED_ACOUSTPARAMS->PRAAT_TEXTGRID, locale null).
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2018-04-19 12:17:11,311 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale en).
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.Preprocess Module started (TOKENS->WORDS, locale en).
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.Preprocess Starting power-on self test.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.Preprocess Power-on self test complete.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_US).
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_GB).
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Starting power-on self test.
+2018-04-19 12:17:11,320 [AWT-EventQueue-0] INFO  marytts.JPhonemiser Power-on self test complete.
+2018-04-19 12:17:11,323 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale en).
+2018-04-19 12:17:11,323 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2018-04-19 12:17:11,323 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2018-04-19 12:17:11,324 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Module started (SIMPLEPHONEMES->ACOUSTPARAMS, locale en_US).
+2018-04-19 12:17:11,324 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Starting power-on self test.
+2018-04-19 12:17:11,325 [AWT-EventQueue-0] INFO  marytts.SimplePhoneme2AP Power-on self test complete.
+2018-04-19 12:17:11,325 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale en).
+2018-04-19 12:17:11,325 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2018-04-19 12:17:11,325 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2018-04-19 12:17:11,325 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Module started (WORDS->PARTSOFSPEECH, locale en).
+2018-04-19 12:17:11,984 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Starting power-on self test.
+2018-04-19 12:17:11,984 [AWT-EventQueue-0] INFO  marytts.OpenNLPPosTagger Power-on self test complete.
+2018-04-19 12:17:11,984 [AWT-EventQueue-0] INFO  marytts.main Startup complete.

@@ -5,6 +5,7 @@
  */
 package ai;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
@@ -12,29 +13,29 @@ import javax.swing.JOptionPane;
  *
  * @author THANOS
  */
-public class remindedit extends javax.swing.JFrame {
+public class remindnew extends javax.swing.JFrame {
 
     /**
      * Creates new form remindedit
      */
     String aa[];
     JMake jj;
-    public remindedit(String a[],JMake jj) {
+    public remindnew(String a[],JMake jj) {
         this.jj=jj;
         initComponents();
         aa=a;
-        if (aa[5].length() == 1) {
-            hr.setSelectedItem("0" + aa[5]);
+        this.setLocationRelativeTo(null);
+        if (aa[2].length() == 1) {
+            hr.setSelectedItem("0" + aa[2]);
         } else {
-            hr.setSelectedItem(aa[5]);
+            hr.setSelectedItem(aa[2]);
         }
-        if (aa[6].length() == 1) {
-            min.setSelectedItem("0" + aa[6]);
+        if (aa[3].length() == 1) {
+            min.setSelectedItem("0" + aa[3]);
         } else {
-            min.setSelectedItem(aa[6]);
+            min.setSelectedItem(aa[3]);
         }
         txt.setText(aa[7]);
-        this.setLocationRelativeTo(null);
         
         int y = LocalDateTime.now().getYear();
 
@@ -46,13 +47,10 @@ public class remindedit extends javax.swing.JFrame {
         }
         for (int i = y; i <= y+1; i++) {
             yy.addItem(i + "");
-        }
-        System.out.println(aa[2]);
-        
-        mm.setSelectedItem(aa[3]);
-        yy.setSelectedItem(aa[4]);
-        dd.setSelectedItem(aa[2]);
-        
+        }        
+        yy.setSelectedItem(aa[6]);
+        mm.setSelectedItem(aa[5]);
+        dd.setSelectedItem(aa[4]);
     }
 
     /**
@@ -78,7 +76,7 @@ public class remindedit extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setTitle("Edit Reminder");
+        setTitle("Set a Reminder");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -202,13 +200,13 @@ public class remindedit extends javax.swing.JFrame {
             bb.open();
             String tm=hr.getSelectedItem().toString()+":"+min.getSelectedItem().toString();
             String dt=dd.getSelectedItem().toString()+"/"+mm.getSelectedItem().toString()+"/"+yy.getSelectedItem().toString();
-            System.out.println("update reminder set remind_date='"+dt+"',remind_time='"+tm+"' , remind_text='"+txt.getText()+"' where remind_id ='"+aa[1]+"'");
-            bb.insertData("update reminder set remind_date='"+dt+"', remind_time='"+tm+"' , remind_text='"+txt.getText()+"' where remind_id ='"+aa[1]+"'");
+           // System.out.println("update reminder set remind_date='"+dt+"',remind_time='"+tm+"' , remind_text='"+txt.getText()+"' where remind_id ='"+aa[1]+"'");
+            bb.insertData("insert into reminder values('"+aa[1]+"','"+dt+"','"+tm+"','"+txt.getText()+"')");
             jj.changeRem(new String[]{aa[0],aa[1],dt,tm,txt.getText()});
             bb.close();
             this.setVisible(false);
         }
-        catch(Exception ex){JOptionPane.showMessageDialog(null, "Failed to update reminder.","Error",JOptionPane.OK_OPTION);}
+        catch(Exception ex){JOptionPane.showMessageDialog(null, "Failed to insert reminder.","Error",JOptionPane.OK_OPTION);}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -317,14 +315,17 @@ public class remindedit extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(remindedit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(remindnew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(remindedit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(remindnew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(remindedit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(remindnew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(remindedit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(remindnew.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
