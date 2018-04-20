@@ -231,6 +231,8 @@ public class test extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
  MenuItem lis;
+    SystemTray tray;
+     TrayIcon trayIcon;
 private void task()
 {
 if (!SystemTray.isSupported()) {
@@ -239,8 +241,8 @@ if (!SystemTray.isSupported()) {
         }
         final PopupMenu popup = new PopupMenu();
         java.awt.Image image = Toolkit.getDefaultToolkit().getImage("assets/sys.png");
-        final TrayIcon trayIcon =  new TrayIcon(image);
-        final SystemTray tray = SystemTray.getSystemTray();
+       trayIcon  =  new TrayIcon(image);
+     tray = SystemTray.getSystemTray();
        
         // Create a pop-up menu components
         MenuItem wel = new MenuItem("Welcome");
@@ -396,6 +398,7 @@ if (!SystemTray.isSupported()) {
                
                 
                 w.setVisible(true);
+                tray.remove(trayIcon);
                 this.setVisible(false);
             } catch (Exception ex) {
                 Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
