@@ -33,6 +33,7 @@ and
 android
 angreji
 anna
+any
 app
 apps
 arijit
@@ -58,6 +59,7 @@ chammak
 chammakak
 charraiya
 chat
+child
 chrome
 chutia
 chutiya
@@ -110,6 +112,7 @@ gujrat
 health
 hi
 ho
+ibps
 images
 in
 instagram
@@ -118,6 +121,8 @@ irctc
 iron
 is
 java
+kapoor's
+kareena
 keyboard
 kits
 know IP
@@ -138,6 +143,7 @@ meri
 modi
 movie
 movies
+movies
 mujra
 mujra Chikni
 music
@@ -146,6 +152,7 @@ my SQL
 mysql
 narendra
 news
+news news news
 note
 notepad
 notes
@@ -168,6 +175,7 @@ powerless
 prem
 qurbani
 raha
+regarding
 remind
 reminder
 reminders
@@ -202,6 +210,7 @@ sunn
 technology
 teel
 tell
+tell news
 teri
 the
 this PC
@@ -224,6 +233,7 @@ was
 what
 whatsapp
 where
+where Barack Obama born
 windows
 wordnet
 world
@@ -231,6 +241,8 @@ x
 ye
 ye_duniya
 youtube
-tell news
-news news news
-where Barack Obama born
+wikipedia
+who
+are
+hell
+you

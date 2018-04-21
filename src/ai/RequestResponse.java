@@ -8,14 +8,14 @@ import org.json.simple.*;
 import org.json.simple.parser.*;
 
 public class RequestResponse {
-
+//any news regarding kareena kapoor's child
     //Variable
     private final String USER_AGENT = "Mozilla/5.0";
    //private final String server_url = "http://gs98.ddns.net/"; /*deploy*/
     //private final String server_url = "http://103.109.216.66/"; 
  //  private final String server_url = "http://aiproject7579.ddns.net/";
-     private final String server_url = "http://ansh998.ddns.net/";
- //private final String server_url = "http://localhost/"; /*tester*/
+ //    private final String server_url = "http://ansh998.ddns.net/";
+ private final String server_url = "http://localhost/"; /*tester*/
     private StringBuffer response = new StringBuffer();
     private String inputLine;
     private int timeout = 10000;

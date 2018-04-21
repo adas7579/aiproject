@@ -1278,7 +1278,7 @@ Color ch = new Color(102, 140, 255);
 
         //off();
         lbllog.setBackground(ch);
-        int a = JOptionPane.showConfirmDialog(null, "Are you sure want to logout?");
+        int a = JOptionPane.showConfirmDialog(this, "Are you sure want to logout?");
 
         if (a == 0) {
 
@@ -1504,7 +1504,7 @@ Color ch = new Color(102, 140, 255);
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        int a = JOptionPane.showConfirmDialog(null, "Quit?", "Confirm Action", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(this, "Quit?", "Confirm Action", JOptionPane.YES_NO_OPTION);
         if (a == JOptionPane.OK_OPTION) {
 
             String s = "";
