@@ -554,7 +554,7 @@ if (!SystemTray.isSupported()) {
         if (output.contains("note") && (output.contains("make") || output.contains("type")|| output.contains("create"))) {
             nt = 1;
             Instant in = Instant.now();
-            String timeStamp = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss").format(new Date());
+            String timeStamp = new SimpleDateFormat("dd-MMM-yyyy").format(new Date());
             nn = new notenew(new String[]{uid, in.toString(), timeStamp, ""});
             nn.jj = jj;
             nn.user = detail;

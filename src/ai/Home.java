@@ -262,7 +262,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_forgotMouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+     
+       
+           
+          
         String s = "";
         try {
             Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
@@ -319,6 +322,8 @@ public class Home extends javax.swing.JFrame {
 //                    bb.newuser(new String[]{txtemail.getText(), txtpss.getText(), s});
 //                    bb.close();
                 }
+                   
+              
                     welcome w = new welcome(i);
                     w.pass = txtpss.getText();
                     w.setVisible(true);

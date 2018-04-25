@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -26,11 +27,11 @@ public class Options extends javax.swing.JFrame {
     DefaultTableModel tm;
     ArrayList arr = new ArrayList();
 
-    public Options(ArrayList arr) {
+    public Options(ArrayList arr,String cmd) {
         this.arr = arr;
-
+            
         initComponents();
-
+qry.setText(cmd);
         this.setLocationRelativeTo(null);
         this.pack();
 
@@ -62,6 +63,8 @@ try{
         tb = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         desc = new javax.swing.JTextArea();
+        qry = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setTitle("Choose....");
         setAlwaysOnTop(true);
@@ -100,17 +103,28 @@ try{
         });
         jScrollPane1.setViewportView(tb);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 470, 370));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 37, 470, 330));
 
+        desc.setEditable(false);
         desc.setColumns(20);
         desc.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         desc.setLineWrap(true);
         desc.setRows(3);
         desc.setWrapStyleWord(true);
-        desc.setBorder(null);
         jScrollPane2.setViewportView(desc);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, 470, 100));
+
+        qry.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        getContentPane().add(qry, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 320, 30));
+
+        jButton1.setText("Search Web");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 130, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -141,6 +155,18 @@ desc.append("\nLocation : "+tb.getValueAt(tb.getSelectedRow(), 2).toString());
         }
 
     }//GEN-LAST:event_tbMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+ try {
+         JMake jj=new JMake();
+        JSONObject tt=jj.aiResponse("desktop:"+qry.getText());
+        Aires ai=new Aires(tt);
+        ai.setVisible(true);
+        this.setVisible(false);
+        } catch (Exception ex) {
+            Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,8 +205,10 @@ desc.append("\nLocation : "+tb.getValueAt(tb.getSelectedRow(), 2).toString());
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea desc;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel qry;
     public javax.swing.JTable tb;
     // End of variables declaration//GEN-END:variables
 }

@@ -396,7 +396,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd);
+                Options op = new Options(asd,cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -438,7 +438,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd);
+                Options op = new Options(asd,cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -484,7 +484,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd);
+                Options op = new Options(asd,cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -524,7 +524,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd);
+                Options op = new Options(asd,cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -559,7 +559,7 @@ public class Windows {
             }
 
             if (ar.size() > 1) {
-                Options op = new Options(ar);
+                Options op = new Options(ar,cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -820,7 +820,7 @@ public class Windows {
             return ok;
 
         } else if (ar.size() > 1) {
-            Options op = new Options(ar);
+            Options op = new Options(ar,cmd);
             op.setVisible(true);
             ar.clear();
             String temp[] = {"@#$", "Here's a list of files and apps with similar names."};

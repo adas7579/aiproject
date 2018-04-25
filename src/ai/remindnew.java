@@ -204,7 +204,7 @@ public class remindnew extends javax.swing.JFrame {
             String dt=dd.getSelectedItem().toString()+"/"+mm.getSelectedItem().toString()+"/"+yy.getSelectedItem().toString();
            // System.out.println("update reminder set remind_date='"+dt+"',remind_time='"+tm+"' , remind_text='"+txt.getText()+"' where remind_id ='"+aa[1]+"'");
             bb.insertData("insert into reminder values('"+aa[1]+"','"+dt+"','"+tm+"','"+txt.getText()+"')");
-            jj.changeRem(new String[]{aa[0],aa[1],dt,tm,txt.getText()});
+            jj.InsertRem(new String[]{aa[0],aa[1],dt,tm,txt.getText()});
             bb.close();
             this.setVisible(false);
         }

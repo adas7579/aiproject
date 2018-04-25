@@ -55,6 +55,7 @@ public class alarmedit extends javax.swing.JFrame {
         txt = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
+        setTitle("Edit Alarm");
         setAlwaysOnTop(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

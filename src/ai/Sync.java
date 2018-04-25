@@ -93,13 +93,14 @@ public class Sync extends Thread {
             tt = jj.getRem(ud);
 
             for (int i = 0; i < tt.length; i++) {
-                if (!ar.contains(tt[i].get("remind_id"))) {
-                    ar.add(tt[i].get("remind_id") + "=" + tt[i].get("remind_date") + "=" + tt[i].get("remind_time") + "=" + tt[i].get("remind_text"));
+                //System.out.println(ar.get(i)+"...."+tt[i].get("rem_id"));
+                if (!ar.contains(tt[i].get("rem_id"))) {
+                    ar.add(tt[i].get("rem_id") + "=" + tt[i].get("reminder_date") + "=" + tt[i].get("reminder_time") + "=" + tt[i].get("reminder_text"));
                 }
             }
             bb.insertData("delete from reminder");
             for (int j = 0; j < tt.length; j++) {
-                jj.deleteRem(new String[]{ud, tt[j].get("remind_id").toString()});
+                jj.deleteRem(new String[]{ud, tt[j].get("rem_id").toString()});
             }
             for (int j = 0; j < ar.size(); j++) {
                 String ass[] = ar.get(j).toString().split("=");
@@ -151,7 +152,7 @@ public class Sync extends Thread {
                 bb.insertData("delete from reminder");
                 tt = jj.getRem(ud);
                 for (int j = 0; j < tt.length; j++) {
-                    bb.insertData("insert into reminder values('" + tt[j].get("remind_id").toString() + "','" + tt[j].get("remind_date").toString() + "','" + tt[j].get("remind_time").toString() + "','" + tt[j].get("remind_text").toString() + "')");
+                    bb.insertData("insert into reminder values('" + tt[j].get("rem_id").toString() + "','" + tt[j].get("reminder_date").toString() + "','" + tt[j].get("reminder_time").toString() + "','" + tt[j].get("reminder_text").toString() + "')");
                 }
                 bb.close();
                 }
