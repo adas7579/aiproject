@@ -27,7 +27,7 @@ public class QRCode {
 
 	public  void createCode(String qrCodeData) throws WriterException, IOException,
 			NotFoundException {
-		//qrCodeData = "Hello World!";
+		qrCodeData ="inarco"+qrCodeData;
 		String filePath = "assets/qr.png";
 		String charset = "UTF-8"; // or "ISO-8859-1"
 		Map<EncodeHintType, ErrorCorrectionLevel> hintMap = new HashMap<EncodeHintType, ErrorCorrectionLevel>();

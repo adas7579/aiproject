@@ -62,7 +62,6 @@ public class remem {
             bb.close();
             br.close();
             fr.close();
-
             return s;
 
         } catch (Exception ex) {

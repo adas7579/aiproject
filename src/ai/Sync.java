@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ai;
 
 import java.sql.ResultSet;
@@ -83,7 +78,39 @@ public class Sync extends Thread {
                 String ass[] = ar.get(j).toString().split("=");
                 bb.insertData("insert into notes values('" + ass[0] + "','" + ass[1] + "','" + ass[2] + "')");
             }
-            bb.close();
+            //bb.close();
+
+//            // ------------  REMINDER  -------------
+//            
+//            
+            ar.clear();
+//            bb.open();
+            rs = bb.getData("select * from reminder");
+
+            while (rs.next()) {
+                ar.add(rs.getString("remind_id").toString() + "=" + rs.getString("remind_date").toString() + "=" + rs.getString("remind_time").toString()+ "=" + rs.getString("remind_text").toString());
+            }
+            tt = jj.getRem(ud);
+
+            for (int i = 0; i < tt.length; i++) {
+                if (!ar.contains(tt[i].get("remind_id"))) {
+                    ar.add(tt[i].get("remind_id") + "=" + tt[i].get("remind_date") + "=" + tt[i].get("remind_time") + "=" + tt[i].get("remind_text"));
+                }
+            }
+            bb.insertData("delete from reminder");
+            for (int j = 0; j < tt.length; j++) {
+                jj.deleteRem(new String[]{ud, tt[j].get("remind_id").toString()});
+            }
+            for (int j = 0; j < ar.size(); j++) {
+                String ass[] = ar.get(j).toString().split("=");
+                jj.InsertRem(new String[]{ud, ass[0], ass[1], ass[2], ass[3]});
+            }
+            for (int j = 0; j < ar.size(); j++) {
+                String ass[] = ar.get(j).toString().split("=");
+                bb.insertData("insert into reminder values('" + ass[0] + "','" + ass[1] + "','" + ass[2]  + "','" + ass[3] + "')");
+            }
+            bb.close();            
+            
 
         } catch (Exception ex) {
             Logger.getLogger(Sync.class.getName()).log(Level.SEVERE, null, ex);
@@ -95,12 +122,8 @@ public class Sync extends Thread {
         try {
             while (true) {
                 
-                
                  JSONObject us = jj.getUser(email);
                 if(us.get("sync").toString().equals("1")){
-                
-                
-                
                 
                 DB bb = new DB(ud);
                 
@@ -121,34 +144,21 @@ public class Sync extends Thread {
                 for (int j = 0; j < tt.length; j++) {
                     bb.insertData("insert into notes values('" + tt[j].get("note_id").toString() + "','" + tt[j].get("note_date").toString() + "','" + tt[j].get("note_data").toString() + "')");
                 }
-                bb.close();
-//                
-
-
-
-
+                //bb.close();
+                
+                //  ----------  REMINDER  ------------
+                  //bb.open();
+                bb.insertData("delete from reminder");
+                tt = jj.getRem(ud);
+                for (int j = 0; j < tt.length; j++) {
+                    bb.insertData("insert into reminder values('" + tt[j].get("remind_id").toString() + "','" + tt[j].get("remind_date").toString() + "','" + tt[j].get("remind_time").toString() + "','" + tt[j].get("remind_text").toString() + "')");
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                bb.close();
+                }
                 Thread.sleep(15000);
             }
         } catch (Exception ex) {
             Logger.getLogger(Sync.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
 }

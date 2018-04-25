@@ -192,7 +192,7 @@ public class Home extends javax.swing.JFrame {
                 forgotMouseExited(evt);
             }
         });
-        getContentPane().add(forgot, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 470, 120, -1));
+        getContentPane().add(forgot, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 470, 130, -1));
 
         txtemail.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         txtemail.setForeground(new java.awt.Color(153, 153, 153));

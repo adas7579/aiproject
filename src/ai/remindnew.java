@@ -126,7 +126,9 @@ public class remindnew extends javax.swing.JFrame {
 
         txt.setColumns(20);
         txt.setFont(new java.awt.Font("Segoe UI Historic", 0, 13)); // NOI18N
+        txt.setLineWrap(true);
         txt.setRows(5);
+        txt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txt);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 180, -1));

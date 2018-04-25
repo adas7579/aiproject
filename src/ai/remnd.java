@@ -2,7 +2,7 @@ package ai;
 
 import java.io.*;
 import java.sql.ResultSet;
-import java.time.LocalDate;
+import java.time.*;
 import java.util.ArrayList;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -16,7 +16,7 @@ import javax.sound.sampled.DataLine;
  */
 public class remnd extends Thread {
 
-    int h, m;
+    int h, m, dd, mm, yy;
     AudioInputStream stream;
     AudioFormat format;
     DataLine.Info info;
@@ -36,21 +36,28 @@ public class remnd extends Thread {
                 ArrayList al1 = new ArrayList();
                 ResultSet rs = bb.getData("select * from reminder");
                 while (rs.next()) {
-                    al1.add(rs.getString("remind_time") + "=" + rs.getString("remind_text"));
+                    al1.add(rs.getString("remind_date") + "=" + rs.getString("remind_time") + "=" + rs.getString("remind_text"));
                 }
                 bb.close();
-                h = java.time.LocalTime.now().getHour();
-                m = java.time.LocalTime.now().getMinute();
+                h = LocalTime.now().getHour();
+                m = LocalTime.now().getMinute();
+                dd = LocalDate.now().getDayOfMonth();
+                mm = LocalDate.now().getMonthValue();
+                yy = LocalDate.now().getYear();
 
                 int i = 0;
                 while (i < al1.size()) {
-                    int h1 = Integer.parseInt(al1.get(i).toString().split("=")[0].split(":")[0]);
-                    int m1 = Integer.parseInt(al1.get(i).toString().split("=")[0].split(":")[1]);
-                    if (h == h1 && m == m1) {
+                    int dd1 = Integer.parseInt(al1.get(i).toString().split("=")[0].split("/")[0]);
+                    int mm1 = Integer.parseInt(al1.get(i).toString().split("=")[0].split("/")[1]);
+                    int yy1 = Integer.parseInt(al1.get(i).toString().split("=")[0].split("/")[2]);
+                    int h1 = Integer.parseInt(al1.get(i).toString().split("=")[1].split(":")[0]);
+                    int m1 = Integer.parseInt(al1.get(i).toString().split("=")[1].split(":")[1]);
+
+                    if (dd == dd1 && mm == mm1 && yy == yy1 && h == h1 && m == m1) {
 
                         remind a;
                         ring();
-                        a = new remind(al1.get(i).toString().split("=")[1], clip);
+                        a = new remind(al1.get(i).toString().split("=")[2], clip);
                         a.setVisible(true);
                         Thread.sleep(10000);
                         a.setVisible(false);

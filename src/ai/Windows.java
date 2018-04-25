@@ -345,7 +345,7 @@ public class Windows {
                     d = d + ch;
                 }
             }
-          
+
             ss[1] = String.valueOf(nc.evaluate(d));
             ss[0] = "@#$";
             return ss;
@@ -693,7 +693,7 @@ public class Windows {
             int i = 0, j;
             String ss = "";
 
-            while (!s[i].equalsIgnoreCase("to")) {
+            while (i < s.length && !s[i].equalsIgnoreCase("to")) {
                 i++;
             }
             i++;
@@ -739,6 +739,11 @@ public class Windows {
                         }
                         da = n + ":" + d.getMinutes();
                     }
+                }
+                else {
+                    da = LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();
+                    t = 0;
+                    //ss = "You forgot something.";
                 }
             }
             String ss1[] = new String[2];

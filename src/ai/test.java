@@ -59,7 +59,7 @@ public class test extends javax.swing.JFrame {
             ms = new Main(name, frq);
         }
         try{
-        ob = new SpRecog(this, pp, con, uid,email);
+        ob = new SpRecog(this, pp, con, uid,email,detail);
         }
         catch(Exception e)
         {
@@ -181,6 +181,9 @@ public class test extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 responseKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                responseKeyReleased(evt);
+            }
         });
         getContentPane().add(response, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 200, 30));
         getContentPane().add(lb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 220, 200));
@@ -278,7 +281,7 @@ if (!SystemTray.isSupported()) {
                 JSONObject qw = jj.getUser(detail.get("email").toString());
                 welcome w = new welcome(qw,syn);
                 w.pass = pass;
-               
+               tray.remove(trayIcon);
                 
                 w.setVisible(true);
                 setVisible(false);
@@ -340,7 +343,7 @@ if (!SystemTray.isSupported()) {
             lb.setIcon(new ImageIcon("assets/listening.gif"));
             label.setIcon(new ImageIcon("assets/unmute.png"));
             try {
-                ob = new SpRecog(this, pp, conn, uid,email);
+                ob = new SpRecog(this, pp, conn, uid,email,detail);
                 ob.jj = jj;
                 ob.uid = uid;
                 ob.Reco();
@@ -353,7 +356,7 @@ if (!SystemTray.isSupported()) {
             label.setIcon(new ImageIcon("assets/mute.png"));
             ob.duplex.stopSpeechRecognition();
             ob = null;
-
+            response.setText("");
         }
     }
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -378,8 +381,11 @@ if (!SystemTray.isSupported()) {
                 pp.Write();
 
             }
-            autoComplete.keywords = pp.list;
-
+            response.getDocument().removeDocumentListener(autoComplete);
+            autoComplete=null;
+            autoComplete = new Autocomplete(response, pp.list);         
+            response.getDocument().addDocumentListener(autoComplete);
+            response.getActionMap().put(COMMIT_ACTION, autoComplete.new CommitAction());
             System.out.print(pp.list);
             start(response.getText());
         }
@@ -420,6 +426,10 @@ if (!SystemTray.isSupported()) {
             anime();
         }
     }//GEN-LAST:event_b1MouseEntered
+
+    private void responseKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_responseKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_responseKeyReleased
 
     /**
      * @param args the command line arguments

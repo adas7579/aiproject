@@ -21,9 +21,9 @@ public class SpRecog implements GSpeechResponseListener {
     test njf;
     Windows w = new Windows();
     public String uid;
-    Main ms = new Main();
+    Main ms= null;
     String email,timeStamp, note = "";
-
+    JSONObject detail;
     int cn = 0;
     int nt = 0;
     ArrayList<String> ar = new ArrayList<>();
@@ -32,9 +32,10 @@ public class SpRecog implements GSpeechResponseListener {
     notenew nn;
     JMake jj;
     
-    public SpRecog(test nj, Prefernces pp, ArrayList con,String uid,String email) {
+    public SpRecog(test nj, Prefernces pp, ArrayList con,String uid,String email,JSONObject detail) {
         this.pp = pp;
         njf = nj;
+            this.detail=detail;
         this.uid=uid;
         w.uid = uid;
         this.email=email;
@@ -143,6 +144,7 @@ public class SpRecog implements GSpeechResponseListener {
             String timeStamp = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss").format(new Date());
          nn = new notenew(new String[]{uid, in.toString(), timeStamp, ""});
             nn.jj=jj;
+            nn.user = detail;
             njf.opt.setText("Creating a Note");
             try {
                 ms.sp = njf.opt.getText();

@@ -1401,11 +1401,11 @@ Color ch = new Color(102, 140, 255);
         try {
             int i = jj.UpdateDetails(data);
             if (i == 1) {
-                JOptionPane.showMessageDialog(null, "Details Updated Successfully");
+                JOptionPane.showMessageDialog(this, "Details Updated Successfully");
                 char ffn = lblfull.getText().charAt(0);
                 lblimg.setIcon(new ImageIcon("assets/alpha/" + ffn + ".png"));
             } else {
-                JOptionPane.showMessageDialog(null, "Failed To Update!");
+                JOptionPane.showMessageDialog(this, "Failed To Update!");
                 lblun.setText(data[1]);
                 lblfull.setText(data[2]);
                 lbldob.setText(data[3]);
@@ -1453,7 +1453,7 @@ Color ch = new Color(102, 140, 255);
                     sy.start();
                     synbtn.setText("Turn OFF");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Unable to Turn Off Sync!");
+                    JOptionPane.showMessageDialog(this, "Unable to Turn Off Sync!");
                 }
             } catch (Exception ex) {
                 Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
@@ -1466,7 +1466,7 @@ Color ch = new Color(102, 140, 255);
                     sy.stop();
                     synbtn.setText("Turn ON");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Unable to Turn On Sync!");
+                    JOptionPane.showMessageDialog(this, "Unable to Turn On Sync!");
                 }
             } catch (Exception ex) {
                 Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
@@ -1565,11 +1565,11 @@ Color ch = new Color(102, 140, 255);
         }
 
         try {
-            int a = JOptionPane.showConfirmDialog(null, "Sure to Want to Remove this Device?");
+            int a = JOptionPane.showConfirmDialog(this, "Sure to Want to Remove this Device?");
             if (a == JOptionPane.YES_OPTION) {
                 int y = jj.delDev(devi.getText());
                 if (y == 1) {
-                    JOptionPane.showMessageDialog(null, "Successfully Removed Device!");
+                    JOptionPane.showMessageDialog(this, "Successfully Removed Device!");
                     if (devi.getText().equals(s)) {
                         remem m = new remem();
                         m.clear(js.get("id").toString());
@@ -1578,7 +1578,7 @@ Color ch = new Color(102, 140, 255);
                         getdev();
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Unable To Remove Device!");
+                    JOptionPane.showMessageDialog(this, "Unable To Remove Device!");
                 }
 
             }
@@ -1799,7 +1799,7 @@ Color ch = new Color(102, 140, 255);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             for (int i = 0; i < tb1.getRowCount(); i++) {
                 if (tb1.getValueAt(i, 1).equals(fc.getCurrentDirectory())) {
-                    JOptionPane.showMessageDialog(null, "Directory Already Added!");
+                    JOptionPane.showMessageDialog(this, "Directory Already Added!");
                     return;
                 }
             }
@@ -1823,7 +1823,7 @@ Color ch = new Color(102, 140, 255);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             for (int i = 0; i < tb2.getRowCount(); i++) {
                 if (tb2.getValueAt(i, 1).equals(fc.getCurrentDirectory())) {
-                    JOptionPane.showMessageDialog(null, "Directory Already Added!");
+                    JOptionPane.showMessageDialog(this, "Directory Already Added!");
                     return;
                 }
             }
@@ -1847,7 +1847,7 @@ Color ch = new Color(102, 140, 255);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             for (int i = 0; i < tb3.getRowCount(); i++) {
                 if (tb3.getValueAt(i, 1).equals(fc.getCurrentDirectory())) {
-                    JOptionPane.showMessageDialog(null, "Directory Already Added!");
+                    JOptionPane.showMessageDialog(this, "Directory Already Added!");
                     return;
                 }
             }
@@ -1871,7 +1871,7 @@ Color ch = new Color(102, 140, 255);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             for (int i = 0; i < tb4.getRowCount(); i++) {
                 if (tb4.getValueAt(i, 1).equals(fc.getCurrentDirectory())) {
-                    JOptionPane.showMessageDialog(null, "Directory Already Added!");
+                    JOptionPane.showMessageDialog(this, "Directory Already Added!");
                     return;
                 }
             }

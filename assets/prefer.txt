@@ -1,248 +1,27 @@
-(
-)
-*
-+
--
-A.M
-A.m
-AVG
-Asphalt
-DSC
-DU c
-Gujarat Somnath
-Gujarati Gani
-MTDC
-P.M
-P.m
-PC
-Pm
 a
-aakhya
-abc
-about
-acess
-admission
-ae
-ahsbdiah
 alarm
 alarms
-amplifier
-anadi
-anal
-and
-android
-angreji
-anna
-any
-app
-apps
-arijit
-asefedf
-asphalt
 at
-atm
-audio
-baaghi
-backup
-banking
 bca
-blogger
-born
-browse
-bubububg
-bulleya
-calculate
-calculator
-castle
-chaa
-chammak
-chammakak
-charraiya
-chat
-child
-chrome
-chutia
-chutiya
-color
-control
 create
-crm
-cva
-di
-diagnostic
-dil
-direct
-discards
-discord
-document
-dopen
-duc
-duo
-eCRM
-easy GS
-ecrm
-ek
-emma
-end
-enth
-evga
-exit
-facebook
-falguni
 file
-filefox
-final
-find Satvik
-firefox
-firewall
-for
 from
-fuck
-gallery
-games
-gandhi
-get
-gm
-gmail
-google
-googleel
-googlw
-gujarat
-gujrat
 health
-hi
-ho
-ibps
-images
-in
-instagram
-internet
-irctc
-iron
 is
-java
-kapoor's
-kareena
-keyboard
-kits
-know IP
-leela
-link
-lisp
-list
-m
-magni
-mahatma
-make
-man
-maula
-maulaa
 me
-mera
-meri
-modi
-movie
-movies
-movies
-mujra
-mujra Chikni
-music
-my
-my SQL
-mysql
-narendra
 news
-news news news
 note
-notepad
 notes
-numb
-of
-online
 open
-panel
-pirates
-play
-play Castle
-play Linkin
-play Numb
-play Numb
-play in the end
-play powerless
-plus
 pm
-powerless
-prem
-qurbani
-raha
-regarding
-remind
-reminder
-reminders
-scarlet
-sds
-selena
-server
 set
-set alarm at 6:15 P.M
-set alarm at 9:05 P.M
-set an alarm for 6:12 P.M
-sex
 show
-show alarm
-show alarm
-show alarms
-show reminders
-show songs
-sjdbfhdbf
-software
 some
-son
-song
-songs
-songs
-sport
+sonu
+soports
 sports
-spotify
-sql
-studio
-sunn
-technology
-teel
-tell
-tell news
-teri
-the
-this PC
-time
-to
-tomorrow
-tool
-tools
-torch
-tum
-twitter
-up
-video
-video Naam
-video number
-vlc
-volum
-wafa
-was
+week
 what
-whatsapp
-where
-where Barack Obama born
-windows
-wordnet
-world
-x
-ye
-ye_duniya
-youtube
-wikipedia
-who
-are
-hell
-you
+word
+create a note
+show notes
