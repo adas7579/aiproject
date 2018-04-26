@@ -645,6 +645,19 @@ if (!SystemTray.isSupported()) {
 
           exit();
         }
+        else if (output.equalsIgnoreCase("my calculator")) {
+
+          calc cal=new calc();
+          cal.setVisible(true);
+          return;
+        }
+         else if (output.equalsIgnoreCase("play game")) {
+
+          Game gm=new Game();
+          gm.setVisible(true);
+          return;
+        }
+        
 
    
             if (sig == 0) {

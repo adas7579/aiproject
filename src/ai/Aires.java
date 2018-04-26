@@ -5,6 +5,7 @@
  */
 package ai;
 
+import javax.swing.table.DefaultTableModel;
 import org.json.simple.JSONObject;
 
 /**
@@ -13,6 +14,7 @@ import org.json.simple.JSONObject;
  */
 public class Aires extends javax.swing.JFrame {
 JSONObject tt;
+DefaultTableModel db;
     /**
      * Creates new form Aires
      * @param tt
@@ -21,9 +23,13 @@ JSONObject tt;
     public Aires(JSONObject tt) {
         this.tt=tt;
           initComponents();
+          db=(DefaultTableModel)a1.getModel();
            this.setLocationRelativeTo(null);
            this.pack();
-           a1.setText(tt.get("answer").toString());
+           String res[]=tt.get("answer").toString().split("\n");
+           for(String line:res)
+           db.addRow(new Object[]{line});
+           a1.setShowGrid(false);
     }
 
     /**
@@ -36,25 +42,45 @@ JSONObject tt;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        a1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        a1 = new javax.swing.JTable();
+
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        a1.setColumns(20);
-        a1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        a1.setLineWrap(true);
-        a1.setRows(5);
-        jScrollPane1.setViewportView(a1);
+        a1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        a1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 460));
+            },
+            new String [] {
+                ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        a1.setRowHeight(20);
+        a1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(a1);
+        if (a1.getColumnModel().getColumnCount() > 0) {
+            a1.getColumnModel().getColumn(0).setResizable(false);
+        }
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 844, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,8 +127,8 @@ JSONObject tt;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea a1;
+    private javax.swing.JTable a1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,17 +5,8 @@
  */
 package ai;
 
-import java.awt.AWTException;
-import java.awt.CheckboxMenuItem;
-import java.awt.Menu;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
-import java.awt.SystemTray;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
 import java.io.InputStream;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;

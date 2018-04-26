@@ -233,7 +233,18 @@ public class SpRecog implements GSpeechResponseListener {
             }
             System.exit(0);
         }
+            else if (output.equalsIgnoreCase("my calculator")) {
 
+          calc cal=new calc();
+          cal.setVisible(true);
+          return;
+        }
+         else if (output.equalsIgnoreCase("play game")) {
+
+          Game gm=new Game();
+          gm.setVisible(true);
+          return;
+        }
         if (nt == 0) {
             if (sig == 0) {
                 String tt[] = w.pr(output);
