@@ -239,7 +239,7 @@ public class SpRecog implements GSpeechResponseListener {
           cal.setVisible(true);
           return;
         }
-         else if (output.equalsIgnoreCase("play game")) {
+   else if ((output.toLowerCase().contains("play game"))||(output.toLowerCase().contains("show tools"))) {
 
           Game gm=new Game();
           gm.setVisible(true);

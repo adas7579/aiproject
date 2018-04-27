@@ -28,13 +28,13 @@ String j="";
 int o1;
 /** Creates new form Anagrams */
     public KBC() {
- //j=JOptionPane.showInputDialog(null,"Please Enter Your Name.."); 
+// j=JOptionPane.showInputDialog(null,"Please Enter Your Name.."); 
 
  
         initComponents();
-         this.setLocationRelativeTo(null);
-           this.pack();
-        qz.setIcon(new ImageIcon("assets/game/quiz.jpg"));
+          this.setLocationRelativeTo(null);
+        this.pack();
+        qzq.setIcon(new ImageIcon("assets/game/quiz.jpg"));
         wr();
          
     }
@@ -63,10 +63,9 @@ int o1;
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        qz = new javax.swing.JLabel();
-        q1 = new javax.swing.JPanel();
+        qzq = new javax.swing.JLabel();
+        q1 = new javax.swing.JLabel();
 
-        setTitle("Quiz");
         setResizable(false);
 
         m1.setBackground(new java.awt.Color(3, 0, 0));
@@ -161,17 +160,18 @@ int o1;
         l1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         l1.setForeground(new java.awt.Color(15, 1, 1));
         l1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Level 10", "Level 9", "Level 8", "Level 7", "Level 6", "Level 5", "Level 4", "Level 3", "Level 2", "Level 1" };
+            String[] strings = { "10   <>     1000", "9     <>     800  ", "8     <>     700", "7     <>     600", "6     <>     500", "5     <>     400", "4     <>     300", "3     <>     200", "2     <>     100", "1     <>     10\t     " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         l1.setEnabled(false);
+        l1.setSelectedIndex(9);
         l1.setSelectionBackground(new java.awt.Color(0, 0, 0));
         l1.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(l1);
 
         m1.add(jScrollPane1);
-        jScrollPane1.setBounds(830, 50, 160, 280);
+        jScrollPane1.setBounds(830, 80, 160, 280);
 
         q2.setBackground(new java.awt.Color(0, 204, 51));
 
@@ -234,22 +234,11 @@ int o1;
         jLabel4.setText("WRIGHT ANSWER");
         m1.add(jLabel4);
         jLabel4.setBounds(50, 170, 140, 30);
-        m1.add(qz);
-        qz.setBounds(290, 60, 490, 250);
+        m1.add(qzq);
+        qzq.setBounds(280, 50, 500, 280);
 
-        q1.setBackground(new java.awt.Color(255, 102, 51));
-
-        javax.swing.GroupLayout q1Layout = new javax.swing.GroupLayout(q1);
-        q1.setLayout(q1Layout);
-        q1Layout.setHorizontalGroup(
-            q1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-        q1Layout.setVerticalGroup(
-            q1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
+        q1.setBackground(new java.awt.Color(255, 153, 51));
+        q1.setOpaque(true);
         m1.add(q1);
         q1.setBounds(10, 130, 20, 30);
 
@@ -1331,17 +1320,17 @@ st.setVisible(false);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList l1;
     private javax.swing.JDesktopPane m1;
-    private javax.swing.JPanel q1;
+    private javax.swing.JLabel q1;
     private javax.swing.JPanel q2;
     private javax.swing.JPanel q3;
     private javax.swing.JButton qu;
-    private javax.swing.JLabel qz;
+    private javax.swing.JLabel qzq;
     private javax.swing.JButton st;
     // End of variables declaration//GEN-END:variables
 class a{
 public void exe()
 {
-   // JOptionPane.showMessageDialog(null,"go to hell");
+    //JOptionPane.showMessageDialog(null,"go to hell");
 }
 };
     private void re() {

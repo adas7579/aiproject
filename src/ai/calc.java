@@ -571,6 +571,7 @@ public class calc extends javax.swing.JFrame {
         x18.setBounds(170, 140, 140, 50);
 
         g1.setBackground(new java.awt.Color(153, 255, 102));
+        g1.setForeground(new java.awt.Color(255, 255, 51));
         g1.setText("Keyboard Disabled");
         g1.setFocusable(false);
         g1.setMargin(new java.awt.Insets(2, 1, 2, 1));
@@ -583,6 +584,7 @@ public class calc extends javax.swing.JFrame {
         g1.setBounds(20, 250, 130, 30);
 
         g2.setBackground(new java.awt.Color(153, 255, 102));
+        g2.setForeground(new java.awt.Color(255, 255, 51));
         g2.setText("OnScreen Num Disabled");
         g2.setFocusable(false);
         g2.setMargin(new java.awt.Insets(2, 1, 2, 0));
@@ -592,7 +594,7 @@ public class calc extends javax.swing.JFrame {
             }
         });
         d2.add(g2);
-        g2.setBounds(150, 250, 160, 30);
+        g2.setBounds(150, 250, 170, 30);
 
         x19.setBackground(new java.awt.Color(0, 255, 255));
         x19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -638,7 +640,7 @@ public class calc extends javax.swing.JFrame {
         d2.setBounds(10, 90, 330, 340);
 
         d1.setBackground(new java.awt.Color(204, 255, 255));
-        d1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "ARITHMATIC CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
+        d1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Scientific CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
         d1.setFocusable(false);
 
         x16.setText("Sin");
@@ -850,7 +852,7 @@ public class calc extends javax.swing.JFrame {
         a1.setBounds(350, 40, 400, 30);
 
         d4.setBackground(new java.awt.Color(204, 255, 255));
-        d4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "ARITHMATIC CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
+        d4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Mensuration CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
         d4.setFocusable(false);
 
         t1.setModel(new javax.swing.AbstractListModel() {
@@ -1664,7 +1666,7 @@ public class calc extends javax.swing.JFrame {
         v1.setBounds(10, 700, 1010, 680);
 
         d3.setBackground(new java.awt.Color(204, 255, 255));
-        d3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "ARITHMATIC CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
+        d3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Feature CONTROLS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Algerian", 1, 18), new java.awt.Color(255, 102, 255))); // NOI18N
         d3.setForeground(new java.awt.Color(0, 0, 204));
         d3.setFocusable(false);
 
@@ -1732,7 +1734,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(jButton7);
         jButton7.setBounds(150, 470, 170, 60);
 
-        jButton9.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 0, 0));
         jButton9.setText("HCF");
         jButton9.setFocusable(false);
@@ -1744,7 +1746,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(jButton9);
         jButton9.setBounds(150, 410, 170, 60);
 
-        jButton8.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 0, 0));
         jButton8.setText("LCM");
         jButton8.setFocusable(false);
@@ -1756,7 +1758,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(jButton8);
         jButton8.setBounds(10, 410, 140, 60);
 
-        jButton10.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jButton10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton10.setForeground(new java.awt.Color(0, 153, 0));
         jButton10.setText("PROFIT %");
         jButton10.setFocusable(false);
@@ -1768,7 +1770,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(jButton10);
         jButton10.setBounds(150, 350, 170, 60);
 
-        kk.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
+        kk.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         kk.setForeground(new java.awt.Color(51, 51, 255));
         kk.setText("Pythagoras");
         kk.setFocusable(false);
@@ -1781,7 +1783,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(kk);
         kk.setBounds(10, 290, 140, 60);
 
-        jButton12.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jButton12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton12.setForeground(new java.awt.Color(0, 153, 0));
         jButton12.setText("LOSS %");
         jButton12.setFocusable(false);
@@ -1793,7 +1795,7 @@ public class calc extends javax.swing.JFrame {
         d3.add(jButton12);
         jButton12.setBounds(10, 350, 140, 60);
 
-        jButton13.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jButton13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton13.setForeground(new java.awt.Color(51, 51, 255));
         jButton13.setText("HERONS");
         jButton13.setFocusable(false);

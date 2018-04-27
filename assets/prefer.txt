@@ -5,6 +5,7 @@ alculator
 calculator
 game
 games
+gmaes
 health
 my
 news
@@ -15,3 +16,4 @@ show
 show some health related news
 show some sports news
 sports
+tools

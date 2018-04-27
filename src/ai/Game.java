@@ -7,6 +7,7 @@ package ai;
 
 import javax.swing.ImageIcon;
 import Games.*;
+import crypto.*;
 /**
  *
  * @author aNaWorLd
@@ -22,6 +23,8 @@ public class Game extends javax.swing.JFrame {
            this.pack();
         qz.setIcon(new ImageIcon("assets/game/quiz.jpg"));
         sn.setIcon(new ImageIcon("assets/game/sn.jpg"));
+        cal.setIcon(new ImageIcon("assets/game/cal.jpg"));
+        ed.setIcon(new ImageIcon("assets/game/ed.jpg"));
     }
 
     /**
@@ -38,17 +41,22 @@ public class Game extends javax.swing.JFrame {
         sn = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
+        ed = new javax.swing.JLabel();
+        cal = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setTitle("Play Games");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         qz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(qz, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 225));
+        getContentPane().add(qz, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 380, 225));
 
         sn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 380, 225));
+        getContentPane().add(sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 380, 225));
 
         jButton1.setText("Play Game");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +64,7 @@ public class Game extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 380, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 600, 380, 40));
 
         jButton2.setText("Play Game");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -64,10 +72,43 @@ public class Game extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 380, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 380, 40));
 
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 15, 280));
+        ed.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(ed, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 380, 225));
+
+        cal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 380, 225));
+
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText(" Games");
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 810, 30));
+
+        jLabel3.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText(" Tools");
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 30));
+
+        jButton3.setText("Open Calculator");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 380, 40));
+
+        jButton4.setText("Open Encoder/Decoder");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 380, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,6 +124,18 @@ Snake sk=new Snake();
 sk.setVisible(true);
 this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+calc cc=new calc();
+cc.setVisible(true);
+this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+Crypto cc=new Crypto();
+cc.setVisible(true);
+this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,10 +173,15 @@ this.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel cal;
+    private javax.swing.JLabel ed;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel qz;
     private javax.swing.JLabel sn;
     // End of variables declaration//GEN-END:variables

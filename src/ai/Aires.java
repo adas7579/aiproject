@@ -5,6 +5,11 @@
  */
 package ai;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.json.simple.JSONObject;
 
@@ -68,6 +73,11 @@ DefaultTableModel db;
         });
         a1.setRowHeight(20);
         a1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        a1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                a1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(a1);
         if (a1.getColumnModel().getColumnCount() > 0) {
             a1.getColumnModel().getColumn(0).setResizable(false);
@@ -90,6 +100,18 @@ DefaultTableModel db;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void a1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseClicked
+if(evt.getClickCount()==2)
+{
+
+    try {
+                            Desktop.getDesktop().browse(new URI("https://www.google.co.in/search?q="+a1.getValueAt(a1.getSelectedRow(),0).toString().trim().replace(" ","+")));
+                        } catch (IOException | URISyntaxException ex) {
+                            System.out.println(ex.getMessage());
+                        }
+}
+    }//GEN-LAST:event_a1MouseClicked
 
     /**
      * @param args the command line arguments
