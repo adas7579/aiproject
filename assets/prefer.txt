@@ -1,3 +1,4 @@
+GAME
 NEWS
 alarm
 alculator
@@ -8,10 +9,9 @@ health
 my
 news
 nw
+pLAY
 play
 show
 show some health related news
 show some sports news
 sports
-pLAY
-GAME
