@@ -1,6 +1,6 @@
-Improvement:
-UI Disco
-System optimisation
-Added:
-AI Implementation
-task tray icon
+Added:-
+Tools:Calculator
+Tools:Encoder/Decoder
+Games:Quiz
+Games:Snake
+Calling Term:-show tools
