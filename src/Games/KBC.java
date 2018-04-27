@@ -161,18 +161,17 @@ int o1;
         l1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         l1.setForeground(new java.awt.Color(15, 1, 1));
         l1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "10   <>     1000", "9     <>     800  ", "8     <>     700", "7     <>     600", "6     <>     500", "5     <>     400", "4     <>     300", "3     <>     200", "2     <>     100", "1     <>     10\t     " };
+            String[] strings = { "Level 10", "Level 9", "Level 8", "Level 7", "Level 6", "Level 5", "Level 4", "Level 3", "Level 2", "Level 1" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         l1.setEnabled(false);
-        l1.setSelectedIndex(9);
         l1.setSelectionBackground(new java.awt.Color(0, 0, 0));
         l1.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(l1);
 
         m1.add(jScrollPane1);
-        jScrollPane1.setBounds(830, 50, 160, 290);
+        jScrollPane1.setBounds(830, 50, 160, 280);
 
         q2.setBackground(new java.awt.Color(0, 204, 51));
 
