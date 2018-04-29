@@ -698,8 +698,7 @@ if (!SystemTray.isSupported()) {
     this.opt.setText("Need assistance?");
         this.response.setText("");
         } catch (InterruptedException ex) {
-            Logger.getLogger(SpRecog.class
-                    .getName()).log(Level.SEVERE, null, ex);
+           
         }
        
     }

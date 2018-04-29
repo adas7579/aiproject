@@ -25,6 +25,7 @@ import javax.swing.JFileChooser;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileSystemView;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -51,7 +52,21 @@ public class AudPlay extends javax.swing.JFrame {
         load();
         pau.setEnabled(false);
         bck.setIcon(new ImageIcon("assets/bck.jpg"));
-        pic.setVisible(false);
+       
+        pic.setIcon(new ImageIcon("assets/mlogo.png"));
+        lblpl.setIcon(new ImageIcon("assets/plist.png"));
+        lblvl.setIcon(new ImageIcon("assets/vicon.png"));
+        
+        
+        
+        
+        list.setOpaque(false);
+        ((DefaultTableCellRenderer) list.getDefaultRenderer(Object.class)).setOpaque(false);
+        ScrollPane.setOpaque(false);
+        ScrollPane.getViewport().setOpaque(false);
+        list.setShowGrid(false);
+        this.setSize(850, this.getHeight());
+        
     }
 
     public void load() {
@@ -81,12 +96,16 @@ public class AudPlay extends javax.swing.JFrame {
     private void initComponents() {
 
         sname = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        ScrollPane = new javax.swing.JScrollPane();
         list = new javax.swing.JTable();
+        lblvol = new javax.swing.JLabel();
+        lblpl = new javax.swing.JLabel();
+        pic = new javax.swing.JLabel();
+        lblvl = new javax.swing.JLabel();
+        vol = new javax.swing.JSlider();
         stp1 = new javax.swing.JButton();
         stp2 = new javax.swing.JButton();
         ply = new javax.swing.JButton();
-        vol = new javax.swing.JSlider();
         pau = new javax.swing.JButton();
         stp = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -94,7 +113,6 @@ public class AudPlay extends javax.swing.JFrame {
         tdur = new javax.swing.JLabel();
         cdur = new javax.swing.JLabel();
         sld = new javax.swing.JSlider();
-        pic = new javax.swing.JLabel();
         bck = new javax.swing.JLabel();
 
         setTitle("Audio Player");
@@ -109,11 +127,11 @@ public class AudPlay extends javax.swing.JFrame {
         sname.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         sname.setForeground(new java.awt.Color(255, 255, 255));
         sname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(sname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 520, 40));
+        getContentPane().add(sname, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 380, 40));
 
-        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        ScrollPane.setBackground(new java.awt.Color(255, 255, 255));
 
-        list.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        list.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         list.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -140,6 +158,7 @@ public class AudPlay extends javax.swing.JFrame {
         list.setColumnSelectionAllowed(true);
         list.setOpaque(false);
         list.setRowHeight(25);
+        list.setSelectionBackground(new java.awt.Color(102, 102, 102));
         list.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         list.getTableHeader().setReorderingAllowed(false);
         list.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -147,14 +166,51 @@ public class AudPlay extends javax.swing.JFrame {
                 listMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(list);
+        ScrollPane.setViewportView(list);
         list.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (list.getColumnModel().getColumnCount() > 0) {
             list.getColumnModel().getColumn(0).setResizable(false);
             list.getColumnModel().getColumn(0).setPreferredWidth(10);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 300, 430));
+        getContentPane().add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 290, 430));
+
+        lblvol.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        lblvol.setForeground(new java.awt.Color(255, 255, 255));
+        lblvol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblvol.setText("50");
+        getContentPane().add(lblvol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 30, 30));
+
+        lblpl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblplMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblpl, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 50, 50));
+        getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 280));
+
+        lblvl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblvlMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 50, 50));
+
+        vol.setBackground(new java.awt.Color(153, 153, 153));
+        vol.setMajorTickSpacing(1);
+        vol.setOrientation(javax.swing.JSlider.VERTICAL);
+        vol.setOpaque(false);
+        vol.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                volStateChanged(evt);
+            }
+        });
+        vol.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                volMouseWheelMoved(evt);
+            }
+        });
+        getContentPane().add(vol, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 50, 180));
 
         stp1.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         stp1.setText("<<");
@@ -182,21 +238,6 @@ public class AudPlay extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ply, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 90, 30));
-
-        vol.setMajorTickSpacing(1);
-        vol.setOrientation(javax.swing.JSlider.VERTICAL);
-        vol.setPaintTicks(true);
-        vol.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                volStateChanged(evt);
-            }
-        });
-        vol.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                volMouseWheelMoved(evt);
-            }
-        });
-        getContentPane().add(vol, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 40, 320));
 
         pau.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         pau.setText("Pause ||");
@@ -232,7 +273,7 @@ public class AudPlay extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 150, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 140, 40));
 
         tdur.setBackground(new java.awt.Color(0, 0, 0));
         tdur.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -255,16 +296,25 @@ public class AudPlay extends javax.swing.JFrame {
         sld.setMinorTickSpacing(1);
         sld.setToolTipText("Seek");
         sld.setValue(0);
-        sld.setEnabled(false);
         sld.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 sldStateChanged(evt);
             }
         });
+        sld.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                sldMouseWheelMoved(evt);
+            }
+        });
+        sld.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sldMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                sldMouseReleased(evt);
+            }
+        });
         getContentPane().add(sld, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 450, 40));
-
-        pic.setOpaque(true);
-        getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 280));
 
         bck.setOpaque(true);
         getContentPane().add(bck, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
@@ -386,32 +436,16 @@ if (tm.getRowCount() > 0) {
 }
     }//GEN-LAST:event_listMouseClicked
 
-    private void volStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_volStateChanged
-try{
-play.setVolume((double)vol.getValue()/100);
-}catch(Exception e){}
-    }//GEN-LAST:event_volStateChanged
-
-    private void volMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_volMouseWheelMoved
- if(evt.getWheelRotation()<0)
- {
-     vol.setValue(vol.getValue()+evt.getScrollAmount());
-try{
-play.setVolume((double)vol.getValue()/100);
-}catch(Exception e){}
- }
- else
- {
-     vol.setValue(vol.getValue()-evt.getScrollAmount());
-     try{
-play.setVolume((double)vol.getValue()/100);
-}catch(Exception e){}
- }
-    }//GEN-LAST:event_volMouseWheelMoved
-
     private void sldStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldStateChanged
+mn=(int)play.getCurrentTime().toMinutes();
 
-//System.out.println(sld.getValue());
+if(play.getCurrentTime().toSeconds()<=60.0)
+sc=(int)play.getCurrentTime().toSeconds();
+else
+sc=(int)play.getCurrentTime().toSeconds()%60;
+
+
+
     }//GEN-LAST:event_sldStateChanged
 
     private void stp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stp1ActionPerformed
@@ -476,6 +510,84 @@ if (list.getRowCount() > 0) {
         }
     }//GEN-LAST:event_stp2ActionPerformed
 
+    private void sldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldMouseClicked
+   // TODO add your handling code here:
+    }//GEN-LAST:event_sldMouseClicked
+
+    private void sldMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldMouseReleased
+play.seek(Duration.seconds((double)sld.getValue()));         // TODO add your handling code here:
+    }//GEN-LAST:event_sldMouseReleased
+
+    private void lblvlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvlMouseClicked
+try{
+if(play.isMute()==false)
+{
+    play.setMute(true);
+           lblvl.setIcon(new ImageIcon("assets/vmute.png"));
+}
+else{
+play.setMute(false);
+       lblvl.setIcon(new ImageIcon("assets/vicon.png"));
+}
+}catch(Exception e){}
+    }//GEN-LAST:event_lblvlMouseClicked
+
+    private void lblplMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblplMouseClicked
+        if (this.getWidth() == 850) {
+            this.setSize(550, this.getHeight());
+        } else {
+            this.setSize(850, this.getHeight());
+        }
+    }//GEN-LAST:event_lblplMouseClicked
+
+    private void volStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_volStateChanged
+        try {
+            lblvol.setText(vol.getValue()+"");
+            play.setVolume((double) vol.getValue() / 100);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_volStateChanged
+
+    private void volMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_volMouseWheelMoved
+        if (evt.getWheelRotation() < 0) {
+            vol.setValue(vol.getValue() + evt.getScrollAmount());
+            try {
+                lblvol.setText(vol.getValue()+"");
+                play.setVolume((double) vol.getValue() / 100);
+
+            } catch (Exception e) {
+            }
+        } else {
+            vol.setValue(vol.getValue() - evt.getScrollAmount());
+            try {
+                lblvol.setText(vol.getValue()+"");
+                play.setVolume((double) vol.getValue() / 100);
+
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_volMouseWheelMoved
+
+    private void sldMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_sldMouseWheelMoved
+      try{
+        if(evt.getWheelRotation()<0)
+        {
+            sld.setValue(sld.getValue()+evt.getScrollAmount());
+        }
+        else
+        {
+            sld.setValue(sld.getValue()-evt.getScrollAmount());
+        }
+            play.seek(Duration.seconds((double)sld.getValue())); 
+            mn=(int)play.getCurrentTime().toMinutes();
+            if(play.getCurrentTime().toSeconds()<=60.0)
+            sc=(int)play.getCurrentTime().toSeconds();
+            else
+            sc=(int)play.getCurrentTime().toSeconds()%60;
+      }catch(Exception e){}
+        
+    }//GEN-LAST:event_sldMouseWheelMoved
+
     public static BufferedImage resize(BufferedImage img, int newW, int newH) {
         Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
         BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
@@ -493,7 +605,7 @@ if (list.getRowCount() > 0) {
             });
             m = new Media(new File(song).toURI().toString());
             play = new MediaPlayer(m);
-            play.setVolume(0.5);
+            play.setVolume((double)vol.getValue()/100);
             play.play();
 
             play.setOnReady(new Runnable() {
@@ -523,11 +635,20 @@ if (list.getRowCount() > 0) {
                     m1 = Integer.parseInt(sdf.format(date).split(":")[0]);
                     s1 = Integer.parseInt(sdf.format(date).split(":")[1]);
                     sld.setMaximum((m1 * 60) + s1);
+                    
                     sd = new Slid();
                     sd.start();
                 }
             }
             );
+            
+             play.setOnEndOfMedia(new Runnable() {
+                @Override
+                
+                public void run() {
+                    stp2.doClick();
+                }
+            });
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -552,8 +673,9 @@ if (list.getRowCount() > 0) {
 
         public void run() {
             while (true) {
-                sld.setValue((mn * 60) + sc);
-                // System.out.println(sld.getValue()/60+" "+sld.getValue()%60);
+//                sld.setValue((mn * 60) + sc);
+//                
+//                // System.out.println(sld.getValue()/60+" "+sld.getValue()%60);
                 setcdur();
                 sc++;
                 if (mn == m1 && sc == s1) {
@@ -563,10 +685,14 @@ if (list.getRowCount() > 0) {
                     sc = 0;
                     mn++;
                 }
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                }
+                
+                    sld.setValue(sld.getValue()+1);
+               try {
+                   Thread.sleep(1000);
+               } catch (InterruptedException ex) {
+               }
+
+
             }
         }
     }
@@ -634,11 +760,14 @@ if (list.getRowCount() > 0) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JLabel bck;
     private javax.swing.JLabel cdur;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblpl;
+    private javax.swing.JLabel lblvl;
+    private javax.swing.JLabel lblvol;
     private javax.swing.JTable list;
     private javax.swing.JButton pau;
     private javax.swing.JLabel pic;

@@ -22,12 +22,12 @@ public class Game extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
            this.pack();
-        qz.setIcon(new ImageIcon("assets/game/qz.png"));
-        sn.setIcon(new ImageIcon("assets/game/sn.jpg"));
-        cal.setIcon(new ImageIcon("assets/game/cal.png"));
-        ed.setIcon(new ImageIcon("assets/game/ed.png"));
-         ap.setIcon(new ImageIcon("assets/game/tone.png"));
-          wb.setIcon(new ImageIcon("assets/game/web.png"));
+//        qz.setIcon(new ImageIcon("assets/game/qz.png"));
+//        sn.setIcon(new ImageIcon("assets/game/sn.jpg"));
+//        cal.setIcon(new ImageIcon("assets/game/cal.png"));
+//        ed.setIcon(new ImageIcon("assets/game/ed.png"));
+//         ap.setIcon(new ImageIcon("assets/game/tone.png"));
+//          wb.setIcon(new ImageIcon("assets/game/web.png"));
     }
 
     /**
@@ -42,19 +42,13 @@ public class Game extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
-        wb = new javax.swing.JLabel();
         c1 = new javax.swing.JLabel();
         c3 = new javax.swing.JLabel();
         c4 = new javax.swing.JLabel();
         c5 = new javax.swing.JLabel();
         c6 = new javax.swing.JLabel();
         c7 = new javax.swing.JLabel();
-        cal = new javax.swing.JLabel();
-        ed = new javax.swing.JLabel();
-        qz = new javax.swing.JLabel();
-        sn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        ap = new javax.swing.JLabel();
 
         setTitle("Play Games");
         setUndecorated(true);
@@ -72,8 +66,7 @@ public class Game extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
-        jPanel1.add(wb, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 60, 50));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, -1, -1));
 
         c1.setBackground(new java.awt.Color(102, 102, 102));
         c1.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -92,7 +85,7 @@ public class Game extends javax.swing.JFrame {
                 c1MouseExited(evt);
             }
         });
-        jPanel1.add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 350, 60));
+        jPanel1.add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 350, 60));
 
         c3.setBackground(new java.awt.Color(102, 102, 102));
         c3.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -111,7 +104,7 @@ public class Game extends javax.swing.JFrame {
                 c3MouseExited(evt);
             }
         });
-        jPanel1.add(c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 350, 60));
+        jPanel1.add(c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 350, 60));
 
         c4.setBackground(new java.awt.Color(102, 102, 102));
         c4.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -130,7 +123,7 @@ public class Game extends javax.swing.JFrame {
                 c4MouseExited(evt);
             }
         });
-        jPanel1.add(c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 350, 60));
+        jPanel1.add(c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 350, 60));
 
         c5.setBackground(new java.awt.Color(102, 102, 102));
         c5.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -149,7 +142,7 @@ public class Game extends javax.swing.JFrame {
                 c5MouseExited(evt);
             }
         });
-        jPanel1.add(c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 350, 60));
+        jPanel1.add(c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 350, 60));
 
         c6.setBackground(new java.awt.Color(102, 102, 102));
         c6.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -168,7 +161,7 @@ public class Game extends javax.swing.JFrame {
                 c6MouseExited(evt);
             }
         });
-        jPanel1.add(c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 350, 60));
+        jPanel1.add(c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 350, 60));
 
         c7.setBackground(new java.awt.Color(102, 102, 102));
         c7.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
@@ -187,21 +180,16 @@ public class Game extends javax.swing.JFrame {
                 c7MouseExited(evt);
             }
         });
-        jPanel1.add(c7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 60));
-        jPanel1.add(cal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 60, 50));
-        jPanel1.add(ed, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 60, 50));
-        jPanel1.add(qz, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 60, 50));
-        jPanel1.add(sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 60, 50));
+        jPanel1.add(c7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 350, 60));
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 0, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Tools & Games");
         jLabel1.setOpaque(true);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 30));
-        jPanel1.add(ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 60, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 430));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,21 +324,15 @@ this.setVisible(false);        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ap;
     private javax.swing.JLabel c1;
     private javax.swing.JLabel c3;
     private javax.swing.JLabel c4;
     private javax.swing.JLabel c5;
     private javax.swing.JLabel c6;
     private javax.swing.JLabel c7;
-    private javax.swing.JLabel cal;
-    private javax.swing.JLabel ed;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel qz;
-    private javax.swing.JLabel sn;
-    private javax.swing.JLabel wb;
     // End of variables declaration//GEN-END:variables
 }

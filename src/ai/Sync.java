@@ -166,12 +166,15 @@ public class Sync extends Thread {
                          //notification
                  tt=jj.getHistory(ud);
                   for (int j = 0; j < tt.length; j++) {
+                      
+                      
+                      
                     Noti nn=new Noti();
                     nn.dt.setText(tt[j].get("pref_id").toString());
                     
                     String b="";
                     
-                    if(tt[j].get("pref_para").toString().split(":")[0].equalsIgnoreCase("c"))
+                    if(tt[j].get("pref_para").toString().split("=")[0].equalsIgnoreCase("c"))
                     {
                         nn.head.setText("Incoming Call...");
                         b="Incoming Call...";
@@ -183,13 +186,13 @@ public class Sync extends Thread {
                             b="Notification...";
                             nn.img.setIcon(new ImageIcon("assets/bell.ico"));
                     }
-                    nn.text.setText(tt[j].get("pref_para").toString().split(":")[1]);
-                    nn.dev.setText(tt[j].get("pref_para").toString().split(":")[2]);
+                    nn.text.setText(tt[j].get("pref_para").toString().split("=")[1]);
+                    nn.dev.setText(tt[j].get("pref_para").toString().split("=")[2]);
                     jj.deleteHistory(tt[0].get("id").toString());
                     
                     if (SystemTray.isSupported()) {
           
-                        displayTray(tt[j].get("pref_para").toString().split(":")[1],b);
+                        displayTray(tt[j].get("pref_para").toString().split("=")[1],b);
                                          } else {
                           System.err.println("System tray not supported!");
                                              }

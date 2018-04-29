@@ -161,7 +161,7 @@ desc.append("\nLocation : "+tb.getValueAt(tb.getSelectedRow(), 2).toString());
     }//GEN-LAST:event_tbMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-if(qry.getText().contains(""))
+if(qry.getText().equals(""))
     return;
         try {
          JMake jj=new JMake();
