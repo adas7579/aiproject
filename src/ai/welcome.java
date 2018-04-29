@@ -204,6 +204,16 @@ RSA rs=new RSA();
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        tts = new javax.swing.JPanel();
+        jSeparator7 = new javax.swing.JSeparator();
+        chktts = new javax.swing.JCheckBox();
+        jLabel15 = new javax.swing.JLabel();
+        pnltts = new javax.swing.JPanel();
+        vname = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        freq = new javax.swing.JSlider();
+        jLabel16 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         set = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -249,16 +259,6 @@ RSA rs=new RSA();
         devi = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         btrefresh = new javax.swing.JButton();
-        tts = new javax.swing.JPanel();
-        jSeparator7 = new javax.swing.JSeparator();
-        chktts = new javax.swing.JCheckBox();
-        jLabel15 = new javax.swing.JLabel();
-        pnltts = new javax.swing.JPanel();
-        vname = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        freq = new javax.swing.JSlider();
-        jLabel16 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         fav = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
@@ -339,6 +339,75 @@ RSA rs=new RSA();
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tts.setBackground(new java.awt.Color(51, 51, 51));
+        tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        tts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tts.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        chktts.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
+        chktts.setForeground(new java.awt.Color(255, 255, 255));
+        chktts.setSelected(true);
+        chktts.setText("Enable Text-to-Speech");
+        chktts.setOpaque(false);
+        chktts.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                chkttsItemStateChanged(evt);
+            }
+        });
+        chktts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chkttsMouseClicked(evt);
+            }
+        });
+        tts.add(chktts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Text-to-Speech ");
+        tts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        pnltts.setBackground(new java.awt.Color(51, 51, 51));
+        pnltts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        pnltts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        vname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female 1", "Female 2" }));
+        pnltts.add(vname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 220, 30));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Set Frequency :");
+        pnltts.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 130, 30));
+
+        freq.setBackground(new java.awt.Color(255, 255, 255));
+        freq.setMajorTickSpacing(1);
+        freq.setMaximum(10);
+        freq.setPaintLabels(true);
+        freq.setValue(1);
+        freq.setOpaque(false);
+        freq.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                freqStateChanged(evt);
+            }
+        });
+        pnltts.add(freq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 220, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Select Voice :");
+        pnltts.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 30));
+
+        jButton5.setText("Test");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        pnltts.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 70, -1));
+
+        tts.add(pnltts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 440, 260));
+
+        hh1.add(tts, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         set.setBackground(new java.awt.Color(51, 51, 51));
         set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -586,75 +655,6 @@ RSA rs=new RSA();
         sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
 
         hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        tts.setBackground(new java.awt.Color(51, 51, 51));
-        tts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        tts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        tts.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        chktts.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
-        chktts.setForeground(new java.awt.Color(255, 255, 255));
-        chktts.setSelected(true);
-        chktts.setText("Enable Text-to-Speech");
-        chktts.setOpaque(false);
-        chktts.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkttsItemStateChanged(evt);
-            }
-        });
-        chktts.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chkttsMouseClicked(evt);
-            }
-        });
-        tts.add(chktts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Text-to-Speech ");
-        tts.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        pnltts.setBackground(new java.awt.Color(51, 51, 51));
-        pnltts.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        pnltts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        vname.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female 1", "Female 2" }));
-        pnltts.add(vname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 220, 30));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Set Frequency :");
-        pnltts.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 130, 30));
-
-        freq.setBackground(new java.awt.Color(255, 255, 255));
-        freq.setMajorTickSpacing(1);
-        freq.setMaximum(10);
-        freq.setPaintLabels(true);
-        freq.setValue(1);
-        freq.setOpaque(false);
-        freq.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                freqStateChanged(evt);
-            }
-        });
-        pnltts.add(freq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 220, -1));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Select Voice :");
-        pnltts.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 30));
-
-        jButton5.setText("Test");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        pnltts.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 70, -1));
-
-        tts.add(pnltts, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 440, 260));
-
-        hh1.add(tts, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         fav.setBackground(new java.awt.Color(51, 51, 51));
         fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));

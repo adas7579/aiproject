@@ -1,10 +1,17 @@
 package ai;
 
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.TrayIcon.MessageType;
+import java.net.MalformedURLException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import org.json.simple.JSONObject;
 
 public class Sync extends Thread {
@@ -155,11 +162,90 @@ public class Sync extends Thread {
                     bb.insertData("insert into reminder values('" + tt[j].get("rem_id").toString() + "','" + tt[j].get("reminder_date").toString() + "','" + tt[j].get("reminder_time").toString() + "','" + tt[j].get("reminder_text").toString() + "')");
                 }
                 bb.close();
+                
+                         //notification
+                 tt=jj.getHistory(ud);
+                  for (int j = 0; j < tt.length; j++) {
+                    Noti nn=new Noti();
+                    nn.dt.setText(tt[j].get("pref_id").toString());
+                    
+                    String b="";
+                    
+                    if(tt[j].get("pref_para").toString().split(":")[0].equalsIgnoreCase("c"))
+                    {
+                        nn.head.setText("Incoming Call...");
+                        b="Incoming Call...";
+                        nn.img.setIcon(new ImageIcon("assets/dialer.png"));
+                    }
+                    else
+                    {
+                            nn.head.setText("Notification...");
+                            b="Notification...";
+                            nn.img.setIcon(new ImageIcon("assets/bell.ico"));
+                    }
+                    nn.text.setText(tt[j].get("pref_para").toString().split(":")[1]);
+                    nn.dev.setText(tt[j].get("pref_para").toString().split(":")[2]);
+                    jj.deleteHistory(tt[0].get("id").toString());
+                    
+                    if (SystemTray.isSupported()) {
+          
+                        displayTray(tt[j].get("pref_para").toString().split(":")[1],b);
+                                         } else {
+                          System.err.println("System tray not supported!");
+                                             }
+                    
+                   //  nn.setVisible(true);
+                  }
+                  
+                 
+                  
+                  
+                  
+                  
+                  
+                
                 }
+                
+                
+       
+               
+                
+                
+                
+                
+                
                 Thread.sleep(15000);
             }
         } catch (Exception ex) {
             Logger.getLogger(Sync.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    public void displayTray(String a,String b) throws AWTException, MalformedURLException {
+        //Obtain only one instance of the SystemTray object
+        SystemTray tray = SystemTray.getSystemTray();
+
+        //If the icon is a file
+        java.awt.Image image = Toolkit.getDefaultToolkit().createImage("assets/bell.png");
+        //Alternative (if the icon is on the classpath):
+        //Image image = Toolkit.getToolkit().createImage(getClass().getResource("icon.png"));
+
+        TrayIcon trayIcon = new TrayIcon(image, "Tray Demo");
+        //Let the system resize the image if needed
+        trayIcon.setImageAutoSize(true);
+        //Set tooltip text for the tray icon
+        trayIcon.setToolTip("System tray");
+       tray.add(trayIcon);
+
+        trayIcon.displayMessage(b, a, MessageType.INFO);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Sync.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tray.remove(trayIcon);
+    }
+    
+    
 }

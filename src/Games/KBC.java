@@ -11,7 +11,6 @@
 package Games;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,13 +27,10 @@ String j="";
 int o1;
 /** Creates new form Anagrams */
     public KBC() {
-// j=JOptionPane.showInputDialog(null,"Please Enter Your Name.."); 
+
 
  
         initComponents();
-          this.setLocationRelativeTo(null);
-        this.pack();
-        qzq.setIcon(new ImageIcon("assets/game/quiz.jpg"));
         wr();
          
     }
@@ -63,23 +59,22 @@ int o1;
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        qzq = new javax.swing.JLabel();
         q1 = new javax.swing.JLabel();
 
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        m1.setBackground(new java.awt.Color(3, 0, 0));
+        m1.setBackground(new java.awt.Color(51, 51, 51));
+        m1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b1.setBackground(new java.awt.Color(255, 255, 255));
         b1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         b1.setForeground(new java.awt.Color(246, 239, 239));
         b1.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(204, 102, 0)));
-        m1.add(b1);
-        b1.setBounds(10, 370, 990, 90);
+        m1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 990, 90));
 
         jDesktopPane2.setBackground(new java.awt.Color(51, 255, 255));
 
-        a2.setBackground(new java.awt.Color(0, 0, 0));
+        a2.setBackground(new java.awt.Color(51, 51, 51));
         a2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         a2.setForeground(new java.awt.Color(255, 255, 255));
         a2.setText("B)");
@@ -93,7 +88,7 @@ int o1;
         jDesktopPane2.add(a2);
         a2.setBounds(500, 0, 490, 110);
 
-        a3.setBackground(new java.awt.Color(0, 0, 0));
+        a3.setBackground(new java.awt.Color(51, 51, 51));
         a3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         a3.setForeground(new java.awt.Color(255, 255, 255));
         a3.setText("C)");
@@ -107,7 +102,7 @@ int o1;
         jDesktopPane2.add(a3);
         a3.setBounds(0, 110, 500, 120);
 
-        a4.setBackground(new java.awt.Color(0, 0, 0));
+        a4.setBackground(new java.awt.Color(51, 51, 51));
         a4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         a4.setForeground(new java.awt.Color(255, 255, 255));
         a4.setText("D)");
@@ -121,7 +116,7 @@ int o1;
         jDesktopPane2.add(a4);
         a4.setBounds(500, 110, 490, 120);
 
-        a1.setBackground(new java.awt.Color(0, 0, 0));
+        a1.setBackground(new java.awt.Color(51, 51, 51));
         a1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         a1.setForeground(new java.awt.Color(255, 255, 255));
         a1.setText("A)");
@@ -140,8 +135,7 @@ int o1;
         jDesktopPane2.add(a1);
         a1.setBounds(0, 0, 500, 110);
 
-        m1.add(jDesktopPane2);
-        jDesktopPane2.setBounds(10, 470, 990, 230);
+        m1.add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 990, 230));
 
         st.setBackground(new java.awt.Color(153, 255, 153));
         st.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -153,8 +147,7 @@ int o1;
                 stActionPerformed(evt);
             }
         });
-        m1.add(st);
-        st.setBounds(20, 303, 100, 50);
+        m1.add(st, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 303, 100, 50));
 
         l1.setBackground(new java.awt.Color(153, 255, 255));
         l1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -170,8 +163,7 @@ int o1;
         l1.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(l1);
 
-        m1.add(jScrollPane1);
-        jScrollPane1.setBounds(830, 80, 160, 280);
+        m1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 80, 160, 250));
 
         q2.setBackground(new java.awt.Color(0, 204, 51));
 
@@ -186,8 +178,7 @@ int o1;
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        m1.add(q2);
-        q2.setBounds(10, 170, 20, 30);
+        m1.add(q2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         q3.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -202,8 +193,7 @@ int o1;
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        m1.add(q3);
-        q3.setBounds(10, 210, 20, 30);
+        m1.add(q3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         qu.setBackground(new java.awt.Color(255, 0, 51));
         qu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -214,43 +204,38 @@ int o1;
                 quActionPerformed(evt);
             }
         });
-        m1.add(qu);
-        qu.setBounds(130, 300, 80, 50);
+        m1.add(qu, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 80, 50));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("WRONG ANSWER");
-        m1.add(jLabel2);
-        jLabel2.setBounds(50, 210, 140, 30);
+        m1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("LOCK ANSWER");
-        m1.add(jLabel3);
-        jLabel3.setBounds(50, 130, 120, 30);
+        m1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 120, 30));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("WRIGHT ANSWER");
-        m1.add(jLabel4);
-        jLabel4.setBounds(50, 170, 140, 30);
-        m1.add(qzq);
-        qzq.setBounds(280, 50, 500, 280);
+        m1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 30));
 
-        q1.setBackground(new java.awt.Color(255, 153, 51));
+        q1.setBackground(new java.awt.Color(255, 102, 0));
         q1.setOpaque(true);
-        m1.add(q1);
-        q1.setBounds(10, 130, 20, 30);
+        m1.add(q1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 20, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(m1, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(m1, javax.swing.GroupLayout.PREFERRED_SIZE, 1010, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(m1, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+            .addComponent(m1, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
         );
 
         pack();
@@ -744,7 +729,15 @@ if (q == 5) {
                     l1.setSelectedIndex(4);s();
                     JOptionPane.showMessageDialog(null, "Congratulations!\nYour Answer is Right"); sh();wr();
                     qu.setVisible(true);
-                } else {
+                } 
+                if (ans.equalsIgnoreCase("c) The hague")) {
+                    Color qw = q2.getBackground();
+                    a3.setBackground(qw);
+                    l1.setSelectedIndex(4);s();
+                    JOptionPane.showMessageDialog(null, "Congratulations!\nYour Answer is Right"); sh();wr();
+                    qu.setVisible(true);
+                } 
+                else {
                     Color qw = q3.getBackground();
                     a3.setBackground(qw);
                     l1.setSelectedIndex(9);
@@ -979,7 +972,7 @@ o1=0;//a4
 
         cr();
 st.setVisible(false);
-        re();
+       re();
         a1.setSelected(false);
         a2.setSelected(false);
         a3.setSelected(false);
@@ -994,12 +987,12 @@ st.setVisible(false);
         int no = l1.getSelectedIndex();
         double a = Math.random();
         if (no == 9) {
-//di.setText("HEY "+j+" THIS IS YOUR FIRST QUESTION. FOR ANSWER THIS QUESTION YOU HAVE FOUR OPTIONS. YOUR ALL LIFE LINES ARE ALIVE. ");
+
 
 
             if (a < 0.20) {
                 b1.setText("Q1) WHICH IS THE FIRST PROCESSOR OF INTEL?");
-                a1.setText(a1.getText() + " INTEL8008");
+                a1.setText(a1.getText() + " INTEL 8008");
                 a2.setText(a2.getText() + " INTEL 4004");//WRITE
                 a3.setText(a3.getText() + " INTEL 4040");
                 a4.setText(a4.getText() + " INTEL PENTIUM 1");
@@ -1324,13 +1317,12 @@ st.setVisible(false);
     private javax.swing.JPanel q2;
     private javax.swing.JPanel q3;
     private javax.swing.JButton qu;
-    private javax.swing.JLabel qzq;
     private javax.swing.JButton st;
     // End of variables declaration//GEN-END:variables
 class a{
 public void exe()
 {
-    //JOptionPane.showMessageDialog(null,"go to hell");
+    JOptionPane.showMessageDialog(null,"go to hell");
 }
 };
     private void re() {
@@ -1340,8 +1332,8 @@ public void exe()
             a2.setBackground(af);
             a3.setBackground(af);
             a4.setBackground(af);
-         a df = new a();
-         df.exe();
+         a df = null;
+         //df.exe();
         }
     }
 
@@ -1366,12 +1358,12 @@ public void exe()
         }
     }
      private void cr() {
-        {
+        
            a1.setEnabled(true);
             a2.setEnabled(true);
              a3.setEnabled(true);
               a4.setEnabled(true);
-        }
+        
     }
      private void sh() {
         {

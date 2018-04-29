@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.json.simple.JSONObject;
 
 public class Windows {
@@ -156,17 +158,29 @@ public class Windows {
     }
 
     private void getFav1() {
+        FileReader fr;
+        BufferedReader br;
+        String s;
         try {
-            FileReader fr = new FileReader("assets/fav/folder.txt");
-            BufferedReader br = new BufferedReader(fr);
-            String s = "";
+            fr = new FileReader("assets/fav/folder.txt");
+            br = new BufferedReader(fr);
+            s = "";
             while ((s = br.readLine()) != null) {
                 String a[] = s.split("=");
                 folder.add(a[1]);
             }
             br.close();
             fr.close();
-
+        } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/folder.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        
+        try {
             fr = new FileReader("assets/fav/audio.txt");
             br = new BufferedReader(fr);
             s = "";
@@ -176,7 +190,16 @@ public class Windows {
             }
             br.close();
             fr.close();
-
+        } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/audio.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        
+        try {
             fr = new FileReader("assets/fav/video.txt");
             br = new BufferedReader(fr);
             s = "";
@@ -186,7 +209,16 @@ public class Windows {
             }
             br.close();
             fr.close();
-
+        } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/video.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        
+        try {
             fr = new FileReader("assets/fav/movies.txt");
             br = new BufferedReader(fr);
             s = "";
@@ -197,7 +229,16 @@ public class Windows {
 
             br.close();
             fr.close();
-
+        } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/movies.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        
+        try {
             fr = new FileReader("assets/fav/apps.txt");
             br = new BufferedReader(fr);
             s = "";
@@ -207,7 +248,15 @@ public class Windows {
             }
             br.close();
             fr.close();
-
+        } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/apps.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        try {
             fr = new FileReader("assets/fav/browse.txt");
             br = new BufferedReader(fr);
             s = "";
@@ -218,6 +267,12 @@ public class Windows {
             fr.close();
 
         } catch (Exception e) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/browse.txt");
+                fw.close();
+            } catch (IOException ex) {
+            }
         }
 
         System.out.println(folder);
@@ -244,80 +299,88 @@ public class Windows {
     }
 
     private void file(String path) {
+        try {
+            File root = new File(path);
+            File[] list = root.listFiles();
 
-        File root = new File(path);
-        File[] list = root.listFiles();
-
-        for (File f : list) {
-            if (f.isFile() && f.getName().toLowerCase().contains(fname.toLowerCase())) {
-                try {
-                    WindowsShortcut ws = new WindowsShortcut(f);
-                    if (ws.isDirectory()) {
-                        ar.add(f.getName() + "=Folder=explorer \"" + f.getPath() + "\"");
-                    } else {
-                        if (ws.getRealFilename().contains(".")) {
-                            ar.add(f.getName() + "=File=\"" + ws.getRealFilename() + "\"");
+            for (File f : list) {
+                if (f.isFile() && f.getName().toLowerCase().contains(fname.toLowerCase())) {
+                    try {
+                        WindowsShortcut ws = new WindowsShortcut(f);
+                        if (ws.isDirectory()) {
+                            ar.add(f.getName() + "=Folder=explorer \"" + f.getPath() + "\"");
+                        } else {
+                            if (ws.getRealFilename().contains(".")) {
+                                ar.add(f.getName() + "=File=\"" + ws.getRealFilename() + "\"");
+                            }
                         }
+                        pth = "\"" + ws.getRealFilename() + "\"";
+                    } catch (Exception ex) {
                     }
-                    pth = "\"" + ws.getRealFilename() + "\"";
-                } catch (Exception ex) {
+                } else if (f.isDirectory()) {
+                    file(f.getAbsolutePath());
                 }
-            } else if (f.isDirectory()) {
-                file(f.getAbsolutePath());
-            }
 
+            }
+        } catch (Exception ex) {
         }
     }
 
     private void direc(String dir) {
-        File r = new File(dir);
-        File[] l = r.listFiles();
+        try {
+            File r = new File(dir);
+            File[] l = r.listFiles();
 
-        for (File f : l) {
-            if (f.isFile() && !f.getName().contains("desktop.ini") && !f.getName().contains("Thumbs.db")) {
-                //System.out.println("\n\n\n"+f.getAbsolutePath()+"\n\n\n");
-                if (f.getAbsolutePath().contains(".")) {
-                    ar.add(f.getName() + "=File=\"" + f.getAbsolutePath() + "\"");
+            for (File f : l) {
+                if (f.isFile() && !f.getName().contains("desktop.ini") && !f.getName().contains("Thumbs.db")) {
+                    //System.out.println("\n\n\n"+f.getAbsolutePath()+"\n\n\n");
+                    if (f.getAbsolutePath().contains(".")) {
+                        ar.add(f.getName() + "=File=\"" + f.getAbsolutePath() + "\"");
+                    }
+                }
+                if (f.isDirectory() && !f.getName().contains("$RECYCLE.BIN") && !f.getName().contains("System Volume Information")) {
+                    direc(f.getAbsolutePath());
                 }
             }
-            if (f.isDirectory() && !f.getName().contains("$RECYCLE.BIN") && !f.getName().contains("System Volume Information")) {
-                direc(f.getAbsolutePath());
-            }
+        } catch (Exception ex) {
         }
     }
 
     private void apps(String path) {
+        try {
+            File root = new File(path);
+            File[] list = root.listFiles();
 
-        File root = new File(path);
-        File[] list = root.listFiles();
+            if (list == null) {
+                return;
+            }
+            for (File f : list) {
 
-        if (list == null) {
-            return;
-        }
-        for (File f : list) {
+                if (f.getName().toLowerCase().contains(fname.toLowerCase()) && f.getName().contains(".lnk")) {
+                    try {
 
-            if (f.getName().toLowerCase().contains(fname.toLowerCase()) && f.getName().contains(".lnk")) {
-                try {
-
-                    WindowsShortcut ws = new WindowsShortcut(f);
-                    System.out.println(ws.getRealFilename());
-                    pth = "\"" + ws.getRealFilename() + "\"";
-                    String g = f.getName();
-                    //System.out.println(pth);
-                    if (f.getName().endsWith(".lnk")) {
-                        g = g.substring(0, g.length() - 4);
+                        WindowsShortcut ws = new WindowsShortcut(f);
+                        System.out.println(ws.getRealFilename());
+                        pth = "\"" + ws.getRealFilename() + "\"";
+                        String g = f.getName();
+                        //System.out.println(pth);
+                        if (f.getName().endsWith(".lnk")) {
+                            g = g.substring(0, g.length() - 4);
+                        }
+                        if (ws.getRealFilename().contains(".")) {
+                            ar.add(g + "=App=\"" + ws.getRealFilename() + "\"");
+                        }
+                    } catch (Exception ex) {
                     }
-                    if (ws.getRealFilename().contains(".")) {
-                        ar.add(g + "=App=\"" + ws.getRealFilename() + "\"");
+                } else if (f.isDirectory()) {
+                    System.out.println(f.getName());
+                    if (!f.getName().contains("Accessories")) {
+                        apps(f.getAbsolutePath());
                     }
-                } catch (Exception ex) {
-                }
-            } else if (f.isDirectory()) {
-                System.out.println(f.getName());
-                if (!f.getName().contains("Accessories")) {
-                    apps(f.getAbsolutePath());
                 }
             }
+        } catch (Exception ex) {
+
         }
     }
 
@@ -396,7 +459,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd,cmd);
+                Options op = new Options(asd, cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -438,7 +501,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd,cmd);
+                Options op = new Options(asd, cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -484,7 +547,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd,cmd);
+                Options op = new Options(asd, cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -524,7 +587,7 @@ public class Windows {
             }
 
             if (asd.size() > 1) {
-                Options op = new Options(asd,cmd);
+                Options op = new Options(asd, cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -559,7 +622,7 @@ public class Windows {
             }
 
             if (ar.size() > 1) {
-                Options op = new Options(ar,cmd);
+                Options op = new Options(ar, cmd);
                 op.setVisible(true);
 
                 String ss[] = new String[2];
@@ -739,8 +802,7 @@ public class Windows {
                         }
                         da = n + ":" + d.getMinutes();
                     }
-                }
-                else {
+                } else {
                     da = LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();
                     t = 0;
                     //ss = "You forgot something.";
@@ -820,7 +882,7 @@ public class Windows {
             return ok;
 
         } else if (ar.size() > 1) {
-            Options op = new Options(ar,cmd);
+            Options op = new Options(ar, cmd);
             op.setVisible(true);
             ar.clear();
             String temp[] = {"@#$", "Here's a list of files and apps with similar names."};

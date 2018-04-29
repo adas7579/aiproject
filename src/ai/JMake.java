@@ -290,9 +290,9 @@ public class JMake {
         }
     }
 
-    public int deleteHistory(String a[]) throws Exception {
+    public int deleteHistory(String a) throws Exception {
 
-        JSONObject tt = rr.decodeJson(rr.putRequest("api/Prefrence/2", rr.encodeJSON(new String[][]{{"id", a[0]}, {"pref_id", a[1]}})));
+        JSONObject tt = rr.decodeJson(rr.deleteRequest("api/Prefrence/"+a));
         if (tt.containsValue("Successfully Deleted Prefrence")) {
             return 1;
         } else {

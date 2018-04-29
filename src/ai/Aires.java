@@ -18,23 +18,35 @@ import org.json.simple.JSONObject;
  * @author ULTRON
  */
 public class Aires extends javax.swing.JFrame {
-JSONObject tt;
-DefaultTableModel db;
+
+    JSONObject tt;
+    DefaultTableModel db;
+
     /**
      * Creates new form Aires
+     *
      * @param tt
      */
     @SuppressWarnings("OverridableMethodCallInConstructor")
     public Aires(JSONObject tt) {
-        this.tt=tt;
-          initComponents();
-          db=(DefaultTableModel)a1.getModel();
-           this.setLocationRelativeTo(null);
-           this.pack();
-           String res[]=tt.get("answer").toString().split("\n");
-           for(String line:res)
-           db.addRow(new Object[]{line});
-           a1.setShowGrid(false);
+        this.tt = tt;
+        initComponents();
+
+        this.setLocationRelativeTo(null);
+        this.pack();
+        String res[] = tt.get("answer").toString().split("\n");
+        for (String line : res) {
+            if (line.contains("<<>>")) {
+                if (line.split("<<>>").length == 2) {
+                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1]+"\n\n");
+                }
+            } else {
+                a1.append(line + "\n");
+            }
+
+        }
+        a1.setCaretPosition(0);
+
     }
 
     /**
@@ -46,72 +58,27 @@ DefaultTableModel db;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        a1 = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        a1 = new javax.swing.JTextArea();
+
+        jScrollPane1.setViewportView(jEditorPane1);
 
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        a1.setColumns(20);
+        a1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        a1.setLineWrap(true);
+        a1.setRows(5);
+        a1.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(a1);
 
-        a1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        a1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                ""
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        a1.setRowHeight(20);
-        a1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        a1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                a1MouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(a1);
-        if (a1.getColumnModel().getColumnCount() > 0) {
-            a1.getColumnModel().getColumn(0).setResizable(false);
-        }
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 844, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-        );
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void a1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseClicked
-if(evt.getClickCount()==2)
-{
-
-    try {
-                            Desktop.getDesktop().browse(new URI("https://www.google.co.in/search?q="+a1.getValueAt(a1.getSelectedRow(),0).toString().trim().replace(" ","+")));
-                        } catch (IOException | URISyntaxException ex) {
-                            System.out.println(ex.getMessage());
-                        }
-}
-    }//GEN-LAST:event_a1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -143,14 +110,15 @@ if(evt.getClickCount()==2)
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-//                new Aires().setVisible(true);
+                //  new Aires().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable a1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea a1;
+    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

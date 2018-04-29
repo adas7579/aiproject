@@ -8,6 +8,7 @@ package ai;
 import javax.swing.ImageIcon;
 import Games.*;
 import crypto.*;
+import java.awt.Color;
 /**
  *
  * @author aNaWorLd
@@ -21,10 +22,12 @@ public class Game extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
            this.pack();
-        qz.setIcon(new ImageIcon("assets/game/quiz.jpg"));
+        qz.setIcon(new ImageIcon("assets/game/qz.png"));
         sn.setIcon(new ImageIcon("assets/game/sn.jpg"));
-        cal.setIcon(new ImageIcon("assets/game/cal.jpg"));
-        ed.setIcon(new ImageIcon("assets/game/ed.jpg"));
+        cal.setIcon(new ImageIcon("assets/game/cal.png"));
+        ed.setIcon(new ImageIcon("assets/game/ed.png"));
+         ap.setIcon(new ImageIcon("assets/game/tone.png"));
+          wb.setIcon(new ImageIcon("assets/game/web.png"));
     }
 
     /**
@@ -37,105 +40,265 @@ public class Game extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        wb = new javax.swing.JLabel();
+        c1 = new javax.swing.JLabel();
+        c3 = new javax.swing.JLabel();
+        c4 = new javax.swing.JLabel();
+        c5 = new javax.swing.JLabel();
+        c6 = new javax.swing.JLabel();
+        c7 = new javax.swing.JLabel();
+        cal = new javax.swing.JLabel();
+        ed = new javax.swing.JLabel();
         qz = new javax.swing.JLabel();
         sn = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        ed = new javax.swing.JLabel();
-        cal = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        ap = new javax.swing.JLabel();
 
         setTitle("Play Games");
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        qz.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(qz, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 380, 225));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 380, 225));
-
-        jButton1.setText("Play Game");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 0, 0));
+        jButton5.setText("X");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 600, 380, 40));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
+        jPanel1.add(wb, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 60, 50));
 
-        jButton2.setText("Play Game");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        c1.setBackground(new java.awt.Color(102, 102, 102));
+        c1.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c1.setForeground(new java.awt.Color(255, 255, 255));
+        c1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c1.setText("Snake & Ladder");
+        c1.setOpaque(true);
+        c1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c1MouseExited(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 380, 40));
+        jPanel1.add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 350, 60));
 
-        ed.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(ed, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 380, 225));
-
-        cal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 380, 225));
-
-        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText(" Games");
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 810, 30));
-
-        jLabel3.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(" Tools");
-        jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 30));
-
-        jButton3.setText("Open Calculator");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        c3.setBackground(new java.awt.Color(102, 102, 102));
+        c3.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c3.setForeground(new java.awt.Color(255, 255, 255));
+        c3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c3.setText("Calculator");
+        c3.setOpaque(true);
+        c3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c3MouseExited(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 380, 40));
+        jPanel1.add(c3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 350, 60));
 
-        jButton4.setText("Open Encoder/Decoder");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        c4.setBackground(new java.awt.Color(102, 102, 102));
+        c4.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c4.setForeground(new java.awt.Color(255, 255, 255));
+        c4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c4.setText("Encoder/Decoder");
+        c4.setOpaque(true);
+        c4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c4MouseExited(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 380, 40));
+        jPanel1.add(c4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 350, 60));
+
+        c5.setBackground(new java.awt.Color(102, 102, 102));
+        c5.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c5.setForeground(new java.awt.Color(255, 255, 255));
+        c5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c5.setText("Web Browser");
+        c5.setOpaque(true);
+        c5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c5MouseExited(evt);
+            }
+        });
+        jPanel1.add(c5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 350, 60));
+
+        c6.setBackground(new java.awt.Color(102, 102, 102));
+        c6.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c6.setForeground(new java.awt.Color(255, 255, 255));
+        c6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c6.setText("Audio Player");
+        c6.setOpaque(true);
+        c6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c6MouseExited(evt);
+            }
+        });
+        jPanel1.add(c6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 350, 60));
+
+        c7.setBackground(new java.awt.Color(102, 102, 102));
+        c7.setFont(new java.awt.Font("Segoe UI Historic", 1, 15)); // NOI18N
+        c7.setForeground(new java.awt.Color(255, 255, 255));
+        c7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        c7.setText("Quiz");
+        c7.setOpaque(true);
+        c7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                c7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c7MouseExited(evt);
+            }
+        });
+        jPanel1.add(c7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 60));
+        jPanel1.add(cal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 60, 50));
+        jPanel1.add(ed, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 60, 50));
+        jPanel1.add(qz, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 60, 50));
+        jPanel1.add(sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 60, 50));
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 0, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Tools & Games");
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 30));
+        jPanel1.add(ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 60, 50));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-KBC kb=new KBC();
-kb.setVisible(true);
-this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void c1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseClicked
 Snake sk=new Snake();
 sk.setVisible(true);
 this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    }//GEN-LAST:event_c1MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void c1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseEntered
+        
+            c1.setBackground(ch);
+        
+    }//GEN-LAST:event_c1MouseEntered
+Color ch = new Color(102, 140, 255);
+    private void c1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseExited
+        
+            c1.setBackground(new Color(102, 102, 102));
+        
+    }//GEN-LAST:event_c1MouseExited
+
+    private void c3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c3MouseClicked
 calc cc=new calc();
 cc.setVisible(true);
-this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+this.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_c3MouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void c3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c3MouseEntered
+    c3.setBackground(ch);        // TODO add your handling code here:
+    }//GEN-LAST:event_c3MouseEntered
+
+    private void c3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c3MouseExited
+  c3.setBackground(new Color(102, 102, 102));        // TODO add your handling code here:
+    }//GEN-LAST:event_c3MouseExited
+
+    private void c4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c4MouseClicked
 Crypto cc=new Crypto();
 cc.setVisible(true);
+this.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_c4MouseClicked
+
+    private void c4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c4MouseEntered
+    c4.setBackground(ch);        // TODO add your handling code here:
+    }//GEN-LAST:event_c4MouseEntered
+
+    private void c4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c4MouseExited
+  c4.setBackground(new Color(102, 102, 102));        // TODO add your handling code here:
+    }//GEN-LAST:event_c4MouseExited
+
+    private void c5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c5MouseClicked
+Web ww=new Web();
+this.setVisible(false);  
+ww.main();
+
+    }//GEN-LAST:event_c5MouseClicked
+
+    private void c5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c5MouseEntered
+    c5.setBackground(ch);        // TODO add your handling code here:
+    }//GEN-LAST:event_c5MouseEntered
+
+    private void c5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c5MouseExited
+  c5.setBackground(new Color(102, 102, 102));        // TODO add your handling code here:
+    }//GEN-LAST:event_c5MouseExited
+
+    private void c6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c6MouseClicked
+AudPlay ad=new AudPlay();
+ad.setVisible(true);
 this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_c6MouseClicked
+
+    private void c6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c6MouseEntered
+    c6.setBackground(ch);        // TODO add your handling code here:
+    }//GEN-LAST:event_c6MouseEntered
+
+    private void c6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c6MouseExited
+  c6.setBackground(new Color(102, 102, 102));        // TODO add your handling code here:
+    }//GEN-LAST:event_c6MouseExited
+
+    private void c7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c7MouseClicked
+KBC kb=new KBC();
+kb.setVisible(true);
+this.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_c7MouseClicked
+
+    private void c7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c7MouseEntered
+    c7.setBackground(ch);        // TODO add your handling code here:
+    }//GEN-LAST:event_c7MouseEntered
+
+    private void c7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c7MouseExited
+  c7.setBackground(new Color(102, 102, 102));        // TODO add your handling code here:
+    }//GEN-LAST:event_c7MouseExited
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,16 +336,21 @@ this.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ap;
+    private javax.swing.JLabel c1;
+    private javax.swing.JLabel c3;
+    private javax.swing.JLabel c4;
+    private javax.swing.JLabel c5;
+    private javax.swing.JLabel c6;
+    private javax.swing.JLabel c7;
     private javax.swing.JLabel cal;
     private javax.swing.JLabel ed;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel qz;
     private javax.swing.JLabel sn;
+    private javax.swing.JLabel wb;
     // End of variables declaration//GEN-END:variables
 }

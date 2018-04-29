@@ -75,6 +75,7 @@ public class alarm extends Thread {
             format = stream.getFormat();
             info = new DataLine.Info(Clip.class, format);
             clip = (Clip) AudioSystem.getLine(info);
+            
             clip.open(stream);
             
             clip.start();
