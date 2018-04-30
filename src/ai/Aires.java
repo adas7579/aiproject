@@ -9,6 +9,8 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.json.simple.JSONObject;
@@ -21,24 +23,24 @@ public class Aires extends javax.swing.JFrame {
 
     JSONObject tt;
     DefaultTableModel db;
-
+    JMake jj=new JMake();
     /**
      * Creates new form Aires
      *
      * @param tt
      */
     @SuppressWarnings("OverridableMethodCallInConstructor")
-    public Aires(JSONObject tt) {
+    public Aires(JSONObject tt, String head) {
         this.tt = tt;
         initComponents();
-
+        url.setText(head);
         this.setLocationRelativeTo(null);
         this.pack();
         String res[] = tt.get("answer").toString().split("\n");
         for (String line : res) {
             if (line.contains("<<>>")) {
                 if (line.split("<<>>").length == 2) {
-                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1]+"\n\n");
+                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n\n");
                 }
             } else {
                 a1.append(line + "\n");
@@ -62,6 +64,8 @@ public class Aires extends javax.swing.JFrame {
         jEditorPane1 = new javax.swing.JEditorPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         a1 = new javax.swing.JTextArea();
+        url = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -75,10 +79,45 @@ public class Aires extends javax.swing.JFrame {
         a1.setWrapStyleWord(true);
         jScrollPane3.setViewportView(a1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 460));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 850, 420));
+
+        url.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        url.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(url, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
+
+        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setText("Search");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 210, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            a1.setText("");
+            JSONObject tt=jj.aiResponse("desktop:"+url.getText());
+             String res[] = tt.get("answer").toString().split("\n");
+        for (String line : res) {
+            if (line.contains("<<>>")) {
+                if (line.split("<<>>").length == 2) {
+                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n\n");
+                }
+            } else {
+                a1.append(line + "\n");
+            }
+
+        }
+        a1.setCaretPosition(0);
+        } catch (Exception ex) {
+            Logger.getLogger(Aires.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,8 +156,10 @@ public class Aires extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea a1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField url;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,6 +47,581 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
+        <Container class="javax.swing.JPanel" name="fav">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="33" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="50" y="30" width="530" height="400"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JSeparator" name="jSeparator8">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="40" width="470" height="10"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Semibold" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Favourites :"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="66" type="rgb"/>
+                </Property>
+                <Property name="tabLayoutPolicy" type="int" value="1"/>
+                <Property name="opaque" type="boolean" value="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="60" width="470" height="310"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanel1">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Documents">
+                        <Property name="tabTitle" type="java.lang.String" value="Documents"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tdoc">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Location" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="1">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="33" green="33" red="33" type="rgb"/>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton7">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton8">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel4">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Audio Songs">
+                        <Property name="tabTitle" type="java.lang.String" value="Audio Songs"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tas">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Location" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Default Cursor"/>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton9">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton10">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel5">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Video Songs">
+                        <Property name="tabTitle" type="java.lang.String" value="Video Songs"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tvs">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Location" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton11">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton12">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel6">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Movies">
+                        <Property name="tabTitle" type="java.lang.String" value="Movies"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tmv">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Location" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton13">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton14">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel7">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Browsing">
+                        <Property name="tabTitle" type="java.lang.String" value="Browsing"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tbrw">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Page Name" type="java.lang.Object"/>
+                                <Column editable="false" title="URL" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton15">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton16">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel9">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Applications">
+                        <Property name="tabTitle" type="java.lang.String" value="Applications"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tapp">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
+                                <Column editable="false" title="Location" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="jButton17">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add New"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton18">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="set">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -910,581 +1485,6 @@
                 </Constraint>
               </Constraints>
             </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="fav">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder>
-                  <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="30" width="530" height="400"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JSeparator" name="jSeparator8">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="40" width="470" height="10"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Favourites :"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
-                </Property>
-                <Property name="tabLayoutPolicy" type="int" value="1"/>
-                <Property name="opaque" type="boolean" value="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="20" y="60" width="470" height="310"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="jPanel1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="99" red="99" type="rgb"/>
-                    </Property>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Documents">
-                        <Property name="tabTitle" type="java.lang.String" value="Documents"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tdoc">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                            </Property>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Location" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="1">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="33" green="33" red="33" type="rgb"/>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton7">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton8">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel4">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Audio Songs">
-                        <Property name="tabTitle" type="java.lang.String" value="Audio Songs"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tas">
-                          <Properties>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Location" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton9">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton10">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel5">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Video Songs">
-                        <Property name="tabTitle" type="java.lang.String" value="Video Songs"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tvs">
-                          <Properties>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Location" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton11">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton12">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel6">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Movies">
-                        <Property name="tabTitle" type="java.lang.String" value="Movies"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tmv">
-                          <Properties>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Location" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton13">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton14">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel7">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Browsing">
-                        <Property name="tabTitle" type="java.lang.String" value="Browsing"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tbrw">
-                          <Properties>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Page Name" type="java.lang.Object"/>
-                                <Column editable="false" title="URL" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                          </AuxValues>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton15">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton16">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel9">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Applications">
-                        <Property name="tabTitle" type="java.lang.String" value="Applications"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="false"/>
-                  </Layout>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane6">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="6" y="5" width="450" height="240"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTable" name="tapp">
-                          <Properties>
-                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="0">
-                                <Column editable="false" title="Folder Name" type="java.lang.Object"/>
-                                <Column editable="false" title="Location" type="java.lang.Object"/>
-                              </Table>
-                            </Property>
-                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                              <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                  <Title/>
-                                  <Editor/>
-                                  <Renderer/>
-                                </Column>
-                              </TableColumnModel>
-                            </Property>
-                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                            </Property>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JButton" name="jButton17">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Add New"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="290" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton18">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Remove"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
-                      </Events>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="380" y="250" width="-1" height="30"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="about">

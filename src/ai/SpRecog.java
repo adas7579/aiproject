@@ -1,5 +1,7 @@
 package ai;
 
+import Games.AudPlay;
+import Games.Web;
 import java.util.*;
 import com.darkprograms.speech.microphone.Microphone;
 import com.darkprograms.speech.recognizer.GSpeechDuplex;
@@ -239,6 +241,18 @@ public class SpRecog implements GSpeechResponseListener {
           cal.setVisible(true);
           return;
         }
+             else if (output.equalsIgnoreCase("my playlist")) {
+
+          AudPlay ap=new AudPlay();
+          ap.setVisible(true);
+          return;
+        } 
+         else if (output.equalsIgnoreCase("my browser")) {
+
+          Web wb=new Web();
+          wb.main();
+          return;
+        } 
    else if ((output.toLowerCase().contains("play game"))||(output.toLowerCase().contains("show tools"))) {
 
           Game gm=new Game();
@@ -293,7 +307,7 @@ public class SpRecog implements GSpeechResponseListener {
     public void sorry(String a) {
       try {
         JSONObject tt=jj.aiResponse("desktop:"+a);
-        Aires ai=new Aires(tt);
+        Aires ai=new Aires(tt,a);
         ai.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);

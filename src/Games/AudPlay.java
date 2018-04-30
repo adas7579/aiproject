@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -210,6 +211,11 @@ public class AudPlay extends javax.swing.JFrame {
                 volMouseWheelMoved(evt);
             }
         });
+        vol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                volMouseClicked(evt);
+            }
+        });
         getContentPane().add(vol, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 50, 180));
 
         stp1.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
@@ -364,6 +370,9 @@ public class AudPlay extends javax.swing.JFrame {
         JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+       fc.addChoosableFileFilter(new FileNameExtensionFilter(".mp3", "mp3"));
+       fc.addChoosableFileFilter(new FileNameExtensionFilter(".wav", "wav"));
+       fc.addChoosableFileFilter(new FileNameExtensionFilter(".avi", "avi"));
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             tm.addRow(new Object[]{fc.getSelectedFile().getName()});
@@ -588,6 +597,10 @@ play.setMute(false);
         
     }//GEN-LAST:event_sldMouseWheelMoved
 
+    private void volMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volMouseClicked
+
+    }//GEN-LAST:event_volMouseClicked
+
     public static BufferedImage resize(BufferedImage img, int newW, int newH) {
         Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
         BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
@@ -618,7 +631,7 @@ play.setMute(false);
                     SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
                     sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
 
-                    pic.setIcon(FileSystemView.getFileSystemView().getSystemIcon(new File(song)));
+               pic.setIcon(new ImageIcon("assets/mlogo.png"));
 
                     // display media's metadata
                     for (Map.Entry<String, Object> entry : m.getMetadata().entrySet()) {

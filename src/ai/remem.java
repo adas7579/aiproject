@@ -57,7 +57,10 @@ public class remem {
             s[1] = r.Decode(rs.getString("id"), 77, 221);
         
             s[2] = r.Decode(rs.getString("pwd"), 77, 221);
-            s[3] = r.Decode(rs.getString("did"), 77, 221);
+            
+            
+            
+            s[3] = getID();
             System.out.println("Pre-Credentials: " + s[0] + " " + s[1] + " " + s[2] + "\n\n");
             bb.close();
             br.close();
@@ -82,5 +85,29 @@ public class remem {
 
         } catch (Exception ex) {
         }
+    }
+    
+    public String getID()
+    {
+    String s = "";
+        try {
+            Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
+
+            InputStream in = child.getInputStream();
+
+            int c;
+            while ((c = in.read()) != -1) {
+                //System.out.print((char) c);
+                s = s + (char) c;
+            }
+            System.out.println(s);
+            s = s.substring(4);
+            s = s.trim();
+            System.out.println(s);
+            in.close();
+
+        } catch (Exception ex) {
+        }
+        return s;
     }
 }

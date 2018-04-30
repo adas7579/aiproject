@@ -166,6 +166,11 @@ public class Home extends javax.swing.JFrame {
                 txtpssMouseClicked(evt);
             }
         });
+        txtpss.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpssKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtpss, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 330, 40));
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
@@ -420,6 +425,13 @@ if (txtemail.getText().equals("E-mail")) {
     }
         }
     }//GEN-LAST:event_forgotMouseClicked
+
+    private void txtpssKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpssKeyPressed
+        if(evt.getKeyChar()==10)
+        {
+        jButton1.doClick();
+        }
+    }//GEN-LAST:event_txtpssKeyPressed
 
     /**
      * @param args the command line arguments

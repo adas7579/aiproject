@@ -204,6 +204,40 @@ RSA rs=new RSA();
     private void initComponents() {
 
         hh1 = new javax.swing.JPanel();
+        fav = new javax.swing.JPanel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tdoc = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tas = new javax.swing.JTable();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tvs = new javax.swing.JTable();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tmv = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tbrw = new javax.swing.JTable();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tapp = new javax.swing.JTable();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
         set = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -259,40 +293,6 @@ RSA rs=new RSA();
         devi = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         btrefresh = new javax.swing.JButton();
-        fav = new javax.swing.JPanel();
-        jSeparator8 = new javax.swing.JSeparator();
-        jLabel17 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tdoc = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tas = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tvs = new javax.swing.JTable();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tmv = new javax.swing.JTable();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tbrw = new javax.swing.JTable();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tapp = new javax.swing.JTable();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
         about = new javax.swing.JPanel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
@@ -339,6 +339,269 @@ RSA rs=new RSA();
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        fav.setBackground(new java.awt.Color(51, 51, 51));
+        fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        fav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fav.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Favourites :");
+        fav.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jTabbedPane1.setBackground(new java.awt.Color(102, 102, 102));
+        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        jTabbedPane1.setOpaque(true);
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tdoc.setBackground(new java.awt.Color(204, 204, 204));
+        tdoc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folder Name", "Location"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tdoc.setGridColor(new java.awt.Color(51, 51, 51));
+        jScrollPane1.setViewportView(tdoc);
+        tdoc.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton7.setText("Remove");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jButton8.setText("Add New");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jTabbedPane1.addTab("Documents", jPanel1);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folder Name", "Location"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setViewportView(tas);
+
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton9.setText("Add New");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jButton10.setText("Remove");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jTabbedPane1.addTab("Audio Songs", jPanel4);
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tvs.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folder Name", "Location"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tvs);
+
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton11.setText("Add New");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jButton12.setText("Remove");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jTabbedPane1.addTab("Video Songs", jPanel5);
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tmv.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folder Name", "Location"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tmv);
+
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton13.setText("Add New");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jButton14.setText("Remove");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jTabbedPane1.addTab("Movies", jPanel6);
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbrw.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Page Name", "URL"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tbrw);
+
+        jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton15.setText("Add New");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jButton16.setText("Remove");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jTabbedPane1.addTab("Browsing", jPanel7);
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tapp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folder Name", "Location"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(tapp);
+
+        jPanel9.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
+
+        jButton17.setText("Add New");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
+
+        jButton18.setText("Remove");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
+
+        jTabbedPane1.addTab("Applications", jPanel9);
+
+        fav.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 470, 310));
+
+        hh1.add(fav, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         set.setBackground(new java.awt.Color(51, 51, 51));
         set.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -659,269 +922,6 @@ RSA rs=new RSA();
         sync.add(btrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 30, 30));
 
         hh1.add(sync, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
-
-        fav.setBackground(new java.awt.Color(51, 51, 51));
-        fav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        fav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        fav.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 10));
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Favourites :");
-        fav.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jTabbedPane1.setBackground(new java.awt.Color(102, 102, 102));
-        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        jTabbedPane1.setOpaque(true);
-
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tdoc.setBackground(new java.awt.Color(204, 204, 204));
-        tdoc.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Folder Name", "Location"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tdoc.setGridColor(new java.awt.Color(51, 51, 51));
-        jScrollPane1.setViewportView(tdoc);
-        tdoc.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton7.setText("Remove");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jButton8.setText("Add New");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jTabbedPane1.addTab("Documents", jPanel1);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Folder Name", "Location"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane2.setViewportView(tas);
-
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton9.setText("Add New");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jButton10.setText("Remove");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jTabbedPane1.addTab("Audio Songs", jPanel4);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tvs.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Folder Name", "Location"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(tvs);
-
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton11.setText("Add New");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jButton12.setText("Remove");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jTabbedPane1.addTab("Video Songs", jPanel5);
-
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tmv.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Folder Name", "Location"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(tmv);
-
-        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton13.setText("Add New");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jButton14.setText("Remove");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jTabbedPane1.addTab("Movies", jPanel6);
-
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tbrw.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Page Name", "URL"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane5.setViewportView(tbrw);
-
-        jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton15.setText("Add New");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jButton16.setText("Remove");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jTabbedPane1.addTab("Browsing", jPanel7);
-
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tapp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Folder Name", "Location"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane6.setViewportView(tapp);
-
-        jPanel9.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, 450, 240));
-
-        jButton17.setText("Add New");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, 30));
-
-        jButton18.setText("Remove");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 30));
-
-        jTabbedPane1.addTab("Applications", jPanel9);
-
-        fav.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 470, 310));
-
-        hh1.add(fav, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         about.setBackground(new java.awt.Color(51, 51, 51));
         about.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));

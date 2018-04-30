@@ -166,7 +166,7 @@ if(qry.getText().equals(""))
         try {
          JMake jj=new JMake();
         JSONObject tt=jj.aiResponse("desktop:"+qry.getText());
-        Aires ai=new Aires(tt);
+        Aires ai=new Aires(tt,qry.getText());
         ai.setVisible(true);
         this.setVisible(false);
         } catch (Exception ex) {

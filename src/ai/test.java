@@ -2,13 +2,8 @@ package ai;
 
 import application.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -22,6 +17,7 @@ import org.json.simple.JSONObject;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Desktop;
+import Games.*;
 /**
  *
  * @author VISION
@@ -651,6 +647,20 @@ if (!SystemTray.isSupported()) {
           cal.setVisible(true);
           return;
         }
+        
+        else if (output.equalsIgnoreCase("my playlist")) {
+
+          AudPlay ap=new AudPlay();
+          ap.setVisible(true);
+          return;
+        } 
+         else if (output.equalsIgnoreCase("my browser")) {
+
+          Web wb=new Web();
+          wb.main();
+          return;
+        } 
+        
          else if ((output.toLowerCase().contains("play game"))||(output.toLowerCase().contains("show tools"))) {
 
           Game gm=new Game();
@@ -794,7 +804,7 @@ private void logout()
 //        this.response.setText("");
         try {
         JSONObject tt=jj.aiResponse("desktop:"+a);
-        Aires ai=new Aires(tt);
+        Aires ai=new Aires(tt,a);
         ai.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
