@@ -16,15 +16,16 @@ import javax.swing.ComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author aNawOrLd
  */
 public class Reg extends javax.swing.JFrame {
-JMake jj=new JMake();
-    public Reg() {
 
+    JMake jj = new JMake();
+
+    public Reg() {
+        
         initComponents();
         setLocationRelativeTo(null);
         pic.setIcon(new ImageIcon("assets/ipad.jpg"));
@@ -36,7 +37,7 @@ JMake jj=new JMake();
         ee4.setVisible(false);
         ee5.setVisible(false);
         int y = LocalDateTime.now().getYear();
-
+        
         for (int i = 1; i <= 31; i++) {
             dd.addItem(i + "");
         }
@@ -84,6 +85,7 @@ JMake jj=new JMake();
         ee5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         pic = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,8 +241,8 @@ JMake jj=new JMake();
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 1, 48)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("<html><font color=\"white\"><font face=\"monotype corsiva\">Welcome</font> to</font><font color=\"blue\"> InArCo</font></html?");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 730, 120));
+        jLabel8.setText("<html><font color=\"blue\"><font face=\"monotype corsiva\">Welcome</font> to</font><font color=\"blue\"> InArCo</font></html?");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 440, 80));
 
         pwdtxt.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         pwdtxt.setForeground(new java.awt.Color(153, 153, 153));
@@ -268,7 +270,7 @@ JMake jj=new JMake();
         pwdtx.setForeground(new java.awt.Color(153, 153, 153));
         pwdtx.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwdtx.setText("Re-Enter Password");
-        pwdtx.setToolTipText("Password");
+        pwdtx.setToolTipText("Re-Enter Password");
         pwdtx.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         pwdtx.setEchoChar('\u0000');
         pwdtx.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -396,6 +398,13 @@ JMake jj=new JMake();
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 102), 2, true));
         jLabel5.setOpaque(true);
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 50, 370, 660));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel1.setText("Just few steps more to make you ready");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 360, 40));
+
+        pic.setIcon(new javax.swing.ImageIcon("E:\\vero\\AI\\assets\\ipad.jpg")); // NOI18N
         getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 1260, 690));
 
         pack();
@@ -404,98 +413,100 @@ JMake jj=new JMake();
     private void emtxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emtxtMouseClicked
 
     }//GEN-LAST:event_emtxtMouseClicked
-
+    
 
     private void pwdtxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdtxtMouseClicked
-        //if(txtpss.getPassword().equals("Password"))
-        {
-            pwdtxt.setText("");
-            pwdtxt.setEchoChar('\u25cf');
-            pwdtxt.setForeground(Color.BLACK);
-        }
+//        //if(txtpss.getPassword().equals("Password"))
+//        {
+//            pwdtxt.setText("");
+//            pwdtxt.setEchoChar('\u25cf');
+//            pwdtxt.setForeground(Color.BLACK);
+//        }
     }//GEN-LAST:event_pwdtxtMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (emtxt.getText().equalsIgnoreCase("Enter E-mail id")) {
             ee3.setVisible(true);
+            return;
         } else {
             ee3.setVisible(false);
+            
+            
         }
-
+        
         if (pwdtxt.getText().equalsIgnoreCase("Enter Password")) {
             ee2.setVisible(true);
+            return;
         } else {
             ee2.setVisible(false);
         }
-
+        
         if (pwdtx.getText().equalsIgnoreCase("Re-Enter Password")) {
             ee1.setVisible(true);
+            return;
         } else {
             ee1.setVisible(false);
         }
-
+        
         if (untxt.getText().equalsIgnoreCase("User Name")) {
             ee.setVisible(true);
+            return;
         } else {
             ee.setVisible(false);
         }
-
+        
         if (fntxt.getText().equalsIgnoreCase("Full Name")) {
             ee5.setVisible(true);
+            return;
         } else {
             ee5.setVisible(false);
         }
-
+        
         if (gen.getSelectedIndex() == 0) {
             ee4.setVisible(true);
+            return;
         } else {
             ee4.setVisible(false);
         }
-
+        
         if (!pwdtxt.getText().equals(pwdtx.getText())) {
             JOptionPane.showMessageDialog(null, "Password Did't Match", "Message", 2);
             pwdtxt.setText("");
             pwdtx.setText("");
-
+            return;
         }
-
-        String po=untxt.getText().toUpperCase();
+        
+        String po = untxt.getText().toUpperCase();
         if (ee.isVisible() == false && ee1.isVisible() == false && ee2.isVisible() == false && ee3.isVisible() == false && pwdtxt.getText().equals(pwdtx.getText())) {
             String da = dd.getSelectedItem().toString() + "/" + mm.getSelectedItem().toString() + "/" + yy.getSelectedItem().toString();
             String a[] = new String[]{emtxt.getText(), pwdtxt.getText(), po, fntxt.getText(), gen.getSelectedItem().toString(), da};
 
-         //   int otp = (int) Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
-         //   SendEmail mailobj = new SendEmail();
-         //   mailobj.sendMail(emtxt.getText(), "InArCo Email Verification", "Hello " + fntxt.getText().toUpperCase() + "\nUse following OTP to confirm your Email: \nYour OTP is : " + otp + "\nIf you didn’t ask to verify this address, you can ignore this email.\nThanks\nTeam InArCo");
-            
+            //   int otp = (int) Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+            //   SendEmail mailobj = new SendEmail();
+            //   mailobj.sendMail(emtxt.getText(), "InArCo Email Verification", "Hello " + fntxt.getText().toUpperCase() + "\nUse following OTP to confirm your Email: \nYour OTP is : " + otp + "\nIf you didn’t ask to verify this address, you can ignore this email.\nThanks\nTeam InArCo");
             this.setVisible(false);
-          
-           
-            JMake jj=new JMake();
+            
+            JMake jj = new JMake();
             try {
-                int res= jj.getOTP(a[0]);
-                if(res==1)
-                {
-                  cnf ff = new cnf(a);
-                    LocalTime time = LocalTime.now();             
-                     System.out.println(time);
-                   ff.start = Instant.now();
-                   ff.cid.setText(a[0]);
+                int res = jj.getOTP(a[0]);
+                if (res == 1) {
+                    cnf ff = new cnf(a);
+                    LocalTime time = LocalTime.now();                    
+                    System.out.println(time);
+                    ff.start = Instant.now();
+                    ff.cid.setText(a[0]);
                     ff.setVisible(true);
-                }
-                else
-                {
+                } else {
                     JOptionPane.showMessageDialog(null, "Failed To sent OTP!");
                     
                 }
             } catch (Exception ex) {
                 Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
             }
-       //     ff.otp = otp;
-       
-
+            //     ff.otp = otp;
+            
         }
-
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -507,7 +518,7 @@ JMake jj=new JMake();
     }//GEN-LAST:event_untxtMouseClicked
 
     private void untxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_untxtKeyPressed
-
+        
 
     }//GEN-LAST:event_untxtKeyPressed
 
@@ -518,6 +529,7 @@ JMake jj=new JMake();
     private void untxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_untxtFocusGained
         if (untxt.getText().equals("User Name")) {
             untxt.setText("");
+            untxt.setForeground(Color.BLACK);
         }
         
     }//GEN-LAST:event_untxtFocusGained
@@ -525,15 +537,13 @@ JMake jj=new JMake();
     private void untxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_untxtFocusLost
         if (untxt.getText().equals("")) {
             untxt.setText("User Name");
-        }
-        else
-        {
+            untxt.setForeground(new Color(153,153,153));
+        } else {
             try {
-               int i= jj.Validate(untxt.getText(), 1);
-               if(i!=1)
-               {
-                   JOptionPane.showMessageDialog(null, "UserName already Registered!");
-               }
+                int i = jj.Validate(untxt.getText(), 1);
+                if (i != 1) {
+                    JOptionPane.showMessageDialog(null, "UserName already Registered!");
+                }
             } catch (Exception ex) {
                 Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -543,23 +553,22 @@ JMake jj=new JMake();
     private void emtxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emtxtFocusGained
         if (emtxt.getText().equals("Enter E-mail ID")) {
             emtxt.setText("");
+            emtxt.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_emtxtFocusGained
 
     private void emtxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emtxtFocusLost
         if (emtxt.getText().equals("")) {
             emtxt.setText("Enter E-mail ID");
-        }
-        else
-        {
+            emtxt.setForeground(new Color(153,153,153));
+        } else {
             try {
-               int i= jj.Validate(emtxt.getText(), 0);
-               if(i!=1)
-               {
-                   JOptionPane.showMessageDialog(null, "Email Already Registered!");
-                   emtxt.setText("");
-                   emtxt.requestFocus();
-               }
+                int i = jj.Validate(emtxt.getText(), 0);
+                if (i != 1) {
+                    JOptionPane.showMessageDialog(null, "Email Already Registered!");
+                    emtxt.setText("");
+                    emtxt.requestFocus();
+                }
             } catch (Exception ex) {
                 Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -569,7 +578,9 @@ JMake jj=new JMake();
     private void pwdtxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxtFocusGained
         String h = new String(pwdtxt.getPassword());
         if (h.equals("Enter Password")) {
-            pwdtxt.setText("");        
+            pwdtxt.setText("");            
+            pwdtxt.setEchoChar('\u25cf');
+            pwdtxt.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_pwdtxtFocusGained
 
@@ -577,7 +588,8 @@ JMake jj=new JMake();
         String h = new String(pwdtxt.getPassword());
         if (h.equals("")) {
             pwdtxt.setText("Enter Password");
-          
+            pwdtxt.setEchoChar('\0');
+            pwdtxt.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_pwdtxtFocusLost
 
@@ -611,12 +623,14 @@ JMake jj=new JMake();
     private void fntxtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusGained
         if (fntxt.getText().equals("Full Name")) {
             fntxt.setText("");
-        }    
+            fntxt.setForeground(Color.BLACK);
+        }        
     }//GEN-LAST:event_fntxtFocusGained
 
     private void fntxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusLost
         if (fntxt.getText().equals("")) {
             fntxt.setText("Full Name");
+            fntxt.setForeground(new Color(153,153,153));
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_fntxtFocusLost
@@ -630,12 +644,13 @@ JMake jj=new JMake();
     }//GEN-LAST:event_fntxtActionPerformed
 
     private void fntxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyPressed
-     
+        
     }//GEN-LAST:event_fntxtKeyPressed
 
     private void fntxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyTyped
-        if(!Character.isLetter(evt.getKeyChar()) && !Character.isWhitespace(evt.getKeyChar()))
+        if (!Character.isLetter(evt.getKeyChar()) && !Character.isWhitespace(evt.getKeyChar())) {
             evt.setKeyChar('\0');
+        }
     }//GEN-LAST:event_fntxtKeyTyped
 
     private void mmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmActionPerformed
@@ -647,7 +662,7 @@ JMake jj=new JMake();
     }//GEN-LAST:event_formWindowActivated
 
     private void mmItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_mmItemStateChanged
-
+        
         int a = Integer.parseInt(mm.getSelectedItem().toString());
         if (a == 4 || a == 6 || a == 9 || a == 11) {
             dd.removeAllItems();
@@ -656,7 +671,7 @@ JMake jj=new JMake();
             }
         } else if (a == 2) {
             int y = Integer.parseInt(yy.getSelectedItem().toString());
-
+            
             if (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)) {
                 dd.removeAllItems();
                 for (int i = 1; i <= 29; i++) {
@@ -678,7 +693,7 @@ JMake jj=new JMake();
 
     private void yyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_yyItemStateChanged
         int a = Integer.parseInt(yy.getSelectedItem().toString());
-
+        
         if (Integer.parseInt(mm.getSelectedItem().toString()) == 2) {
             if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0)) {
                 dd.removeAllItems();
@@ -722,7 +737,7 @@ JMake jj=new JMake();
     }//GEN-LAST:event_yyFocusLost
 
     private void alreadyMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alreadyMouseEntered
-            already.setForeground(Color.RED);
+        already.setForeground(Color.RED);
     }//GEN-LAST:event_alreadyMouseEntered
 
     private void alreadyMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alreadyMouseExited
@@ -730,30 +745,32 @@ JMake jj=new JMake();
     }//GEN-LAST:event_alreadyMouseExited
 
     private void fntxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fntxtKeyReleased
-    
-   
         
+
     }//GEN-LAST:event_fntxtKeyReleased
 
     private void pwdtxFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusGained
-String h = new String(pwdtx.getPassword());
+        String h = new String(pwdtx.getPassword());
         if (h.equals("Re-Enter Password")) {
-            pwdtx.setText("");        
-        }//
+            pwdtx.setText("");            
+            pwdtx.setEchoChar('\u25cf');
+            pwdtx.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_pwdtxFocusGained
 
     private void pwdtxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusLost
-      String h = new String(pwdtx.getPassword());
+        String h = new String(pwdtx.getPassword());
         if (h.equals("")) {
             pwdtx.setText("Re-Enter Password");
-          
+            pwdtx.setEchoChar('\0');
+            pwdtx.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_pwdtxFocusLost
 
     private void pwdtxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdtxMouseClicked
-  pwdtx.setText("");
-            pwdtx.setEchoChar('\u25cf');
-            pwdtx.setForeground(Color.BLACK);        // TODO add your handling code here:
+//        pwdtx.setText("");
+//        pwdtx.setEchoChar('\u25cf');
+//        pwdtx.setForeground(Color.BLACK);
     }//GEN-LAST:event_pwdtxMouseClicked
 
     /**
@@ -807,6 +824,7 @@ String h = new String(pwdtx.getPassword());
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

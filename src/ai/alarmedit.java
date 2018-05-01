@@ -71,7 +71,7 @@ public class alarmedit extends javax.swing.JFrame {
                 hrActionPerformed(evt);
             }
         });
-        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 80, 30));
+        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 80, 30));
 
         min.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         min.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
@@ -80,7 +80,7 @@ public class alarmedit extends javax.swing.JFrame {
                 minActionPerformed(evt);
             }
         });
-        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 80, 30));
+        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 80, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         jLabel2.setText("Time :");
@@ -92,7 +92,7 @@ public class alarmedit extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
 
         jButton2.setText("OK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class alarmedit extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 60, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 60, -1));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -111,11 +111,11 @@ public class alarmedit extends javax.swing.JFrame {
         txt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txt);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 180, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 190, 100));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 210));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

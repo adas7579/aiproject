@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.*;
 import javax.swing.event.TableModelListener;
@@ -57,7 +58,6 @@ public class viewremind extends javax.swing.JFrame {
             load();
         }
         lbl.setVisible(false);
-
     }
 
     public void load() {
@@ -105,9 +105,9 @@ public class viewremind extends javax.swing.JFrame {
 
         lbl.setForeground(new java.awt.Color(0, 102, 204));
         lbl.setText("Changes saved");
-        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 344, -1, 20));
+        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, 20));
 
-        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -141,7 +141,7 @@ public class viewremind extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb);
         tb.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 392, 327));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 480, 400));
 
         btdel.setText("Delete Reminder");
         btdel.addActionListener(new java.awt.event.ActionListener() {
@@ -149,11 +149,11 @@ public class viewremind extends javax.swing.JFrame {
                 btdelActionPerformed(evt);
             }
         });
-        getContentPane().add(btdel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, -1, -1));
+        getContentPane().add(btdel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 420, 370));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

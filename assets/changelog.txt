@@ -1,6 +1,14 @@
+Solved Bugs:-
+-Registration form password field bug
+-Registration form text field bug
+-UI Improvements
+-Window & Font size increased
+-Music Player table selection bug
+-OTP window close option added
+
 Added:-
-Tools:Calculator
-Tools:Encoder/Decoder
-Games:Quiz
-Games:Snake
-Calling Term:-show tools
+-Tools:Calculator
+-Tools:Encoder/Decoder
+-Games:Quiz
+-Games:Snake
+-Calling Term:-show tools

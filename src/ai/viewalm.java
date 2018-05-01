@@ -104,7 +104,7 @@ public class viewalm extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
+        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -146,11 +146,11 @@ public class viewalm extends javax.swing.JFrame {
             tb.getColumnModel().getColumn(2).setPreferredWidth(150);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 392, 327));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 480, 400));
 
         lbl.setForeground(new java.awt.Color(0, 102, 204));
         lbl.setText("Changes saved");
-        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 344, -1, 20));
+        getContentPane().add(lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, 20));
 
         btdel.setText("Delete Alarm");
         btdel.addActionListener(new java.awt.event.ActionListener() {
@@ -158,11 +158,11 @@ public class viewalm extends javax.swing.JFrame {
                 btdelActionPerformed(evt);
             }
         });
-        getContentPane().add(btdel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        getContentPane().add(btdel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 0, 420, 370));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -1287,7 +1287,7 @@ Color ch = new Color(102, 140, 255);
 
         //off();
         lbllog.setBackground(ch);
-        int a = JOptionPane.showConfirmDialog(this, "Are you sure want to logout?");
+        int a = JOptionPane.showConfirmDialog(this, "Are you sure you want to logout?","Logout?",JOptionPane.YES_NO_OPTION);
 
         if (a == 0) {
 

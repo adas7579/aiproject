@@ -7,8 +7,6 @@ package Games;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -22,10 +20,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import javax.swing.table.DefaultTableModel;
@@ -79,8 +74,7 @@ public class AudPlay extends javax.swing.JFrame {
                 tm.addRow(new Object[]{s.split("=")[0]});
                 sng.add(s.split("=")[1]);
             }
-            list.setRowSelectionAllowed(true);
-            list.setRowSelectionInterval(0, 0);
+            list.changeSelection(0, 0, false, false);
         } catch (Exception ex) {
             FileWriter fw;
             try {
@@ -188,6 +182,8 @@ public class AudPlay extends javax.swing.JFrame {
             }
         });
         getContentPane().add(lblpl, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 50, 50));
+
+        pic.setIcon(new javax.swing.ImageIcon("E:\\vero\\AI\\assets\\mlogo.png")); // NOI18N
         getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 280));
 
         lblvl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,6 +318,7 @@ public class AudPlay extends javax.swing.JFrame {
         });
         getContentPane().add(sld, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 450, 40));
 
+        bck.setIcon(new javax.swing.ImageIcon("E:\\vero\\AI\\assets\\bck.jpg")); // NOI18N
         bck.setOpaque(true);
         getContentPane().add(bck, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
 
@@ -331,7 +328,7 @@ public class AudPlay extends javax.swing.JFrame {
     private void plyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plyActionPerformed
         if (tm.getRowCount() > 0) {
             if (list.getSelectedRowCount() == 0) {
-                list.setRowSelectionInterval(0, 0);
+                list.changeSelection(0, 0, false, false);
             }
             if (play != null) {
                 play.stop();
@@ -376,7 +373,7 @@ public class AudPlay extends javax.swing.JFrame {
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             tm.addRow(new Object[]{fc.getSelectedFile().getName()});
-            list.setRowSelectionInterval(tm.getRowCount() - 1, tm.getRowCount() - 1);
+            list.changeSelection(tm.getRowCount()-1, 0, false, false);
             sng.add(fc.getSelectedFile().getAbsoluteFile());
             addsong(fc.getSelectedFile().getName() + "=" + fc.getSelectedFile().getAbsoluteFile());
         }
@@ -424,7 +421,7 @@ if(evt.getClickCount()==2)
 {
 if (tm.getRowCount() > 0) {
             if (list.getSelectedRowCount() == 0) {
-                list.setRowSelectionInterval(0, 0);
+                list.changeSelection(0, 0, false, false);
             }
             if (play != null) {
                 play.stop();

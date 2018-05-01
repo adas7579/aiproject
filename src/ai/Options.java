@@ -74,7 +74,7 @@ try{
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
+        tb.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         tb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -106,7 +106,7 @@ try{
         });
         jScrollPane1.setViewportView(tb);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 37, 470, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 37, 500, 360));
 
         desc.setEditable(false);
         desc.setColumns(20);
@@ -116,7 +116,7 @@ try{
         desc.setWrapStyleWord(true);
         jScrollPane2.setViewportView(desc);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, 470, 100));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 396, 500, 100));
 
         jButton1.setText("Search Web");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,11 +124,11 @@ try{
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 130, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 130, 40));
 
         qry.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         qry.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(qry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 40));
+        getContentPane().add(qry, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

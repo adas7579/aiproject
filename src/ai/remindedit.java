@@ -88,7 +88,7 @@ public class remindedit extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         jLabel1.setText("Date :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         hr.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         hr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
@@ -97,7 +97,7 @@ public class remindedit extends javax.swing.JFrame {
                 hrActionPerformed(evt);
             }
         });
-        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 80, 30));
+        getContentPane().add(hr, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 100, 30));
 
         min.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         min.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
@@ -106,7 +106,7 @@ public class remindedit extends javax.swing.JFrame {
                 minActionPerformed(evt);
             }
         });
-        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 80, 30));
+        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 110, 30));
 
         jButton2.setText("OK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class remindedit extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 60, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 60, -1));
 
         jButton1.setText("Cancel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class remindedit extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -133,7 +133,7 @@ public class remindedit extends javax.swing.JFrame {
         txt.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txt);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 180, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 220, -1));
 
         dd.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         dd.addItemListener(new java.awt.event.ItemListener() {
@@ -146,7 +146,7 @@ public class remindedit extends javax.swing.JFrame {
                 ddFocusLost(evt);
             }
         });
-        getContentPane().add(dd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 50, -1));
+        getContentPane().add(dd, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 60, 30));
 
         mm.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         mm.addItemListener(new java.awt.event.ItemListener() {
@@ -164,7 +164,7 @@ public class remindedit extends javax.swing.JFrame {
                 mmActionPerformed(evt);
             }
         });
-        getContentPane().add(mm, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 50, -1));
+        getContentPane().add(mm, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 60, 30));
 
         yy.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
         yy.addItemListener(new java.awt.event.ItemListener() {
@@ -177,15 +177,15 @@ public class remindedit extends javax.swing.JFrame {
                 yyFocusLost(evt);
             }
         });
-        getContentPane().add(yy, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 60, -1));
+        getContentPane().add(yy, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 80, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 0, 14)); // NOI18N
         jLabel4.setText("Text :");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 280));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

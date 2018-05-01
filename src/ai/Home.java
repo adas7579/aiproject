@@ -367,19 +367,22 @@ public class Home extends javax.swing.JFrame {
     private void txtemailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtemailFocusGained
         if (txtemail.getText().equals("E-mail")) {
             txtemail.setText("");
+            txtemail.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_txtemailFocusGained
 
     private void txtemailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtemailFocusLost
         if (txtemail.getText().equals("")) {
             txtemail.setText("E-mail");
+            txtemail.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_txtemailFocusLost
 
     private void txtpssFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpssFocusGained
         if (txtpss.getText().equals("Password")) {
-            txtpss.setEchoChar('*');
+            txtpss.setEchoChar('\u25cf');
             txtpss.setText("");
+             txtemail.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_txtpssFocusGained
 
@@ -387,6 +390,7 @@ public class Home extends javax.swing.JFrame {
         if (txtpss.getText().equals("")) {
             txtpss.setEchoChar('\u0000');
             txtpss.setText("Password");
+            txtpss.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_txtpssFocusLost
 

@@ -15,23 +15,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.json.simple.JSONObject;
 
-
 /**
  *
  * @author aNawOrLd
  */
 public class cnf extends javax.swing.JFrame {
-    public Instant start ;
+
+    public Instant start;
     String arr[];
-     JMake jj=new JMake();
+    JMake jj = new JMake();
+
     /**
      * Creates new form cnf
      */
     public cnf(String arr[]) {
-        this.arr=arr;
+        this.arr = arr;
         initComponents();
-             setLocationRelativeTo(null);
-             pic.setIcon(new ImageIcon("assets/otp.jpg"));
+        setLocationRelativeTo(null);
+        pic.setIcon(new ImageIcon("assets/otp.jpg"));
     }
 
     /**
@@ -53,6 +54,7 @@ public class cnf extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        btnclose = new javax.swing.JButton();
         pic = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -64,16 +66,16 @@ public class cnf extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Confirmation of E-mail ID");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 290, 36));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 210, 36));
 
-        cid.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        cid.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         cid.setForeground(new java.awt.Color(0, 255, 0));
         cid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cid.setText("adas7579@rediffmail.com");
         getContentPane().add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 310, 36));
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 0));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 470, 10));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 480, 10));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
@@ -117,142 +119,146 @@ public class cnf extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 140, 40));
+
+        btnclose.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        btnclose.setText("X");
+        btnclose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncloseActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 50, -1));
         getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int a=JOptionPane.showConfirmDialog(null, "Are You Sure to want to exit ?","Select Option",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
+        int a = JOptionPane.showConfirmDialog(null, "Are You Sure to want to exit ?", "Select Option", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             try {
-     jj.delOTP(arr[0]);
-    } catch (Exception ex) {
-        Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
-    }
-            Reg tt=new Reg();
-            tt.setVisible(true);this.setVisible(false);}
+                jj.delOTP(arr[0]);
+            } catch (Exception ex) {
+                Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Reg tt = new Reg();
+            tt.setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         Instant end = Instant.now();
-Duration timeElapsed = Duration.between(start, end);
-System.out.println("Time taken: "+ timeElapsed.toMinutes() +"minutes");
-if(timeElapsed.toMinutes()>9)
-{
-    try {
-     jj.delOTP(arr[0]);
-     JOptionPane.showMessageDialog(null, "OTP Expired!","Error",2);
-            this.setVisible(false);
-            Reg rg=new Reg();
-            rg.setVisible(true);
-    } catch (Exception ex) {
-        Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}
-            
-
-
-       
-        int res = 0;
-        try {
-            res=jj.cnfOTP(new String[]{arr[0],ppl.getText()});
-        } catch (Exception ex) {
-            Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-        if(res==1)
-        {
-        
-           int cc= jj.Reg(arr);
-       if(cc==1){    
-       
+        Duration timeElapsed = Duration.between(start, end);
+        System.out.println("Time taken: " + timeElapsed.toMinutes() + "minutes");
+        if (timeElapsed.toMinutes() > 9) {
             try {
-                 String s = "";
-        try {
-            Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
-
-            InputStream in = child.getInputStream();
-         
-            int c;
-            while ((c = in.read()) != -1) {
-                //System.out.print((char) c);
-                s = s + (char) c;
-            }
-            System.out.println(s);
-            s = s.substring(4);
-            s = s.trim();
-            System.out.println(s);
-            in.close();
-
-        } catch (Exception ex) {
-        }
-                JSONObject i=jj.Login(arr[0], arr[1],s);
-                if (i.containsValue("Device Not Registered")) {
-                String a[] = new String[]{System.getProperty("os.name"),arr[0],s,System.getProperty("user.name")+s.substring(14,18)};
-                
-              int re=jj.RegDevice(a);
-                 if(re==0)                  
-                 {
-                 JOptionPane.showMessageDialog(null, "Device Already Binded!","Warning",2);
-                 System.exit(0);
-                 }
-                 else{
-                  JSONObject yy=   jj.Login(arr[0], arr[1],s);
-                  this.setVisible(false);                
-                welcome w=new welcome(yy);         
-                w.setVisible(true);
+                jj.delOTP(arr[0]);
+                JOptionPane.showMessageDialog(null, "OTP Expired!", "Error", 2);
                 this.setVisible(false);
-                 }
-                
-            } else {
-                    
-                    JSONObject yy=jj.Login(arr[0], arr[1],s);
-                this.setVisible(false);                
-                welcome w=new welcome(yy);         
-                w.setVisible(true);
-                this.setVisible(false);
-            }
+                Reg rg = new Reg();
+                rg.setVisible(true);
             } catch (Exception ex) {
                 Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
-            this.setVisible(false);
-        }
-       else
-        {
-            JOptionPane.showMessageDialog(null, "Registration UnSuccessful!");
-            this.setVisible(false);
-            Reg rg=new Reg();
-            rg.setVisible(true);
-        }
         }
         
-       
-        else
-        {
-        JOptionPane.showMessageDialog(null,"Invalid OTP!","Verification Error",2);
-       // this.setVisible(false);
-      
+        int res = 0;
+        try {
+            res = jj.cnfOTP(new String[]{arr[0], ppl.getText()});
+        } catch (Exception ex) {
+            Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (res == 1) {
+            
+            int cc = jj.Reg(arr);
+            if (cc == 1) {                
+                
+                try {
+                    String s = "";
+                    try {
+                        Process child = Runtime.getRuntime().exec("wmic csproduct get uuid");
+                        
+                        InputStream in = child.getInputStream();
+                        
+                        int c;
+                        while ((c = in.read()) != -1) {
+                            //System.out.print((char) c);
+                            s = s + (char) c;
+                        }
+                        System.out.println(s);
+                        s = s.substring(4);
+                        s = s.trim();
+                        System.out.println(s);
+                        in.close();
+                        
+                    } catch (Exception ex) {
+                    }
+                    JSONObject i = jj.Login(arr[0], arr[1], s);
+                    if (i.containsValue("Device Not Registered")) {
+                        String a[] = new String[]{System.getProperty("os.name"), arr[0], s, System.getProperty("user.name") + s.substring(14, 18)};
+                        
+                        int re = jj.RegDevice(a);
+                        if (re == 0) {
+                            JOptionPane.showMessageDialog(null, "Device Already Binded!", "Warning", 2);
+                            System.exit(0);
+                        } else {
+                            JSONObject yy = jj.Login(arr[0], arr[1], s);
+                            this.setVisible(false);                            
+                            welcome w = new welcome(yy);                            
+                            w.setVisible(true);
+                            this.setVisible(false);
+                        }
+                        
+                    } else {
+                        
+                        JSONObject yy = jj.Login(arr[0], arr[1], s);
+                        this.setVisible(false);                        
+                        welcome w = new welcome(yy);                        
+                        w.setVisible(true);
+                        this.setVisible(false);
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Registration UnSuccessful!");
+                this.setVisible(false);
+                Reg rg = new Reg();
+                rg.setVisible(true);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid OTP!", "Verification Error", 2);
+            // this.setVisible(false);
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        
         try {
-          int i=  jj.resendOTP(arr[0]);
-          if(i==1)
-              JOptionPane.showMessageDialog(null, "OTP Resend Successfully");
-              else
-              JOptionPane.showMessageDialog(null, "Unable to send OTP!");
+            int i = jj.resendOTP(arr[0]);
+            if (i == 1) {
+                JOptionPane.showMessageDialog(null, "OTP Resend Successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "Unable to send OTP!");
+            }
         } catch (Exception ex) {
             Logger.getLogger(cnf.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btncloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncloseActionPerformed
+        int c = JOptionPane.showConfirmDialog(null, "Are you sure you want to cancel this operation and quit registering for InArCo?","Quit Registration?",JOptionPane.YES_NO_OPTION);
+        if (c == JOptionPane.OK_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btncloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,7 +287,7 @@ if(timeElapsed.toMinutes()>9)
         }
         //</editor-fold>
         //</editor-fold>
-String a[] = null;
+        String a[] = null;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -291,6 +297,7 @@ String a[] = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnclose;
     public javax.swing.JLabel cid;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
