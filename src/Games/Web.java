@@ -93,8 +93,9 @@ public class Web extends Application {
             view.setMinSize(500, 400);
             view.setPrefSize(500, 400);
             final WebEngine eng = view.getEngine();
-           // eng.load("http://www.oracle.com/us/index.html");
+            eng.load("http://www.google.com");
             final TextField locationField = new TextField("");
+            locationField.setText("http://www.google.com");
             locationField.setMaxHeight(Double.MAX_VALUE);
             Button goButton = new Button("Go");
             goButton.setDefaultButton(true);

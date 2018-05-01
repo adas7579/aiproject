@@ -22,7 +22,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
-
+import com.darkprograms.speech.microphone.Microphone;
+import com.darkprograms.speech.recognizer.GSpeechDuplex;
+import com.darkprograms.speech.recognizer.GSpeechResponseListener;
+import com.darkprograms.speech.recognizer.GoogleResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -39,7 +44,7 @@ public class AudPlay extends javax.swing.JFrame {
     Media m;
     int pos=0;
     Slid sd;
-
+AudRecog ob=new AudRecog(this);
     public AudPlay() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -63,6 +68,11 @@ public class AudPlay extends javax.swing.JFrame {
         list.setShowGrid(false);
         this.setSize(850, this.getHeight());
         
+          try {
+            ob.Reco();
+        } catch (Exception ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void load() {
@@ -99,12 +109,13 @@ public class AudPlay extends javax.swing.JFrame {
         lblvl = new javax.swing.JLabel();
         vol = new javax.swing.JSlider();
         stp1 = new javax.swing.JButton();
+        response = new javax.swing.JLabel();
         stp2 = new javax.swing.JButton();
         ply = new javax.swing.JButton();
         pau = new javax.swing.JButton();
         stp = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        add = new javax.swing.JButton();
+        rem = new javax.swing.JButton();
         tdur = new javax.swing.JLabel();
         cdur = new javax.swing.JLabel();
         sld = new javax.swing.JSlider();
@@ -182,8 +193,6 @@ public class AudPlay extends javax.swing.JFrame {
             }
         });
         getContentPane().add(lblpl, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 50, 50));
-
-        pic.setIcon(new javax.swing.ImageIcon("E:\\vero\\AI\\assets\\mlogo.png")); // NOI18N
         getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 280, 280));
 
         lblvl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -221,7 +230,12 @@ public class AudPlay extends javax.swing.JFrame {
                 stp1ActionPerformed(evt);
             }
         });
-        getContentPane().add(stp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 60, 30));
+        getContentPane().add(stp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 60, 30));
+
+        response.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        response.setForeground(new java.awt.Color(255, 255, 51));
+        response.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(response, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 410, 30));
 
         stp2.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         stp2.setText(">>");
@@ -230,7 +244,7 @@ public class AudPlay extends javax.swing.JFrame {
                 stp2ActionPerformed(evt);
             }
         });
-        getContentPane().add(stp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 60, 30));
+        getContentPane().add(stp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 60, 30));
 
         ply.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         ply.setText("Play >");
@@ -239,7 +253,7 @@ public class AudPlay extends javax.swing.JFrame {
                 plyActionPerformed(evt);
             }
         });
-        getContentPane().add(ply, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 90, 30));
+        getContentPane().add(ply, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 90, 30));
 
         pau.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         pau.setText("Pause ||");
@@ -248,7 +262,7 @@ public class AudPlay extends javax.swing.JFrame {
                 pauActionPerformed(evt);
             }
         });
-        getContentPane().add(pau, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 90, 30));
+        getContentPane().add(pau, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 90, 30));
 
         stp.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         stp.setText("Stop []");
@@ -257,25 +271,25 @@ public class AudPlay extends javax.swing.JFrame {
                 stpActionPerformed(evt);
             }
         });
-        getContentPane().add(stp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 90, 30));
+        getContentPane().add(stp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 90, 30));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 13)); // NOI18N
-        jButton1.setText("Add Song");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        add.setFont(new java.awt.Font("Segoe UI Emoji", 0, 13)); // NOI18N
+        add.setText("Add Song");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 150, 40));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 150, 40));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 13)); // NOI18N
-        jButton2.setText("Remove Song");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        rem.setFont(new java.awt.Font("Segoe UI Emoji", 0, 13)); // NOI18N
+        rem.setText("Remove Song");
+        rem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                remActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 140, 40));
+        getContentPane().add(rem, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 140, 40));
 
         tdur.setBackground(new java.awt.Color(0, 0, 0));
         tdur.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -318,7 +332,6 @@ public class AudPlay extends javax.swing.JFrame {
         });
         getContentPane().add(sld, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 450, 40));
 
-        bck.setIcon(new javax.swing.ImageIcon("E:\\vero\\AI\\assets\\bck.jpg")); // NOI18N
         bck.setOpaque(true);
         getContentPane().add(bck, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
 
@@ -363,7 +376,7 @@ public class AudPlay extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_stpActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -377,9 +390,9 @@ public class AudPlay extends javax.swing.JFrame {
             sng.add(fc.getSelectedFile().getAbsoluteFile());
             addsong(fc.getSelectedFile().getName() + "=" + fc.getSelectedFile().getAbsoluteFile());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void remActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remActionPerformed
         if (list.getSelectedRowCount() > 0) {
             try {
                 sng.remove(list.getSelectedRow());
@@ -393,7 +406,7 @@ public class AudPlay extends javax.swing.JFrame {
             } catch (Exception ex) {
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_remActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (play != null) {
@@ -525,6 +538,10 @@ play.seek(Duration.seconds((double)sld.getValue()));         // TODO add your ha
     }//GEN-LAST:event_sldMouseReleased
 
     private void lblvlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblvlMouseClicked
+mute();
+    }//GEN-LAST:event_lblvlMouseClicked
+public void mute()
+{
 try{
 if(play.isMute()==false)
 {
@@ -536,8 +553,7 @@ play.setMute(false);
        lblvl.setIcon(new ImageIcon("assets/vicon.png"));
 }
 }catch(Exception e){}
-    }//GEN-LAST:event_lblvlMouseClicked
-
+}
     private void lblplMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblplMouseClicked
         if (this.getWidth() == 850) {
             this.setSize(550, this.getHeight());
@@ -717,6 +733,12 @@ play.setMute(false);
             bw.close();
             fw.close();
         } catch (Exception ex) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/playlist.txt");
+                fw.close();
+            } catch (IOException ex1) {
+            }
         }
     }
 
@@ -730,6 +752,12 @@ play.setMute(false);
             bw.close();
             fw.close();
         } catch (Exception ex) {
+            FileWriter fw;
+            try {
+                fw = new FileWriter("assets/fav/playlist.txt");
+                fw.close();
+            } catch (IOException ex1) {
+            }
         }
     }
 
@@ -771,23 +799,24 @@ play.setMute(false);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollPane;
+    public javax.swing.JButton add;
     private javax.swing.JLabel bck;
     private javax.swing.JLabel cdur;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel lblpl;
-    private javax.swing.JLabel lblvl;
+    public javax.swing.JLabel lblvl;
     private javax.swing.JLabel lblvol;
     private javax.swing.JTable list;
-    private javax.swing.JButton pau;
+    public javax.swing.JButton pau;
     private javax.swing.JLabel pic;
-    private javax.swing.JButton ply;
+    public javax.swing.JButton ply;
+    public javax.swing.JButton rem;
+    public javax.swing.JLabel response;
     public javax.swing.JSlider sld;
     private javax.swing.JLabel sname;
-    private javax.swing.JButton stp;
-    private javax.swing.JButton stp1;
-    private javax.swing.JButton stp2;
+    public javax.swing.JButton stp;
+    public javax.swing.JButton stp1;
+    public javax.swing.JButton stp2;
     private javax.swing.JLabel tdur;
-    private javax.swing.JSlider vol;
+    public javax.swing.JSlider vol;
     // End of variables declaration//GEN-END:variables
 }

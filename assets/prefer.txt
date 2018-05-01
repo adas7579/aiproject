@@ -1,4 +1,5 @@
 about
+alarms
 arijit
 bill
 born
@@ -36,6 +37,7 @@ microsoft
 my
 nvidia
 of
+photos
 playlist
 reminder
 robert
@@ -56,4 +58,3 @@ wiki
 world
 xiaomi
 zukerberg
-alarms

@@ -12,6 +12,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.ComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -475,6 +476,11 @@ public class Reg extends javax.swing.JFrame {
             pwdtx.setText("");
             return;
         }
+        if(pwdtxt.getText().length()<8)
+        {
+          JOptionPane.showMessageDialog(null, "Password should be minimum 8 character!", "Message", 2);
+          return;
+        }
         
         String po = untxt.getText().toUpperCase();
         if (ee.isVisible() == false && ee1.isVisible() == false && ee2.isVisible() == false && ee3.isVisible() == false && pwdtxt.getText().equals(pwdtx.getText())) {
@@ -535,6 +541,11 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_untxtFocusGained
 
     private void untxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_untxtFocusLost
+if(!Pattern.matches("/[^A-Z0-9_@.]/g",untxt.getText()))
+{
+      JOptionPane.showMessageDialog(null,"Invalid Username");
+    return;
+}
         if (untxt.getText().equals("")) {
             untxt.setText("User Name");
             untxt.setForeground(new Color(153,153,153));
@@ -558,6 +569,11 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_emtxtFocusGained
 
     private void emtxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emtxtFocusLost
+if(!Pattern.matches("([\\d\\w]+[.\\w\\d])+?([.\\w\\d])?@([\\w\\d]+[.\\w\\d]*)",emtxt.getText()))
+{
+      JOptionPane.showMessageDialog(null,"Invalid Email");
+    return;
+}
         if (emtxt.getText().equals("")) {
             emtxt.setText("Enter E-mail ID");
             emtxt.setForeground(new Color(153,153,153));
@@ -585,6 +601,11 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_pwdtxtFocusGained
 
     private void pwdtxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxtFocusLost
+if(!Pattern.matches("/((?=.\\d)(?=.[a-z])(?=.[A-Z])(?=.[\\W]).{8,64})/g",pwdtxt.getText()))
+{
+      JOptionPane.showMessageDialog(null,"Invalid Password");
+    return;
+}
         String h = new String(pwdtxt.getPassword());
         if (h.equals("")) {
             pwdtxt.setText("Enter Password");
@@ -628,6 +649,11 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_fntxtFocusGained
 
     private void fntxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusLost
+if(!Pattern.matches("/[^A-Za-z ]/g",fntxt.getText()))
+{
+JOptionPane.showMessageDialog(null,"Invalid FullName");
+    return;
+}
         if (fntxt.getText().equals("")) {
             fntxt.setText("Full Name");
             fntxt.setForeground(new Color(153,153,153));
@@ -759,6 +785,11 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_pwdtxFocusGained
 
     private void pwdtxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusLost
+if(!Pattern.matches("/((?=.\\d)(?=.[a-z])(?=.[A-Z])(?=.[\\W]).{8,64})/g",pwdtx.getText()))
+{
+      JOptionPane.showMessageDialog(null,"Invalid Password");
+    return;
+}
         String h = new String(pwdtx.getPassword());
         if (h.equals("")) {
             pwdtx.setText("Re-Enter Password");

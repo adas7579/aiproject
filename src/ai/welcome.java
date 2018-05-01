@@ -203,6 +203,21 @@ RSA rs=new RSA();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        hh = new javax.swing.JPanel();
+        jSeparator9 = new javax.swing.JSeparator();
+        uun = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        z1 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        z2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        z3 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        z4 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
         hh1 = new javax.swing.JPanel();
         fav = new javax.swing.JPanel();
         jSeparator8 = new javax.swing.JSeparator();
@@ -297,21 +312,6 @@ RSA rs=new RSA();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        hh = new javax.swing.JPanel();
-        jSeparator9 = new javax.swing.JSeparator();
-        uun = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
-        z1 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        z2 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        z3 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        z4 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
-        jSeparator11 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         lblacc = new javax.swing.JLabel();
         lblset = new javax.swing.JLabel();
@@ -336,6 +336,70 @@ RSA rs=new RSA();
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        hh.setBackground(new java.awt.Color(0, 0, 0));
+        hh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hh.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 20, 360));
+
+        uun.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
+        uun.setForeground(new java.awt.Color(102, 140, 255));
+        uun.setText("Welcome!");
+        hh.add(uun, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 380, 70));
+
+        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Welcome!");
+        hh.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 200, 70));
+
+        jSeparator6.setBackground(new java.awt.Color(102, 140, 255));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hh.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 490));
+
+        z1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z1.setForeground(new java.awt.Color(255, 255, 255));
+        z1.setText("get Assistance");
+        hh.add(z1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 240, 40));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("<html>InArCo is a software agent that performs tasks and services for an individual, like opening apps, recent items,<br> favourite files and folders, creating alarm, reminders, notes, perform arithmetic calculations besides helping you answering your queries from around the world.</html>");
+        hh.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, 130));
+
+        z2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z2.setForeground(new java.awt.Color(255, 255, 255));
+        z2.setText("power Of Artificial Intelligence");
+        hh.add(z2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 330, 40));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("<html>InArCo binds with powerful Artificial Intelligence program which with the ability of Natural Language Processing which gives very fast and user customised results of user's query.</html>");
+        hh.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 270, 90));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("<html>InArCo provides you seamless syncing with other cross platform application support with support on  Android and Windows and upcoming on Linux and macOS.  </html>");
+        hh.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 240, 100));
+
+        z3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z3.setForeground(new java.awt.Color(255, 255, 255));
+        z3.setText("cross-Platform Support");
+        hh.add(z3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 40));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("<html>Bind your Android device with smart wearables to provide you with syncronised notifications access without even having to look at your mobile device.</html>");
+        hh.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 280, 100));
+
+        z4.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        z4.setForeground(new java.awt.Color(255, 255, 255));
+        z4.setText("specialised Hardware");
+        hh.add(z4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 260, 40));
+        hh.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 10));
+        hh.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 580, 10));
+
+        getContentPane().add(hh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
 
         hh1.setBackground(new java.awt.Color(51, 51, 51));
         hh1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -682,7 +746,6 @@ RSA rs=new RSA();
         lblgen.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblgen.setForeground(new java.awt.Color(255, 255, 255));
         lblgen.setText("Male");
-        lblgen.setBorder(null);
         pnlacc.add(lblgen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
         lblfull.setEditable(false);
@@ -690,7 +753,6 @@ RSA rs=new RSA();
         lblfull.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblfull.setForeground(new java.awt.Color(255, 255, 255));
         lblfull.setText("@>anadi");
-        lblfull.setBorder(null);
         pnlacc.add(lblfull, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, 30));
 
         lblun.setEditable(false);
@@ -698,7 +760,6 @@ RSA rs=new RSA();
         lblun.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lblun.setForeground(new java.awt.Color(255, 255, 255));
         lblun.setText("@>anadi");
-        lblun.setBorder(null);
         pnlacc.add(lblun, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, 30));
 
         lbldob.setEditable(false);
@@ -706,7 +767,6 @@ RSA rs=new RSA();
         lbldob.setFont(new java.awt.Font("Segoe UI Historic", 0, 15)); // NOI18N
         lbldob.setForeground(new java.awt.Color(255, 255, 255));
         lbldob.setText("12/12/1999");
-        lbldob.setBorder(null);
         pnlacc.add(lbldob, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         gbtn.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
@@ -941,70 +1001,6 @@ RSA rs=new RSA();
         hh1.add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 530, 400));
 
         getContentPane().add(hh1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
-
-        hh.setBackground(new java.awt.Color(0, 0, 0));
-        hh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        hh.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 20, 360));
-
-        uun.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
-        uun.setForeground(new java.awt.Color(102, 140, 255));
-        uun.setText("Welcome!");
-        hh.add(uun, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 380, 70));
-
-        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 3, 48)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Welcome!");
-        hh.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 200, 70));
-
-        jSeparator6.setBackground(new java.awt.Color(102, 140, 255));
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        hh.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 490));
-
-        z1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z1.setForeground(new java.awt.Color(255, 255, 255));
-        z1.setText("get Assistance");
-        hh.add(z1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 240, 40));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("<html>InArCo is a software agent that performs tasks and services for an individual, like opening apps, recent items,<br> favourite files and folders, creating alarm, reminders, notes, perform arithmetic calculations besides helping you answering your queries from around the world.</html>");
-        hh.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, 130));
-
-        z2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z2.setForeground(new java.awt.Color(255, 255, 255));
-        z2.setText("power Of Artificial Intelligence");
-        hh.add(z2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 330, 40));
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("<html>InArCo binds with powerful Artificial Intelligence program which with the ability of Natural Language Processing which gives very fast and user customised results of user's query.</html>");
-        hh.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 270, 90));
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("<html>InArCo provides you seamless syncing with other cross platform application support with support on  Android and Windows and upcoming on Linux and macOS.  </html>");
-        hh.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 240, 100));
-
-        z3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z3.setForeground(new java.awt.Color(255, 255, 255));
-        z3.setText("cross-Platform Support");
-        hh.add(z3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 40));
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("<html>Bind your Android device with smart wearables to provide you with syncronised notifications access without even having to look at your mobile device.</html>");
-        hh.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 280, 100));
-
-        z4.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        z4.setForeground(new java.awt.Color(255, 255, 255));
-        z4.setText("specialised Hardware");
-        hh.add(z4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 260, 40));
-        hh.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 10));
-        hh.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 580, 10));
-
-        getContentPane().add(hh, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 640, 490));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
