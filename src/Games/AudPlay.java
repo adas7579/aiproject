@@ -360,7 +360,29 @@ AudRecog ob=new AudRecog(this);
             sname.setText(list.getValueAt(list.getSelectedRow(), 0).toString());
         }
     }//GEN-LAST:event_plyActionPerformed
+public void ppy()
+{
+   if (tm.getRowCount() > 0) {
+            if (list.getSelectedRowCount() == 0) {
+                list.changeSelection(0, 0, false, false);
+            }
+            if (play != null) {
+                play.stop();
+                sd.stop();
+                mn = 0;
+                sc = 0;
+                sld.setValue(0);
+                setcdur();
+            }
+            pau.setEnabled(true);
+            if (pau.getText().equals("Resume..")) {
+                pau.setText("Pause ||");
+            }
 
+            go(sng.get(list.getSelectedRow()).toString());
+            sname.setText(list.getValueAt(list.getSelectedRow(), 0).toString());
+        }
+}
     private void stpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stpActionPerformed
         if (tm.getRowCount() > 0) {
             play.stop();
@@ -410,9 +432,12 @@ AudRecog ob=new AudRecog(this);
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         if (play != null) {
+            
             play.stop();
             sd.stop();
         }
+        ob.Stop();
+            ob=null;
     }//GEN-LAST:event_formWindowClosing
 
     private void pauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauActionPerformed
@@ -430,7 +455,8 @@ AudRecog ob=new AudRecog(this);
     }//GEN-LAST:event_pauActionPerformed
 
     private void listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listMouseClicked
-if(evt.getClickCount()==2)
+
+        if(evt.getClickCount()==2)
 {
 if (tm.getRowCount() > 0) {
             if (list.getSelectedRowCount() == 0) {
@@ -805,7 +831,7 @@ play.setMute(false);
     private javax.swing.JLabel lblpl;
     public javax.swing.JLabel lblvl;
     private javax.swing.JLabel lblvol;
-    private javax.swing.JTable list;
+    public javax.swing.JTable list;
     public javax.swing.JButton pau;
     private javax.swing.JLabel pic;
     public javax.swing.JButton ply;

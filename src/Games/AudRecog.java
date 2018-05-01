@@ -77,11 +77,10 @@ public class AudRecog implements GSpeechResponseListener {
                     output = output.substring(1, output.length());
                 }
 
-              
                 System.out.println(output);
 
                 if (gr.isFinalResponse()) {
-                    if (output.toLowerCase().contains("play")) {
+                    if (output.toLowerCase().equals("play")) {
                         njf.ply.doClick();
                         njf.response.setText(output);
                     } else if (output.toLowerCase().contains("pause") || output.toLowerCase().contains("resume")) {
@@ -96,31 +95,53 @@ public class AudRecog implements GSpeechResponseListener {
                     } else if (output.toLowerCase().contains("stop")) {
                         njf.stp.doClick();
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().contains("add song")) {
+                    } else if (output.toLowerCase().contains("add song")) {
                         njf.add.doClick();
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().contains("remove song")) {
+                    } else if (output.toLowerCase().contains("remove song")) {
                         njf.rem.doClick();
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().contains("volume up")) {
-                         njf.vol.setValue(njf.vol.getValue()+10);
+                    } else if (output.toLowerCase().equalsIgnoreCase("volume up")) {
+
+                        njf.vol.setValue(njf.vol.getValue() + 10);
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().contains("volume down")) {
-                         njf.vol.setValue(njf.vol.getValue()-10);
+                    } else if (output.toLowerCase().equalsIgnoreCase("volume down")) {
+                        njf.vol.setValue(njf.vol.getValue() - 10);
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().equals("mute")) {
+                    } else if (output.toLowerCase().equals("mute")) {
                         njf.mute();
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().equals("unmute")) {
+                    } else if (output.toLowerCase().equals("unmute")) {
                         njf.mute();
                         njf.response.setText(output);
-                    }else if (output.toLowerCase().equals("exit")) {
+                    } else if (output.toLowerCase().equals("exit")) {
                         njf.setVisible(false);
                         njf.response.setText(output);
+                    } else if (output.toLowerCase().contains("volume")) {
+                        String sp[] = output.split(" ");
+                        for (String vol : sp) {
+                            if (vol.contains("%")) {
+                                int v = Integer.parseInt(vol.replace("%", ""));
+                                System.out.println(vol + " Volume: " + v);
+                                njf.vol.setValue(v);
+                            }
+                        }
+                    } else if (output.toLowerCase().contains("play")) {
+                        String sen = output;
+                        String key[] = sen.split(" ");
+                           
+                        for (int i = 0; i < njf.list.getRowCount(); i++) {
+                            String song = njf.list.getValueAt(i, 0).toString();
+                            System.out.println(song+"<<<<<<<<");
+                            for (String k : key) {
+                                if (song.toLowerCase().contains(k.toLowerCase())) {
+                                     System.out.println("true");
+                                    njf.list.setRowSelectionInterval(0, i);
+                                    njf.ppy();
+                                }
+                            }
+                        }
                     }
-                    
-                    
-                    
 
                     op = "";
                     op += this.old_text;
