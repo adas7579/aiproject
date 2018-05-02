@@ -40,7 +40,7 @@ public class Aires extends javax.swing.JFrame {
         for (String line : res) {
             if (line.contains("<<>>")) {
                 if (line.split("<<>>").length == 2) {
-                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n\n");
+                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n");
                 }
             } else {
                 a1.append(line + "\n");
