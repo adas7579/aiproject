@@ -1,2 +1,15 @@
+about
+alarms
+born
+create
+facebook
+gandhi
+information
+mahatma
+news
+notes
+nvidia
+reminders
 show
 tools
+world

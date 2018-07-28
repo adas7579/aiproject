@@ -66,6 +66,7 @@ public class Aires extends javax.swing.JFrame {
         a1 = new javax.swing.JTextArea();
         url = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        pp1 = new javax.swing.JProgressBar();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -93,14 +94,27 @@ public class Aires extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 210, 40));
+        getContentPane().add(pp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 850, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+         
         try {
             a1.setText("");
             JSONObject tt=jj.aiResponse("desktop:"+url.getText());
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
              String res[] = tt.get("answer").toString().split("\n");
         for (String line : res) {
             if (line.contains("<<>>")) {
@@ -160,6 +174,7 @@ public class Aires extends javax.swing.JFrame {
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JProgressBar pp1;
     private javax.swing.JTextField url;
     // End of variables declaration//GEN-END:variables
 }

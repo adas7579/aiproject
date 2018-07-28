@@ -41,7 +41,7 @@ public class NewJFrame extends javax.swing.JFrame  {
         this.setLocation(x-20, y);
         
         try {
-            ob.Reco();
+          //  ob.Reco();
         } catch (Exception ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -59,13 +59,17 @@ public class NewJFrame extends javax.swing.JFrame  {
     private void initComponents() {
 
         t1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         response = new javax.swing.JTextArea();
         b1 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         t1.setText("0");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -114,15 +118,28 @@ public class NewJFrame extends javax.swing.JFrame  {
         });
         jPanel1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 20, 60));
 
+        jComboBox2.setEditable(true);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 130, Short.MAX_VALUE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,6 +232,8 @@ public class NewJFrame extends javax.swing.JFrame  {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton b1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
