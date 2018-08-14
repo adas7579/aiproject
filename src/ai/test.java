@@ -538,6 +538,11 @@ if (!SystemTray.isSupported()) {
         String aaa = grr.greet(output);
         if (!aaa.equals("")) {
             opt.setText(aaa);
+            if(aaa.contains("Hi"))
+            {
+                 opt.setText(aaa+" "+detail.get("username"));
+                 return;
+            }
             try {
                 ms.sp = this.opt.getText();
                 ms.run();

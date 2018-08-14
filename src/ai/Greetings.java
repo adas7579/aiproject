@@ -40,7 +40,7 @@ public String greet(String a)
 
       System.out.println("Current Hour is : "+i);
     if(a.contains("good")&&a.contains("night"))
-        return "Good Night";
+    {return "Good Night";}
     else{
         if(a.contains("good")&&a.contains("morning"))
         {
@@ -63,6 +63,10 @@ public String greet(String a)
             else
                 return "its Good "+ori+", actually";
         }
+        if(a.toLowerCase().contains("hi")&&a.toLowerCase().contains("hello"))
+        {            
+                return "Hi";
+        } 
     }
     return "";
 }}

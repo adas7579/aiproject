@@ -1,9 +1,12 @@
 about
 alarms
 born
+chilly
 create
 facebook
 gandhi
+hello
+hi
 information
 mahatma
 news
