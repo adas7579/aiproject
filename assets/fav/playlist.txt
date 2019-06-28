@@ -1,5 +1,6 @@
-02_-_Bezubaan(dailymaza.com).mp3=G:\aNaDi\Songs\ABCD\02_-_Bezubaan(dailymaza.com).mp3
-01 - Deewani Mastani_320(dailymaza.com).mp3=G:\aNaDi\Songs\Bajirao Mastani\01 - Deewani Mastani_320(dailymaza.com).mp3
-Mere Rashke Qamar Tu Ne Pehli Nazar (Remix).mp3=G:\aNaDi\Songs\Mere Rashke Qamar Tu Ne Pehli Nazar (Remix).mp3
-04 - Zaroori Tha - DownloadMing.SE.mp3=G:\aNaDi\Songs\Back 2 Love - Rahat Fateh Ali Khan (2014)\04 - Zaroori Tha - DownloadMing.SE.mp3
-12_-_Powerless.mp3=G:\aNaDi\Songs\New folder\songs\Linkin Park\New folder\12_-_Powerless.mp3
+02_-_Bezubaan(dailymaza.com).mp3=H:\aNaDi\Songs\ABCD\02_-_Bezubaan(dailymaza.com).mp3
+01 - Deewani Mastani_320(dailymaza.com).mp3=H:\aNaDi\Songs\Bajirao Mastani\01 - Deewani Mastani_320(dailymaza.com).mp3
+Mere Rashke Qamar Tu Ne Pehli Nazar (Remix).mp3=H:\aNaDi\Songs\Mere Rashke Qamar Tu Ne Pehli Nazar (Remix).mp3
+04 - Zaroori Tha - DownloadMing.SE.mp3=H:\aNaDi\Songs\Back 2 Love - Rahat Fateh Ali Khan (2014)\04 - Zaroori Tha - DownloadMing.SE.mp3
+12_-_Powerless.mp3=H:\aNaDi\Songs\New folder\songs\Linkin Park\New folder\12_-_Powerless.mp3
+A Raja Ji Baja Baji Ki Na Baji 320kbps(Gomirchi.in).mp3=H:\aNaDi\Songs\A Raja Ji Baja Baji Ki Na Baji 320kbps(Gomirchi.in).mp3

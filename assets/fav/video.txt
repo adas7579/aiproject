@@ -1,2 +1,3 @@
-Video=G:\aNaDi\Songs\Video
-Videos=G:\aNaDi\Songs\Videos
+LP Video=H:\aNaDi\Songs\LP Video
+Video=H:\aNaDi\Songs\Video
+Videos=H:\aNaDi\Songs\Videos

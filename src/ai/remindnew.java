@@ -24,7 +24,19 @@ public class remindnew extends javax.swing.JFrame {
         this.jj=jj;
         initComponents();
         aa=a;
+          int y = LocalDateTime.now().getYear();
+
+        for (int i = 1; i <= 31; i++) {
+            dd.addItem(i + "");
+        }
+        for (int i = 1; i <= 12; i++) {
+            mm.addItem(i + "");
+        }
+        for (int i = y; i <= y+1; i++) {
+            yy.addItem(i + "");
+        }  
         this.setLocationRelativeTo(null);
+        try{
         if (aa[2].length() == 1) {
             hr.setSelectedItem("0" + aa[2]);
         } else {
@@ -37,20 +49,11 @@ public class remindnew extends javax.swing.JFrame {
         }
         txt.setText(aa[7]);
         
-        int y = LocalDateTime.now().getYear();
-
-        for (int i = 1; i <= 31; i++) {
-            dd.addItem(i + "");
-        }
-        for (int i = 1; i <= 12; i++) {
-            mm.addItem(i + "");
-        }
-        for (int i = y; i <= y+1; i++) {
-            yy.addItem(i + "");
-        }        
+            
         yy.setSelectedItem(aa[6]);
         mm.setSelectedItem(aa[5]);
         dd.setSelectedItem(aa[4]);
+        }catch(Exception e){}
     }
 
     /**

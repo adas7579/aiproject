@@ -40,10 +40,10 @@ public class Aires extends javax.swing.JFrame {
         for (String line : res) {
             if (line.contains("<<>>")) {
                 if (line.split("<<>>").length == 2) {
-                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n");
+                    a1.setText(a1.getText()+""+line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n");
                 }
             } else {
-                a1.append(line + "\n");
+                   a1.setText(a1.getText()+""+line + "\n");
             }
 
         }
@@ -62,25 +62,16 @@ public class Aires extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        a1 = new javax.swing.JTextArea();
         url = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         pp1 = new javax.swing.JProgressBar();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        a1 = new javax.swing.JEditorPane();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        a1.setColumns(20);
-        a1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        a1.setLineWrap(true);
-        a1.setRows(5);
-        a1.setWrapStyleWord(true);
-        jScrollPane3.setViewportView(a1);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 850, 420));
 
         url.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         url.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -95,6 +86,10 @@ public class Aires extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 210, 40));
         getContentPane().add(pp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 850, 20));
+
+        jScrollPane2.setViewportView(a1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 850, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,10 +114,10 @@ public class Aires extends javax.swing.JFrame {
         for (String line : res) {
             if (line.contains("<<>>")) {
                 if (line.split("<<>>").length == 2) {
-                    a1.append(line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n\n");
+                     a1.setText(a1.getText()+""+line.split("<<>>")[0] + ":-\n" + line.split("<<>>")[1] + "\n\n");
                 }
             } else {
-                a1.append(line + "\n");
+     a1.setText(a1.getText()+""+line + "\n");
             }
 
         }
@@ -169,11 +164,11 @@ public class Aires extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea a1;
+    private javax.swing.JEditorPane a1;
     private javax.swing.JButton jButton2;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JProgressBar pp1;
     private javax.swing.JTextField url;
     // End of variables declaration//GEN-END:variables

@@ -18,6 +18,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Desktop;
 import Games.*;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 /**
  *
  * @author VISION
@@ -66,6 +68,8 @@ public class test extends javax.swing.JFrame {
         conn = con;
         initComponents();
 
+      
+        
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice defaultScreen = ge.getDefaultScreenDevice();
         Rectangle rect = defaultScreen.getDefaultConfiguration().getBounds();
@@ -95,6 +99,10 @@ public class test extends javax.swing.JFrame {
         label.setIcon(new ImageIcon("assets/mute.png"));
         //label.setIcon(new ImageIcon("assets/mute.png"));
         pic.setIcon(new ImageIcon("assets/dots.png"));
+         al.setIcon(new ImageIcon("assets/alarm.png"));
+           no.setIcon(new ImageIcon("assets/notes.png"));
+             re.setIcon(new ImageIcon("assets/rem.png"));
+               shelf.setIcon(new ImageIcon("assets/shelf.png"));
 //        try {
 //            ob.Reco();
 //        } catch (Exception ex) {
@@ -117,7 +125,7 @@ public class test extends javax.swing.JFrame {
 // Maps the tab key to the commit action, which finishes the autocomplete
 // when given a suggestion
         response.getActionMap().put(COMMIT_ACTION, autoComplete.new CommitAction());
-    
+   
     }
 
     /**
@@ -136,6 +144,11 @@ public class test extends javax.swing.JFrame {
         opt = new javax.swing.JLabel();
         label = new javax.swing.JLabel();
         b1 = new javax.swing.JLabel();
+        shelf = new javax.swing.JLabel();
+        al = new javax.swing.JLabel();
+        no = new javax.swing.JLabel();
+        re = new javax.swing.JLabel();
+        sug = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InArCo");
@@ -166,7 +179,7 @@ public class test extends javax.swing.JFrame {
                 picMouseEntered(evt);
             }
         });
-        getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 20, 50));
+        getContentPane().add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 20, 50));
 
         response.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -181,12 +194,12 @@ public class test extends javax.swing.JFrame {
                 responseKeyReleased(evt);
             }
         });
-        getContentPane().add(response, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 200, 30));
-        getContentPane().add(lb, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 220, 200));
+        getContentPane().add(response, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 200, 30));
+        getContentPane().add(lb, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 210, 190));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 240, 50));
 
         opt.setBackground(new java.awt.Color(0, 0, 0));
         opt.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -199,7 +212,7 @@ public class test extends javax.swing.JFrame {
                 optMouseClicked(evt);
             }
         });
-        getContentPane().add(opt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 170, 50));
+        getContentPane().add(opt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 170, 30));
 
         label.setBackground(new java.awt.Color(0, 0, 0));
         label.setText("jLabel3");
@@ -209,7 +222,7 @@ public class test extends javax.swing.JFrame {
                 labelMouseClicked(evt);
             }
         });
-        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 50, 50));
+        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 50, 60));
 
         b1.setBackground(new java.awt.Color(255, 255, 255));
         b1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
@@ -225,7 +238,48 @@ public class test extends javax.swing.JFrame {
                 b1MouseEntered(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 20, 50));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 20, 60));
+
+        shelf.setBackground(new java.awt.Color(0, 0, 0));
+        shelf.setToolTipText("MyShelf");
+        shelf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        shelf.setOpaque(true);
+        getContentPane().add(shelf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 50, 30));
+
+        al.setBackground(new java.awt.Color(0, 0, 0));
+        al.setToolTipText("Alarms");
+        al.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        al.setOpaque(true);
+        al.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alMouseClicked(evt);
+            }
+        });
+        getContentPane().add(al, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 40, 30));
+
+        no.setBackground(new java.awt.Color(0, 0, 0));
+        no.setToolTipText("Notes");
+        no.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        no.setOpaque(true);
+        no.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                noMouseClicked(evt);
+            }
+        });
+        getContentPane().add(no, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 40, 30));
+
+        re.setBackground(new java.awt.Color(0, 0, 0));
+        re.setToolTipText("Reminder");
+        re.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        re.setOpaque(true);
+        re.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reMouseClicked(evt);
+            }
+        });
+        getContentPane().add(re, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 40, 30));
+
+        getContentPane().add(sug, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 200, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -271,6 +325,11 @@ if (!SystemTray.isSupported()) {
         popup.add(exit);       
         trayIcon.setPopupMenu(popup);
         
+         
+          
+          
+          
+          
            wel.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent ev) {
          try {
@@ -385,6 +444,7 @@ if (!SystemTray.isSupported()) {
             System.out.print(pp.list);
             start(response.getText());
         }
+        
     }//GEN-LAST:event_responseKeyPressed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
@@ -426,6 +486,95 @@ if (!SystemTray.isSupported()) {
     private void responseKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_responseKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_responseKeyReleased
+
+    private void alMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alMouseClicked
+ if(evt.getButton()==1)
+ {
+      viewalm v = new viewalm(uid, email);
+            v.setVisible(true);
+ }
+        
+        final JPopupMenu ala = new JPopupMenu();
+          JMenuItem ala1=new JMenuItem("Create");
+          JMenuItem ala2=new JMenuItem("Show");
+             ala1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+          
+        }
+    });
+              ala2.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+             viewalm v = new viewalm(uid, email);
+            v.setVisible(true);
+        }
+    });
+          ala.add(ala1);
+          ala.add(ala2);
+          al.setComponentPopupMenu(ala);        // TODO add your handling code here:
+    }//GEN-LAST:event_alMouseClicked
+
+    private void noMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noMouseClicked
+    if(evt.getButton()==1)
+ {
+     notes n = new notes(uid,email);
+            n.jj = jj;
+            n.user = detail;
+            n.setVisible(true);
+ }
+        
+        final JPopupMenu ala = new JPopupMenu();
+          JMenuItem ala1=new JMenuItem("Create");
+          JMenuItem ala2=new JMenuItem("Show");
+             ala1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+           Instant in = Instant.now();
+            String timeStamp = new SimpleDateFormat("dd-MMM-yyyy").format(new Date());
+            nn = new notenew(new String[]{uid, in.toString(), timeStamp, ""});
+            nn.jj = jj;
+            nn.user = detail;
+            nn.setVisible(true);
+        }
+    });
+              ala2.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+            notes n = new notes(uid,email);
+            n.jj = jj;
+            n.user = detail;
+            n.setVisible(true);
+        }
+    });
+          ala.add(ala1);
+          ala.add(ala2);
+          no.setComponentPopupMenu(ala);  
+    }//GEN-LAST:event_noMouseClicked
+
+    private void reMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reMouseClicked
+      if(evt.getButton()==1)
+ {
+    viewremind v = new viewremind(uid, email);
+            v.setVisible(true);
+ }
+        
+        final JPopupMenu ala = new JPopupMenu();
+          JMenuItem ala1=new JMenuItem("Create");
+          JMenuItem ala2=new JMenuItem("Show");
+             ala1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+           Instant in = Instant.now();
+   remindnew rn = new remindnew(new String[]{uid, in.toString()}, jj);
+                rn.setVisible(true);
+        }
+    });
+              ala2.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ev) {
+          viewremind v = new viewremind(uid, email);
+            v.setVisible(true);
+        }
+    });
+          ala.add(ala1);
+          ala.add(ala2);
+          re.setComponentPopupMenu(ala);  
+    }//GEN-LAST:event_reMouseClicked
 
     /**
      * @param args the command line arguments
@@ -519,13 +668,18 @@ if (!SystemTray.isSupported()) {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel al;
     private javax.swing.JLabel b1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label;
     private javax.swing.JLabel lb;
+    private javax.swing.JLabel no;
     public javax.swing.JLabel opt;
     private javax.swing.JLabel pic;
+    private javax.swing.JLabel re;
     public javax.swing.JTextField response;
+    private javax.swing.JLabel shelf;
+    private javax.swing.JComboBox<String> sug;
     // End of variables declaration//GEN-END:variables
 
     int sig = 0;

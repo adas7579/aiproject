@@ -541,11 +541,7 @@ public class Reg extends javax.swing.JFrame {
     }//GEN-LAST:event_untxtFocusGained
 
     private void untxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_untxtFocusLost
-if(!Pattern.matches("/[^A-Z0-9_@.]/g",untxt.getText()))
-{
-      JOptionPane.showMessageDialog(null,"Invalid Username");
-    return;
-}
+
         if (untxt.getText().equals("")) {
             untxt.setText("User Name");
             untxt.setForeground(new Color(153,153,153));
@@ -601,11 +597,7 @@ if(!Pattern.matches("([\\d\\w]+[.\\w\\d])+?([.\\w\\d])?@([\\w\\d]+[.\\w\\d]*)",e
     }//GEN-LAST:event_pwdtxtFocusGained
 
     private void pwdtxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxtFocusLost
-if(!Pattern.matches("/((?=.\\d)(?=.[a-z])(?=.[A-Z])(?=.[\\W]).{8,64})/g",pwdtxt.getText()))
-{
-      JOptionPane.showMessageDialog(null,"Invalid Password");
-    return;
-}
+
         String h = new String(pwdtxt.getPassword());
         if (h.equals("")) {
             pwdtxt.setText("Enter Password");
@@ -649,11 +641,7 @@ if(!Pattern.matches("/((?=.\\d)(?=.[a-z])(?=.[A-Z])(?=.[\\W]).{8,64})/g",pwdtxt.
     }//GEN-LAST:event_fntxtFocusGained
 
     private void fntxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fntxtFocusLost
-if(!Pattern.matches("/[^A-Za-z ]/g",fntxt.getText()))
-{
-JOptionPane.showMessageDialog(null,"Invalid FullName");
-    return;
-}
+
         if (fntxt.getText().equals("")) {
             fntxt.setText("Full Name");
             fntxt.setForeground(new Color(153,153,153));
@@ -785,11 +773,7 @@ JOptionPane.showMessageDialog(null,"Invalid FullName");
     }//GEN-LAST:event_pwdtxFocusGained
 
     private void pwdtxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdtxFocusLost
-if(!Pattern.matches("/((?=.\\d)(?=.[a-z])(?=.[A-Z])(?=.[\\W]).{8,64})/g",pwdtx.getText()))
-{
-      JOptionPane.showMessageDialog(null,"Invalid Password");
-    return;
-}
+
         String h = new String(pwdtx.getPassword());
         if (h.equals("")) {
             pwdtx.setText("Re-Enter Password");

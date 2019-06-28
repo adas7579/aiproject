@@ -1,2 +1,1 @@
-NetBeansProjects=C:\Users\aNaWorLd\Documents\NetBeansProjects
-AD Drive (J:)=J:\
+Main=I:\Main
